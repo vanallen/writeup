@@ -1,0 +1,8 @@
+*.pyc
+.DS_Store
+*.aux
+*.log
+*.lot
+*.lof
+*.toc
+README.*

@@ -1,0 +1,102 @@
+% Analysis and Interpretation of data
+% * meaning
+% * in the studies involving
+% * interconnection among data
+% * Check for indicaotr whether hypothesis is supported by he finding
+% * Link present finding to previous liturature
+\chapter{Analysis and Interpretation}
+
+\section{Convolutional Neural Network}
+
+\subsection{Recognition}
+
+To evaluate the initial results, we calculate precision, recall, and F1 values of the predicted results compare to the gold standard annotated by the biologists.
+
+\textbf{Input Processing}
+
+According to the proposed architecture in section \ref{system}, we have experimented with both method of input processing, namely, concatenation and computing the difference. The results are shown in table \ref{concatenation-table} and \ref{result-table}.
+
+
+\begin{table}[t]
+\captionsetup{justification=centering}
+  \caption{Precision (P), recall (R), and F-score (F) of the classification results for the input processing with feature vectors concatenation}
+
+  \label{concatenation-table}
+\centering
+\begin{tabular}{lllllllllllllllllll}
+    \toprule
+    \multicolumn{2}{c}{\multirow{2}{*}{Dataset} } & \multicolumn{3}{c}{PCT} & \multicolumn{3}{c}{PA-I} & \multicolumn{3}{c}{PA-II}\\
+  \cmidrule{3-10}
+                                              & & P & R & F  & P & R & F  & P & R & F \\
+    \midrule
+    \multirow{3}{*}{Gr$^{L}$-I}  & Train & 0.01 & 0.03 & 0.01 & 0.04 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 \\
+    \cmidrule{2-11}
+                                 & Val   & 0.40 & 0.13 & 0.08 & 0.23 & 0.06 & 0.08 & 0.46 & 0.08 & 0.06 \\
+    \cmidrule{2-11}
+                                 & Test  & 0.01 & 0.05 & 0.02 & 0.03 & 0.01 & 0.01 &  0.00 & 0.02 & 0.01 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+All the classifiers perform poorly when feature vectors concatenation is used as the input processing method. This happens because of the \emph{curse of dimensionality}, where there are too many unnecessary input features. Doubling the dimension of the input image vector overcomplicates the classifier parameters causing the downfall in the prediction accuracy. On the other hand, the classifiers tend to perform pretty well when using absolute feature difference as the input.
+
+\afterpage{%
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \thispagestyle{empty}% empty page style (?)
+    \begin{landscape}% Landscape page
+    \begin{table}   \label{result-table}
+      \captionsetup{justification=centering}
+        \caption{Precision (P), recall (R), and F-score (F) of the linear classifier with absolute feature difference on train, validation, and test set of the four datasets}
+
+      \centering % Center table
+      \hskip-2.0cm\begin{tabular}{lllll|lll|lll|lll|lllll}
+          \toprule
+
+          \multicolumn{2}{c}{\multirow{2}{*}{Dataset} } & \multicolumn{3}{c}{SVM} & \multicolumn{3}{c}{SVM-RBF} & \multicolumn{3}{c}{PCT} & \multicolumn{3}{c}{PA-I} & \multicolumn{3}{c}{PA-II}\\
+        \cmidrule{3-17}
+                                                    & & P & R & F  & P & R & F  & P & R & F  & P & R & F  & P & R & F \\
+          \midrule
+          \multirow{3}{*}{Gr$^{L}$-I}  & Train & 0.91 & 0.21 & 0.34 & 0.97 & 0.18 & 0.30 & 0.40 & 0.26 & 0.32 & 0.57 & 0.31 & 0.29 & 0.57 & 0.29 & 0.30       \\
+          %\cmidrule{2-17}
+                                       & Val   & 0.95 & 0.23 & 0.37 & 0.99 & 0.19 & 0.32 & 0.58 & 0.37 & 0.45 & 0.65 & 0.48 & 0.38  & 0.67 & 0.44 & 0.39      \\
+          %\cmidrule{2-17}
+                                       & Test  & 0.82 & 0.20 & 0.33 & 1.0 & 0.21 & 0.35 &  0.42 & 0.24 & 0.30 & 0.54 & 0.33 & 0.28 & 0.52 & 0.29 & 0.28     \\
+          \hline
+          \multirow{3}{*}{Ot$^{L}$-I}  & Train & 0.64 & 0.24 & 0.32 & 0.88 & 0.21 & 0.34  & 0.45 & 0.32 & 0.29 & 0.37 & 0.16 & 0.23 & 0.36 & 0.27 & 0.30     \\
+      %\cmidrule{2-17}
+                                       & Val   & 0.81 & 0.42 & 0.51 & 0.90 & 0.24 & 0.37 & 0.55 & 0.54 & 0.42 & 0.89 & 0.30 & 0.39 & 0.65 & 0.55 & 0.59     \\
+      %\cmidrule{2-17}
+                                       & Test  & 0.66 & 0.26 & 0.33 & 0.90 & 0.20 & 0.32 & 0.46 & 0.39 & 0.33 & 0.36 & 0.17 & 0.23 & 0.42 & 0.32 & 0.36     \\
+          \hline
+          \multirow{3}{*}{Gr$^{L}$-II} & Train & 0.92 & 0.35 & 0.50 & 0.99 & 0.21 & 0.34 & 0.99 & 0.27 & 0.43 & 0.89 & 0.48 & 0.63 & 0.83 & 0.57 & 0.67     \\
+      %\cmidrule{2-17}
+                                       & Val   & 0.79 & 0.20 & 0.32 & 1.0 & 0.20 & 0.33 & 0.93 & 0.19 & 0.32 & 0.76 & 0.21 & 0.33 & 0.66 & 0.24 & 0.36     \\
+      %\cmidrule{2-17}
+                                       & Test  & 0.85 & 0.22 & 0.35 & 1.0 & 0.18 & 0.30 & 0.92 & 0.19 & 0.31 & 0.86 & 0.20 & 0.32 & 0.69 & 0.22 & 0.34     \\
+          \hline
+          \multirow{3}{*}{Ot$^{L}$-II} & Train & 0.57 & 0.29 & 0.38 & 1.0 & 0.22 & 0.38 & 0.53 & 0.70 & 0.60 & 0.59 & 0.78 & 0.67 & 1.0 & 0.25 & 0.40     \\
+      %\cmidrule{2-17}
+                                       & Val  & 0.57 & 0.68 & 0.62 & 1.0 & 0.24 & 0.39 & 0.53 & 0.37 & 0.43 & 0.56 & 0.30 & 0.39 & 0.97 & 0.19 & 0.32   \\
+      %\cmidrule{2-17}
+                                       & Test  & 0.57 & 0.28 & 0.38  & 1.0 & 0.19 & 0.32 & 0.43 & 0.36 & 0.39 & 0.50 & 0.32 & 0.39 & 1.0 & 0.22 & 0.37     \\
+          \bottomrule
+        \end{tabular}
+      \end{table}
+    \end{landscape}
+    \clearpage% Flush page
+}
+
+
+
+Considering the classification results in \ref{result-table}, all the classifiers seem to perform equally well on the test data considering the F-beta score. SVM with radial bas kernel function yields the most stable performance with very high precision for both species. The offline algorithms slightly outrun all the online ones on average.
+
+In the system such as Sloop, we would like to have a high standard on the individuals marked as a match becuase mistakes are extremely detrimental. It can easily propagate over the whole database so we would like to select a classifier with high F-beta score, preferably with high precision. In general, SVM-RBF is a very safe choice. However, the classifier with highest F-beta score are listed as following:
+
+\begin{itemize}
+  \item Gr$^{L}$-I SVM-RBF
+  \item Ot$^{L}$-I PA-II/SVM/SVM-RBF (Even though PA-II yields highest F-score, its precision is very low.)
+  \item Gr$^{L}$-II SVM
+  \item Ot$^{L}$-II PCT/PA-I/SVM
+\end{itemize}
+
+Species-wise, classification results for Otago skinks seem to have higher recall, but lower precision, than that of Grands despite the similar proportion between the matching and non-matching pairs in training, validation, and test sets. This implies that the feature vectors of Otago are pretty similar to one another in the classifiers' point of view. The similarity results from the visual patterns of the species, which are less detailed compared to Grand.

@@ -1,0 +1,131 @@
+% -*- Mode:TeX -*-
+
+%% The documentclass options along with the pagestyle can be used to generate
+%% a technical report, a draft copy, or a regular thesis.  You may need to
+%% re-specify the pagestyle after you \include  cover.tex.  For more
+%% information, see the first few lines of mitthesis.cls. 
+
+%\documentclass[12pt,vi,twoside]{mitthesis}
+%%
+%%  If you want your thesis copyright to you instead of MIT, use the
+%%  ``vi'' option, as above.
+%%
+%\documentclass[12pt,twoside,leftblank]{mitthesis}
+%%
+%% If you want blank pages before new chapters to be labelled ``This
+%% Page Intentionally Left Blank'', use the ``leftblank'' option, as
+%% above. 
+
+\documentclass[12pt,twoside]{mitthesis}
+\usepackage{lgrind} 		  % 2e style for including codes
+
+%% Additional packages
+% \usepackage[utf8]{inputenc} % allow utf-8 input
+% \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+% \usepackage{hyperref}       % hyperlinks
+% \usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+% \usepackage{amsfonts}       % blackboard math symbols
+% \usepackage{nicefrac}       % compact symbols for 1/2, etc.
+% \usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{pdflscape}
+\usepackage{multirow}
+\usepackage{afterpage}
+% \usepackage[table,x11names]{xcolor}
+
+\pagestyle{plain}
+
+%% This bit allows you to either specify only the files which you wish to
+%% process, or `all' to process all files which you \include.
+%% Krishna Sethuraman (1990).
+%
+%\typein [\files]{Enter file names to process, (chap1,chap2 ...), or `all' to process all files:}
+%\def\all{all}
+%\ifx\files\all \typeout{Including all files.} \else \typeout{Including only \files.} \includeonly{\files} \fi
+
+%% This is an example first chapter.  You should put chapter/appendix that you
+%% write into a separate file, and add a line \include{yourfilename} to
+%% main.tex, where `yourfilename.tex' is the name of the chapter/appendix file.
+%% You can process specific files by typing their names in at the 
+%% \files=
+%% prompt when you run the file main.tex through LaTeX.
+
+\begin{document}
+
+\include{cover}
+% Some departments (e.g. 5) require an additional signature page.  See
+% signature.tex for more information and uncomment the following line if
+% applicable.
+% \include{signature}
+\pagestyle{plain}
+\include{contents}
+\include{chap1}
+% Introduction (context interms of content of the project)
+% * Significance (who will benefit? contribution of the study)
+% * Sattement of the problem (problem must be reflacted to the title)
+% * Conceptual framework (problems in relation to relevant literatures, summerize the major variables -- independent variables/cause, dependent/effect, other infkuencial vars)
+%   - Existing research and its relevancy
+%   - Key idea of my appproach
+%   - discuss variables related to the problem
+%   - Conceptualize relationship between variables
+% * Scope and delimitation
+% (* list out technical terms)
+\include{chap2}
+% Related Liturature and Studies
+% * Organzied to cover specific problem
+% * how it helps the current study/how it relates
+\include{chap3}
+% Relevance Feedback: Relevance feedback accelerates recall
+% Methodology
+% * Design and Architecture
+% * Population of interest and sampling subject used in the study
+% * Instrument and what it measures (metrices)
+% * qualifications of informants if used in the study
+% * Validation
+% * Data gathering procedure (experiments)
+\include{chap4}
+% Sloop-mturk: Crowdsourced relevance feedback on mturk
+% Methodology
+% * Design and Architecture
+% * Population of interest and sampling subject used in the study
+% * Instrument and what it measures (metrices)
+% * qualifications of informants if used in the study
+% * Validation
+% * Data gathering procedure (experiments)
+\include{chap5}
+% Adaptive sampling method
+% Methodology
+% * Design and Architecture
+% * Population of interest and sampling subject used in the study
+% * Instrument and what it measures (metrices)
+% * qualifications of informants if used in the study
+% * Validation
+% * Data gathering procedure (experiments)
+\include{chap6}
+% Classification with CNN
+% Methodology
+% * Design and Architecture
+% * Population of interest and sampling subject used in the study
+% * Instrument and what it measures (metrices)
+% * qualifications of informants if used in the study
+% * Validation
+% * Data gathering procedure (experiments)
+\include{chap7}
+% Analysis and Interpretation of data
+% * meaning
+% * in the studies involving
+% * interconnection among data
+% * Check for indicaotr whether hypothesis is supported by he finding
+% * Link present finding to previous liturature
+\include{chap8}
+% Conclusion
+% * Describe each problem, research design, and findings (ans to prob)
+% * Recommendations
+\appendix
+\include{appa}
+\include{appb}
+\include{biblio}
+\end{document}
+
