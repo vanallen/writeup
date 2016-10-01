@@ -15,30 +15,17 @@ Unbiased information about animal population ecology gives biologists vital info
 
 As an alternative, ability to identify an individual animal by recognizing its photographs allows researchers to monitor the species' diversity, and dispersal in a non-invasive. Researchers can track the movements and observe the genetic variation of a species by comparing each member's images with the all the existing images collected from different time and locations. However, the arduous task of comparing over a thousand images of every individual animal and their potential matches makes manual reviews impracticable for large collections. To alliviate the problem, we need to automate the recognition process using computer-based image recognition techniques.
 
-The considerable progress we have seen in computer vision is largely due to local descriptor-based algorithms, such as SIFT\cite{lowe04}, and SURF\cite{surf08}, etc. The field of computer vision covers a wide range of topics. For the purpose of animal image biometric, this thesis will deal mostly with the image classification and recognition problems. Despite the stellar performance of these algorithms in the past decades, there exists a substancial gap between human-level performance and theirs.
+The considerable progress we have seen in computer vision is largely due to local descriptor-based algorithms, such as SIFT\cite{lowe04}, and SURF\cite{surf08}, etc. The field of computer vision covers a wide range of topics. For the purpose of animal image biometric, this thesis will deal mostly with the image classification and recognition problems. Despite the stellar performance of these algorithms in the past decades, there exists a substancial gap between human-level performance and theirs. In this work, we present two improvements, whose results have shown to bridge the performance gap between human and these machine-based algorithms, to \emph{Sloop}, the first pattern retrieval engine for animal biometric incorperating crowd-sourced relevance feedback.
 
-In this work, we present two improvements, whose results have shown to bridge the performance gap between human and these machine-based algorithms, to Sloop, the existing pattern retrieval engine for animal biometric.
+In the last few years, deep convolutional neural networks\cite{lecun95, kriz12} have outperformed SIFTs and other descriptor-based techniques by a large margin in both object recognition and classification tasks\cite{kriz12, fisher14, ILSVRC15}. In fact, the architecture has demonstrated recognition accuracy comparable to humans in several visual recognition tasks, such as recognizing faces\cite{deepface14}, and handwritten digits\cite{mnist13}. Motivated by the preceding achievements, we integrate a pre-trained convolutional neural network into a new python version of Sloop, \emph{SlooPy}, as a seperate image processing workflow.
 
-In the last few years, deep convolutional neural networks\cite{lecun95, kriz12} have outperformed SIFTs and other descriptor-based techniques by a large margin in both object recognition and classification tasks\cite{kriz12, fisher14, ILSVRC15}. In fact, the architecture has demonstrated recognition accuracy comparable to humans in several visual recognition tasks, such as recognizing faces\cite{deepface14}, and handwritten digits\cite{mnist13}. 
+Despite the scalability, and advantages of computational speed in automatic pattern recognition, some classification errors could occur and rapidly propagate. Some degree of human involvement may benefit the identification process. Not only can user input resolve the errors, but it can also be used to train machine learning model. The model can incrementally learn from the accumulation of user input data in our retrieval system, which create a positive feedback loop where the model learns its mistakes from the previous iterations and re-evaluate its strategy based on the gold standard responses from human given at the previous iteration. However, this is out of the scope of our work. In this project, we focus on the problem of how we can maximize the the information gain from a given amount of user input.
 
 This project involves design and implementation of two additional features of Sloop, an existing pattern retrieval engine for individual animal identification. The features include:
 \begin{enumerate}
 	\item Relevance Feedback Integration
 	\item Convolutional Neural Network Integration
 \end{enumerate}
-
-
-To bridge the gap, 
-
-
-
-Image classification is the process of creating a thematic image where each pixel is assigned a number representing a class (can include the class 'unclassified'). In an aerial image the classes can be soil, vegetation, water etc. image classification algorithms examples are k-means or ISO-DATA.
-
-Pattern recognition is the process of finding things in an image, for example, search for tanks in an aerial/satellite military image or search for a cancerous cells in a medical image or a garden surrounded by buildings or face recognition. usually this will include specific logic about the pattern you want to find.
-
-them: image retrieval is based on aggregated SIFT descriptors, structure from motion started to work reliably due to SIFT correspondences, and even in low level problems, such as optical flow estimation, orientation histograms help deal with large motion [2].
-
-Our major goal is to achieve 
 
 \section{Problem Statements}
 
