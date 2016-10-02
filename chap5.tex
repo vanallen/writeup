@@ -3,7 +3,7 @@
 % Methodology
 % * Design and Architecture
 % * Population of interest and sampling subject used in the study
-% * Instrument and what it measures (metrices)
+% * Instrument and what it measures (metrics)
 % * qualifications of informants if used in the study
 % * Validation
 % * Data gathering procedure (experiments)
@@ -20,7 +20,7 @@ feedback integration of Sloop.
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{sloop/turk_system}
-  \caption{Sloop Architecture with SloopMTurk integration}
+  \caption{Sloop Architecture with Sloop MTurk integration}
   \label{fig:turk_overview}
 \end{figure}
 
@@ -44,20 +44,20 @@ In the first stage of the relevance feedback workflow, Sloop MTurk retrieves a
 number of unknown, and known image pairs from the database in the ratio
 described in \ref{subsub:validation}. The metadata about the retrieved pairs,
 such as the answers to the known pairs, individual identification numbers, and
-source address, is stored in a lightweight sqlite database while the images are
+source address, is stored in a lightweight SQLite database while the images are
 stored separately.
 
 Sloop MTurk never publishes a duplicated \emph{unknown} pair onto MTurk. It
-actively checks with the local database before any retrival if an unknown pair
+actively checks with the local database before any retrieval if an unknown pair
 is ever published before. User can set the sampling policy of Sloop MTurk in
 the config file. The default value is set to use the normal sampling on the
 median whose performance has been shown in chapter
 \ref{chap:relevance_feedback}.
 
 Sloop MTurk only downloads the images necessary for the tasks to minimize the
-bandwidth usage. Upon the retreival, Sloop MTurk caches the image data into its
+bandwidth usage. Upon the retrieval, Sloop MTurk caches the image data into its
 local storage on the file system running on NGINX. Caching image data on the
-filesystem eliminates the network latency and cuts down the data tranfer
+filesystem eliminates the network latency and cuts down the data transfer
 overhead because fetching large responses, like the images, over the network is
 both slow and expensive. The advantage of storing images on the file system,
 over storing them in the database, is that we can also refer to the images
@@ -76,13 +76,13 @@ Turk under the title: 'Image Matching -- Animals' posted by user 'sloop'.
 
 User can fetch the results that are completed via Sloop MTurk fetch. This can
 also be set up as a cron job. Sloop MTurk searches for all the reviewable
-tasks, and automatically accepts and retreives the tasks whose answers to all
+tasks, and automatically accepts and retrieves the tasks whose answers to all
 of the known pairs are correct; otherwise, it rejects the tasks. If a task is
 accepted, an amount of payment will be incurred to the user's account to reward
 the worker.
 
 Sloop MTurk logs all the answers to the unknown pairs in the accepted
-assignments into the local sqlite database. No result are going to be deleted
+assignments into the local SQLite database. No result are going to be deleted
 until the user runs garbage collection command.
 
 \subsubsection{Update}
@@ -93,7 +93,7 @@ feedback. The remote database server then infers the captures' cohort from the
 data pushed and the existing data, and then performs the merging logic
 accordingly\cite{sloopdocs}. 
 
-The update command is seperated from fetch for the debugging purpose. In
+The update command is separated from fetch for the debugging purpose. In
 practice, as we would like to update the upstream database as frequent as
 possible as we have seen in the Experiments section in
 \ref{chap:relevance_feedback}.
@@ -123,7 +123,7 @@ have considered:
     for a given pool of candidates. Although knowing the correct rankings is
     valuable to ranked retrieval results, which is Sloop preliminary output,
     ultimately, we would like to determine a sharp cutoff between matching
-    images and nonmatching images so that each individual can be exclusively
+    images and non-matching images so that each individual can be exclusively
     identified. Ranks alone do not provide such cutoff. Even if we knew all the
     correct rankings, we would not be able to decide whether two animals are
     the same individual animals. Thus, rankings and weights is not a viable
@@ -142,7 +142,7 @@ have considered:
     We can model our task as a binary questions of whether a pair of images, of
     the same view, contains the same individual animal (Is a match?). Since,
     eventually, all the image pairs will be labelled as either a match or a
-    nonmatch, we will be able to constract a mappping that allows us to
+    non-match, we will be able to construct a mapping that allows us to
     exclusively identify all the individual animals in the pictures.
 \end{itemize}
 
@@ -150,7 +150,7 @@ have considered:
 \label{subsub:validation}
 
 For each task, since the quality of the submitted work is not directly
-observeable, we add other three \emph{gold standard} questions, for which the
+observable, we add other three \emph{gold standard} questions, for which the
 correct answers are known a priori. Among the three questions, one is a known
 pair of images containing the same individual, another is a known pair of
 images containing different individuals, and the other is a random known pair.
@@ -167,19 +167,19 @@ assign, the less chance there is of getting an incorrect answer. However, the
 budget and the time it takes to complete all the assignments is going to
 increase linearly as we increase the number of the workers, while the
 correctness only increases logarithmically. Therefore, we decided to publish
-exactly three assignments, which is the minimal number to reach a concensus,
+exactly three assignments, which is the minimal number to reach a consensus,
 for each task.
 
 \subsection{Cost Model}
 
-Sloop MTurk uses the evaluation metrices mentioned in chapter
+Sloop MTurk uses the evaluation metrics mentioned in chapter
 \ref{chap:relevance_feedback} to measure the performance of the system.
 
 \subsubsection{Correctness}
 
 To analyze the correctness, we are still using the Mean Average Precision to
 evaluate the correctness of the results. MAP has been shown to have especially
-good discrimination and stability on evaluating information retreival
+good discrimination and stability on evaluating information retrieval
 systems\cite{manning2008introduction}.
 
 \subsubsection{Expense}
