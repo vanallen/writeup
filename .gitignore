@@ -1,8 +1,11 @@
-*.pyc
-.DS_Store
 *.aux
+*.lof
 *.log
 *.lot
-*.lof
+*.pdf
+*.pyc
 *.toc
-README.*
+.DS_Store
+README.bibliography
+README.main
+README.text

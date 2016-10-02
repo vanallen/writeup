@@ -1,7 +1,9 @@
 % Introduction (context interms of content of the project)
 % * Significance (who will benefit? contribution of the study)
 % * Statement of the problem (problem must be reflected to the title)
-% * Conceptual framework (problems in relation to relevant literatures, summerize the major variables -- independent variables/cause, dependent/effect, other infkuencial vars)
+% * Conceptual framework (problems in relation to relevant literatures,
+% summerize the major variables -- independent variables/cause,
+% dependent/effect, other infkuencial vars)
 %   - Existing research and its relevancy
 %   - Key idea of my appproach
 %   - discuss variables related to the problem
@@ -11,40 +13,105 @@
 
 \chapter{Introduction}
 
-Unbiased information about animal population ecology gives biologists vital information about the effects of different physical or biological factors on the distribution and abandance of animal species, which plays a key role in the development of effective conservation strategies for rare and endangered species. Typical approaches biologists take to estimate the precise size of a population of species often involves physically marking the animals. These approaches are not only expensive in terms of time and cost, but they are also unhealthy for the animals.
+Unbiased information about animal population ecology gives biologists vital
+information about the effects of different physical or biological factors on
+the distribution and abandance of animal species, which plays a key role in the
+development of effective conservation strategies for rare and endangered
+species. Typical approaches biologists take to estimate the precise size of a
+population of species often involves physically marking the animals. These
+approaches are not only expensive in terms of time and cost, but they are also
+unhealthy for the animals.
 
-As an alternative, ability to identify an individual animal by recognizing its photographs allows researchers to monitor the species' diversity, and dispersal in a non-invasive. Researchers can track the movements and observe the genetic variation of a species by comparing each member's images with the all the existing images collected from different time and locations. However, the arduous task of comparing over a thousand images of every individual animal and their potential matches makes manual reviews impracticable for large collections. To alliviate the problem, we need to automate the recognition process using computer-based image recognition techniques.
+As an alternative, ability to identify an individual animal by recognizing its
+photographs allows researchers to monitor the species' diversity, and dispersal
+in a non-invasive. Researchers can track the movements and observe the genetic
+variation of a species by comparing each member's images with the all the
+existing images collected from different time and locations. However, the
+arduous task of comparing over a thousand images of every individual animal and
+their potential matches makes manual reviews impracticable for large
+collections. To alliviate the problem, we need to automate the recognition
+process using computer-based image recognition techniques.
 
-The considerable progress we have seen in computer vision is largely due to local descriptor-based algorithms, such as SIFT\cite{lowe04}, and SURF\cite{surf08}, etc. The field of computer vision covers a wide range of topics. For the purpose of animal image biometric, this thesis will deal mostly with the image classification and recognition problems. Despite the stellar performance of these algorithms in the past decades, there exists a substancial gap between human-level performance and theirs. In this work, we present two improvements, whose results have shown to bridge the performance gap between human and these machine-based algorithms, to \emph{Sloop}, the first pattern retrieval engine for animal biometric incorperating crowd-sourced relevance feedback.
+The considerable progress we have seen in computer vision is largely due to
+local descriptor-based algorithms, such as SIFT\cite{lowe04}, and
+SURF\cite{surf08}, etc. The field of computer vision covers a wide range of
+topics. For the purpose of animal image biometric, this thesis will deal mostly
+with the image classification and recognition problems. Despite the stellar
+performance of these algorithms in the past decades, there exists a substancial
+gap between human-level performance and theirs. In this work, we present two
+improvements, whose results have shown to bridge the performance gap between
+human and these machine-based algorithms, to \emph{Sloop}, the first pattern
+retrieval engine for animal biometric incorperating crowd-sourced relevance
+feedback.
 
-In the last few years, deep convolutional neural networks\cite{lecun95, kriz12} have outperformed SIFTs and other descriptor-based techniques by a large margin in both object recognition and classification tasks\cite{kriz12, fisher14, ILSVRC15}. In fact, the architecture has demonstrated recognition accuracy comparable to humans in several visual recognition tasks, such as recognizing faces\cite{deepface14}, and handwritten digits\cite{mnist13}. Motivated by the preceding achievements, we integrate a pre-trained convolutional neural network into a new python version of Sloop, \emph{SlooPy}, as a seperate image processing workflow.
+In the last few years, deep convolutional neural networks\cite{lecun95, kriz12}
+have outperformed SIFTs and other descriptor-based techniques by a large margin
+in both object recognition and classification tasks\cite{kriz12, fisher14,
+ILSVRC15}. In fact, the architecture has demonstrated recognition accuracy
+comparable to humans in several visual recognition tasks, such as recognizing
+faces\cite{deepface14}, and handwritten digits\cite{mnist13}. Motivated by the
+preceding achievements, we integrate a pre-trained convolutional neural network
+into a new python version of Sloop, \emph{SlooPy}, as a seperate image
+processing workflow.
 
-Despite the scalability, and advantages of computational speed in automatic pattern recognition, some classification errors could occur and rapidly propagate. Some degree of human involvement may benefit the identification process. Not only can user input resolve the errors, but it can also be used to train machine learning model. The model can incrementally learn from the accumulation of user input data in our retrieval system, which create a positive feedback loop where the model learns its mistakes from the previous iterations and re-evaluate its strategy based on the gold standard responses from human given at the previous iteration. However, this is out of the scope of our work. In this project, we focus on the problem of how we can maximize the the information gain from a given amount of user input.
+Despite the scalability, and advantages of computational speed in automatic
+pattern recognition, some classification errors could occur and rapidly
+propagate. Some degree of human involvement may benefit the identification
+process. Not only can user input resolve the errors, but it can also be used to
+train machine learning model. The model can incrementally learn from the
+accumulation of user input data in our retrieval system, which create a
+positive feedback loop where the model learns its mistakes from the previous
+iterations and re-evaluate its strategy based on the gold standard responses
+from human given at the previous iteration. However, this is out of the scope
+of our work. In this project, we focus on the problem of how we can maximize
+the the information gain from a given amount of user input.
 
-This project involves design and implementation of two additional features of Sloop, an existing pattern retrieval engine for individual animal identification. The features include:
-\begin{enumerate}
-	\item Relevance Feedback Integration
-	\item Convolutional Neural Network Integration
+This project involves design and implementation of two additional features of
+Sloop, an existing pattern retrieval engine for individual animal
+identification. The features include: \begin{enumerate} \item Relevance
+Feedback Integration \item Convolutional Neural Network Integration
 \end{enumerate}
 
 \section{Problem Statements}
 
-\subsection{Relevance Feedback} % (fold)
-\label{sub:relevance_feedback}
-One problem of interest is assigning tasks to workers with the goal of maximizing the quality of completed tasks at a low prices or subject to budget constraints.
+\subsection{Relevance Feedback} % (fold) \label{sub:relevance_feedback} One
+problem of interest is assigning tasks to workers with the goal of maximizing
+the quality of completed tasks at a low prices or subject to budget
+constraints.
 % subsection relevance_feedback (end)
 
-\subsection{Image Recognition} % (fold)
-\label{sub:image_recognition}
-The emergence of convolutional neural network pushes forward the frontiers of all domains of computer vision \cite{lecun95}. Recent studies shows that convolutional neural network architecture clearly dominates the handcrafted features, and traditional orientation-based local descriptors, such as SIFT\cite{lowe04}, and SURF\cite{surf08}, etc. in classification tasks\cite{fisher14,kriz12,prelu15,ILSVRC15}.
+\subsection{Image Recognition} % (fold) \label{sub:image_recognition} The
+emergence of convolutional neural network pushes forward the frontiers of all
+domains of computer vision \cite{lecun95}. Recent studies shows that
+convolutional neural network architecture clearly dominates the handcrafted
+features, and traditional orientation-based local descriptors, such as
+SIFT\cite{lowe04}, and SURF\cite{surf08}, etc. in classification
+tasks\cite{fisher14,kriz12,prelu15,ILSVRC15}.
 
-The second part of the thesis presents a new architecture whose goal is to improve the identification accuracy as well as curtail or eliminate human involvement. We compare the recognition ability of the two algorithms: SIFT and convolutional neural network. 
+The second part of the thesis presents a new architecture whose goal is to
+improve the identification accuracy as well as curtail or eliminate human
+involvement. We compare the recognition ability of the two algorithms: SIFT and
+convolutional neural network. 
 % subsection image_recognition (end)
 
 \section{Challenges}
 
-The animal identification task involves two major challenges: \emph{image feature extraction problem}, and \emph{pattern recognition problem}. 
+The animal identification task involves two major challenges: \emph{image
+feature extraction problem}, and \emph{pattern recognition problem}. 
 
-Image feature extraction problem involves locating the animal in the image, and extract the features required for the matching. The choice of feature selection varies from species to species. The extracted feature object of an image is then passed into the pattern recognition algorithm to find the matches existed in the system. Current Sloop locates the animal and necessary features of an image by having the user click on the key points of the animal, and then calculates the feature vector using SIFT. It performs the matching by scoring the similarity of the SIFT object. 
+Image feature extraction problem involves locating the animal in the image, and
+extract the features required for the matching. The choice of feature selection
+varies from species to species. The extracted feature object of an image is then
+passed into the pattern recognition algorithm to find the matches existed in the
+system. Current Sloop locates the animal and necessary features of an image by
+having the user click on the key points of the animal, and then calculates the
+feature vector using SIFT. It performs the matching by scoring the similarity of
+the SIFT object. 
 
-Traditional approaches in machine learning generally require training samples to be available for all the categories. Moreover, such approaches are designed to handle only the dataset with finite or limited, preferably small, number of categories. Nevertheless, our application requires ability to recognize high dimensional input, whose categories are not known in advance. In addition, while the number of categories can be very large, the number of examples per category can be very small.
+Traditional approaches in machine learning generally require training samples to
+be available for all the categories. Moreover, such approaches are designed to
+handle only the dataset with finite or limited, preferably small, number of
+categories. Nevertheless, our application requires ability to recognize high
+dimensional input, whose categories are not known in advance. In addition, while
+the number of categories can be very large, the number of examples per category
+can be very small.

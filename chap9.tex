@@ -3,14 +3,34 @@
 % * Recommendations
 \chapter{Conclusion}
 
-We have implemented additional two extensions to Sloop to improve the classification performance.
+We have implemented additional two extensions to Sloop to improve the
+classification performance.
 
-\section{Relevance Feedback}
-A relevant feedback simulator and the crowdsourced relevance feedback integration of Sloop, Sloop MTurk, have been implemented to study the impact of relevance feedback on the ranked retrieval data as well as improve the correctness of the result sets. The experiments have confirmed that relevance feedback dramatically accerates precision and recall, despite the present of errors. We showed certain sampling methods outperform others in term of the cost. Exploiting the accumulation of the retrieved information, we introduced a new sampling method that takes advantage of the difference between the CDF of score given matches/non-matches. We then compare the performance of our adaptive sampling approach to the other static  approaches.
+\section{Relevance Feedback} A relevant feedback simulator and the crowdsourced
+relevance feedback integration of Sloop, Sloop MTurk, have been implemented to
+study the impact of relevance feedback on the ranked retrieval data as well as
+improve the correctness of the result sets. The experiments have confirmed that
+relevance feedback dramatically accerates precision and recall, despite the
+present of errors. We showed certain sampling methods outperform others in term
+of the cost. Exploiting the accumulation of the retrieved information, we
+introduced a new sampling method that takes advantage of the difference between
+the CDF of score given matches/non-matches. We then compare the performance of
+our adaptive sampling approach to the other static  approaches.
 
 \section{Convolutional Neural Network}
 
-We presented a new architecture for learning similarity metric in a large dataset and experimented with several algorithm to find the solution that best suited for our animal identification scheme. 
+We presented a new architecture for learning similarity metric in a large
+dataset and experimented with several algorithm to find the solution that best
+suited for our animal identification scheme. 
 
-We propose a new architecture that comprises a feature extractor and a match recognizer. The feature extractor is implemented by a pre-tained convolutional network, AlexNet, with the output layer removed. Given a pair of two images, the feature extractor outputs two fix-size feature vectors. We then take the absolute difference of the feature vector and pass the resulting vector into a support vector machine classifier, which has been proved to be most robust and suitable model in our application. Finally, the classifier outputs whether the two images contains the same individual animals. According to the results, it is able to acheive very high precision with good recall while being completely automated and independent from human involvement. 
+We propose a new architecture that comprises a feature extractor and a match
+recognizer. The feature extractor is implemented by a pre-tained convolutional
+network, AlexNet, with the output layer removed. Given a pair of two images,
+the feature extractor outputs two fix-size feature vectors. We then take the
+absolute difference of the feature vector and pass the resulting vector into a
+support vector machine classifier, which has been proved to be most robust and
+suitable model in our application. Finally, the classifier outputs whether the
+two images contains the same individual animals. According to the results, it
+is able to acheive very high precision with good recall while being completely
+automated and independent from human involvement. 
 
