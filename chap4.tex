@@ -47,15 +47,19 @@ $A$ and $C$. Once such transitive inference is made, it adds $C$ to the
 identity graph. Then, it continues to sample a new batch iteratively until the
 distribution satisfies the convergence condition specified by the user.
 
-The inferred decision plays a very crucial role in relevance feedback. The
-validity of such inference relies on the validity of the premises. If the
-answers to the matches are correct then the conclusion must be true. Problems
-arise when our seemingly \emph{correct} answers are in fact incorrect. In the
-actual production of Sloop, the inconsistence results from such error is
-detectable and will be submitted for manual review. However, in the simulation,
-we would like to also examine the consequences of the incorrect answers. With
-the auto merging, the error propagates rapidly. Therefore, the simulation
-allows users to specify the error probability at the initialization.
+The correctness of such inference relies on the validity of the premises, i.e.
+if the answers to the matches are correct then the conclusion must also hold.
+Problems arise when our seemingly \emph{correct} answers are, in fact,
+incorrect. With the auto merging, the error propagates rapidly. An incorrect
+answer yield erroneous results not only to the pair of captures in question,
+but to \emph{all} the captures from the same cohorts as the captures in
+question. However, incorrect answer can be  detected once inconsistency among
+the answers emerges. In the actual Sloop production, all the captures within
+the cohorts related to the captures in which inconsistency apears are going to
+be send for expert manual review for reevaluation. On the other hand, in our
+simulation, we would like to examine the consequences of the incorrect answers.
+Therefore, the simulator also allows users to specify the error probability at
+the initialization.
 
 \section{Metrics} % (fold)
 \label{sec:metrices}
@@ -310,7 +314,8 @@ between grand and otago.
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{policies/grand}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{policies/otago}}
   \captionsetup{justification=centering}
-  \caption{Mean Average Precision (MAP) for various sampling policies ($Error=0$, \texttt{batch\_size}$=100$)}
+  \caption{Mean Average Precision (MAP) for various sampling policies ($Error=0$,
+    \texttt{batch\_size}$=100$)}
 \end{figure}
 
 % subsection sampling_policies (end)
