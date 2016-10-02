@@ -1,11 +1,11 @@
-% Introduction (context interms of content of the project)
+% Introduction (context in terms of content of the project)
 % * Significance (who will benefit? contribution of the study)
 % * Statement of the problem (problem must be reflected to the title)
 % * Conceptual framework (problems in relation to relevant literatures,
-% summerize the major variables -- independent variables/cause,
-% dependent/effect, other infkuencial vars)
+% summarize the major variables -- independent variables/cause,
+% dependent/effect, other influential vars)
 %   - Existing research and its relevancy
-%   - Key idea of my appproach
+%   - Key idea of my approach
 %   - discuss variables related to the problem
 %   - Conceptualize relationship between variables
 % * Scope and delimitation
@@ -15,7 +15,7 @@
 
 Unbiased information about animal population ecology gives biologists vital
 information about the effects of different physical or biological factors on
-the distribution and abandance of animal species, which plays a key role in the
+the distribution and abundance of animal species, which plays a key role in the
 development of effective conservation strategies for rare and endangered
 species. Typical approaches biologists take to estimate the precise size of a
 population of species often involves physically marking the animals. These
@@ -29,7 +29,7 @@ variation of a species by comparing each member's images with the all the
 existing images collected from different time and locations. However, the
 arduous task of comparing over a thousand images of every individual animal and
 their potential matches makes manual reviews impracticable for large
-collections. To alliviate the problem, we need to automate the recognition
+collections. To alleviate the problem, we need to automate the recognition
 process using computer-based image recognition techniques.
 
 The considerable progress we have seen in computer vision is largely due to
@@ -37,11 +37,11 @@ local descriptor-based algorithms, such as SIFT\cite{lowe04}, and
 SURF\cite{surf08}, etc. The field of computer vision covers a wide range of
 topics. For the purpose of animal image biometric, this thesis will deal mostly
 with the image classification and recognition problems. Despite the stellar
-performance of these algorithms in the past decades, there exists a substancial
+performance of these algorithms in the past decades, there exists a substantial
 gap between human-level performance and theirs. In this work, we present two
 improvements, whose results have shown to bridge the performance gap between
 human and these machine-based algorithms, to \emph{Sloop}, the first pattern
-retrieval engine for animal biometric incorperating crowd-sourced relevance
+retrieval engine for animal biometric incorporating crowd-sourced relevance
 feedback.
 
 In the last few years, deep convolutional neural networks\cite{lecun95, kriz12}
@@ -51,7 +51,7 @@ ILSVRC15}. In fact, the architecture has demonstrated recognition accuracy
 comparable to humans in several visual recognition tasks, such as recognizing
 faces\cite{deepface14}, and handwritten digits\cite{mnist13}. Motivated by the
 preceding achievements, we integrate a pre-trained convolutional neural network
-into a new python version of Sloop, \emph{SlooPy}, as a seperate image
+into a new python version of Sloop, \emph{SlooPy}, as a separate image
 processing workflow.
 
 Despite the scalability, and advantages of computational speed in automatic
@@ -64,7 +64,7 @@ positive feedback loop where the model learns its mistakes from the previous
 iterations and re-evaluate its strategy based on the gold standard responses
 from human given at the previous iteration. However, this is out of the scope
 of our work. In this project, we focus on the problem of how we can maximize
-the the information gain from a given amount of user input.
+the information gain from a given amount of user input.
 
 This project involves design and implementation of two additional features of
 Sloop, an existing pattern retrieval engine for individual animal
