@@ -3,7 +3,7 @@
 % Methodology
 % * Design and Architecture
 % * Population of interest and sampling subject used in the study
-% * Instrument and what it measures (metrices)
+% * Instrument and what it measures (metrics)
 % * qualifications of informants if used in the study
 % * Validation
 % * Data gathering procedure (experiments)
@@ -53,7 +53,7 @@ ImageNet \cite{imagenet}, which contains 1.2 million images with 1000
 categories. To convert the CNN into a feature extractor, we strip out the last
 fully-connected layer, which, in this case, outputs 1000 class scores for
 ImageNet classification task. According to AlexNet architecture, this would
-output a sparse 4096 dimentional vector for every images. The technique is
+output a sparse 4096 dimensional vector for every images. The technique is
 called transfer learning \cite{transfer}.
 
 We map all the available images as well as the input image to points in a low
@@ -77,7 +77,7 @@ aforementioned CNN architecture.
 \end{figure}
 
 
-\textbf{Pretained Convolutional Neural Network}
+\textbf{Pre-trained Convolutional Neural Network}
 
 The main advantage of using a pre-trained CNN to our application is that it is
 robust to geometric distortion. This is a desirable property since the position
@@ -94,7 +94,7 @@ star-shaped spot underneath its eye.
 
 The solution to such problem is to experiment with different pattern of pooling
 regions, and relax the parameter sharing scheme. Since we are using an existing
-pretrained architecture, it is hard to tailor to fit our data. The improvement
+pre-trained architecture, it is hard to tailor to fit our data. The improvement
 can be included in the future work \ref{future}.
 
 \textbf{Caffe}
@@ -159,7 +159,7 @@ We have implemented following algorithms as our match recognizer:
   \item Linear support vector machine (SVM) with L2 regularization (squared
     Euclidean norm)
   \item SVM with radial basis function kernel (SVM-RBF), L2 regularization
-  \item Perceptron (P)
+  \item Perception (P)
   \item Passive-Aggressive with hinge loss (PA-I)
   \item Passive-Aggressive with squared hinge loss (PA-II)
 \end{itemize}
