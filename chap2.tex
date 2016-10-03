@@ -52,19 +52,19 @@ animal in a given image A. Effectiveness of such identification system heavily
 depends on the choice of features on which the machine learning algorithms are
 applied.
 
-Current Sloop uses Scale Invariant Feature Transform (SIFT) \cite{lowe04} to
+Current Sloop uses Scale Invariant Feature Transform (SIFT)~\cite{lowe04} to
 perform such images ranking. Given an image and the four fiducial key points
 annotated by the biologists, Sloop transforms the images into SIFT object and
 compare it among the SIFTs of the existing images stored in the database, using
 Euclidean distance. After the ranking is generated, the biologists then look at
 the top matches and confirm whether the given pairs of images are matches or
-non-matches. 
+non-matches.
 
 While SIFT is still interesting for tasks that speed and simplicity are of
 major concerns, it requires tremendous amount of manual effort and training.
 Recent studies and competition results have proved that features learned via
 convolutional neural networks (CNN) outperform previous descriptors, including
-SIFT, on classification tasks by a wide margin\cite{fisher14}. Therefore,
+SIFT, on classification tasks by a wide margin~\cite{fisher14}. Therefore,
 replacing SIFT with convolutional neural networks seem to be a viable
 improvement to the system.
 
@@ -73,8 +73,8 @@ improvement to the system.
 Relevance Feedback is a technique that involves users in the retrieval process.
 Specifically, given a query that returns a set of initial results, the system
 takes user feedback on the initial results to improve the results returned from
-the later iterations when given the same or related query
-\cite{manning2008introduction}.
+the later iterations when given the same or related
+query~\cite{manning2008introduction}.
 
 \subsection{Crowdsourcing}
 
@@ -104,7 +104,7 @@ overtime.
 
 Convolutional Neural Network is a special kind of multi-layer neural networks,
 whose task is specialized to capture and encode visual patterns directly from
-raw pixel images \cite{lecun95}. 
+raw pixel images~\cite{lecun95}.
 
 \subsection{Face Verification and Siamese Network}
 
@@ -126,7 +126,7 @@ similar to identifying an identical twin by their blemishes except for, in this
 case, we have very high-order of multiple births.
 
 Most current face verification methods use hand-crafted features, which are
-often combined to improve the validation performance. In \cite{chopra05},
+often combined to improve the validation performance. In~\cite{chopra05},
 Chopra presented a new framework, \emph{Siamese Network}, as a solution to this
 problem. He proposed a training method that is used to learn a similarity
 metric from the data with the contrastive loss function, comprised of the sum

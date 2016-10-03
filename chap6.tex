@@ -107,7 +107,7 @@ captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 
 \subsection{Earth Mover's Distance}
 
-We use Earth Mover's Distance (EMD)\cite{emd00} as our metric to calculate the
+We use Earth Mover's Distance (EMD)~\cite{emd00} as our metric to calculate the
 minimal cost required to transform $Pr(score|nonmatch)$ to $Pr(score|match)$.
 
 \begin{figure}[ht]
@@ -181,10 +181,10 @@ $$\Pr{(nonmatch \mid score)} = \frac{\Pr{(score \mid nonmatch)}\Pr{(nonmatch)}}
 \label{sec:sampling_policies}
 
 Starting with a completely unknown pairs, we would like to first get the idea
-of how the overall distribution looks like. As we have seen in chapter
-\ref{chap:relevance_feedback}, the unbiased sampling policies, such as Uniform,
-and AllScores, that broadly sample the data from the distribution seem to form
-a set of good candidates.
+of how the overall distribution looks like. As we have seen in
+Chapter~\ref{chap:relevance_feedback}, the unbiased sampling policies, such as
+Uniform, and AllScores, that broadly sample the data from the distribution seem
+to form a set of good candidates.
 
 Upon the retrieval of the general distribution, we would like to adaptively
 utilize the known data to determine the optimal sampling site. We experiment
@@ -212,6 +212,6 @@ Normal sampling policy.
 
 The adaptive sampling policy seem to perform averagely well. The performance
 does not differ from that of the other static sampling policies we have seen in
-chapter \ref{chap:relevance_feedback}.
+Chapter~\ref{chap:relevance_feedback}.
 
 % section proposed_sampling_policy (end)
