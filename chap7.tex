@@ -67,7 +67,7 @@ aforementioned CNN architecture.
   \subfloat[][The first layer output, \texttt{conv1}]
     {\includegraphics[width=8cm]{preprocess/blob20conv1}}
   \subfloat[][The fifth layer after pooling, \texttt{pool5}]
-    {\includegraphics[width=8cm]{preprocess/blob20pool5}}] \\
+    {\includegraphics[width=8cm]{preprocess/blob20pool5}} \\
   \subfloat[][The first layer output, \texttt{conv1}]
     {\includegraphics[width=8cm]{preprocess/lastconv1}}
   \subfloat[][The fifth layer after pooling, \texttt{pool5}]
@@ -211,10 +211,10 @@ our datasets using two different techniques.
 \end{itemize}
 
 For each dataset, we partition the set of the \emph{generated pairs} into three
-sets: train set (60\%), validation set (20\%), and test set (20\%)respectively.
-We prevent overfitting problem by monitoring the model’s performance on a
+sets: train set (60\%), validation set (20\%), and test set (20\%) respectively.
+We prevent overfitting problem by monitoring the model's performance on a
 validation set, acting as a representative of future test examples. If the
-model’s performance ceases to improve sufficiently on the validation set then
+model's performance ceases to improve sufficiently on the validation set then
 we test the model on teh actual test set.
 
 

@@ -47,7 +47,7 @@ $A$ and $C$. Once such transitive inference is made, it adds $C$ to the
 identity graph. Then, it continues to sample a new batch iteratively until the
 distribution satisfies the convergence condition specified by the user.
 
-The correctness of such inference relies on the validity of the premises, i.e.
+The correctness of such inference relies on the validity of the premises, i.e.\
 if the answers to the matches are correct then the conclusion must also hold.
 Problems arise when our seemingly \emph{correct} answers are, in fact,
 incorrect. With the auto merging, the error propagates rapidly. An incorrect
@@ -240,7 +240,7 @@ interpolation of the new information.
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{pr/otago}}
   \captionsetup{justification=centering}
   \caption{Precision-Recall graph ($Error=0$, \texttt{batch\_size}$=400$)}
-  \label{pr_curves}
+  \label{pr_curves} %chktex 24
 \end{figure}
 
 \subsection{Batch Sizes} % (fold)
