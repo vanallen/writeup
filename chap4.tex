@@ -223,7 +223,7 @@ We experiment with following policies:
 \section{Results and Discussion} % (fold)
 \label{sec:results}
 
-Figure \ref{pr-curves} displays the Precision-Recall graph at a given number of
+Figure \ref{pr_curves} displays the Precision-Recall graph at a given number of
 sampled unknown pairs. With zero error probability, relevance feedback reduces
 the number of comparisons required for each specifies by a factor of 317 and
 307 for grand and otago respectively. Within four iterations of feedback loop,
@@ -235,19 +235,20 @@ inclination of precision and recall is expected largely due to the
 interpolation of the new information.
 
 \begin{figure}[h!]
-  \label{pr-curves}
+
   \centering
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{pr/grand}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{pr/otago}}
   \captionsetup{justification=centering}
   \caption{Precision-Recall graph ($Error=0$, \texttt{batch\_size}$=400$)}
+  \label{pr_curves}
 \end{figure}
 
 \subsection{Batch Sizes} % (fold)
 \label{sub:batch_sizes_res}
 
 Overall, from the graphs, MAP increases as we feed more data into the system.
-Figure \ref{fig:batchsizegraph} indicates that we publish more unnecessary
+Figure \ref{fig:sizes_curves} indicates that we publish more unnecessary
 tasks as we increase the batch size. The fewer captures there are in a batch,
 the lower the overall cost. Taking this idea one step further, we would like to
 infer the matches and merge the individuals as frequently as possible. However,
@@ -264,11 +265,11 @@ size that is still large enough to engage the workers.
 \end{figure}
 
 \begin{figure}[h!]
-  \label{fig:batchsizegraph}
   \centering
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{sizes/grtotal}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{sizes/ottotal}}
   \captionsetup{justification=centering}
+  \label{fig:sizes_curves}
   \caption{The total number of unknown pairs marked to achieve $MAP=1$
   ($Error=0$, \texttt{batch\_size}$=100$). Notice that this equals the total 
   number of tasks published to achieve $MAP=1$. }
@@ -277,7 +278,7 @@ size that is still large enough to engage the workers.
 % subsection batch_size (end)
 
 \subsection{Errors} % (fold)
-\label{sub:errors_res}
+\label{sub:errors}
 
 Despite the present of errors, relevance feedback still yields higher MAP
 overall with an error threshold of 0.05. With a nonzero error probability, MAP
@@ -289,13 +290,12 @@ it is able to recover from the downward phase. However, the historical merges
 resulted from the past faulty data are irrevocable, so the precision saturates
 eventually.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \subfloat[Grand]{\includegraphics[width=\textwidth]{errors/graoc}}
   \caption{Mean Average Precision for different probabilities of error}
-  \label{fig:overview}
+  \label{fig:grand_aoc}
 \end{figure}
-
 % subsection errors (end)
 
 \subsection{Sampling Policies} % (fold)
@@ -317,7 +317,6 @@ between grand and otago.
   \caption{Mean Average Precision (MAP) for various sampling policies ($Error=0$,
     \texttt{batch\_size}$=100$)}
 \end{figure}
-
 % subsection sampling_policies (end)
 
 % section results (end)

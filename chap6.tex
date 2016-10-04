@@ -35,14 +35,14 @@ $$\Pr{(score=s \mid nonmatch)} = \frac{\texttt{\# nonmatches\_whose\_score=s}}
   \centering
   \subfloat[][Probability of Score given matches/non-matches]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/psm}}
-  \label{fig:psm_grand}\\
+  \label{fig:grand_psm}\\
   \subfloat[][CDF of Score given matches/non-matches]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/csm}}
-  \label{fig:csm_grand}\\
+  \label{fig:grand_csm}\\
   \subfloat[][Difference between the CDF of Score given matches/non-matches]
   %$F\[non-match\]$ and $F\[match\]$
   {\includegraphics[width=0.95\textwidth]{dataset/grand/dsm}}
-  \label{fig:dsm_grand}
+  \label{fig:grand_dsm}
   \caption{Functions of Score given matches/non-matches}
 \end{figure}
 
@@ -63,28 +63,28 @@ $$\Pr{(score \mid match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [
   \centering
   \subfloat[][Probability of Score given matches/non-matches]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/psm}}
-  \label{fig:psm_grand}\\
+  \label{fig:otago_psm}\\
   \subfloat[][CDF of Score given matches/non-matches]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/csm}}
-  \label{fig:csm_grand}\\
+  \label{fig:otago_csm}\\
   \subfloat[][Difference between the CDF of Score given matches/non-matches]
     %$F\[non-match\]$ and $F\[match\]$
   {\includegraphics[width=0.95\textwidth]{dataset/otago/dsm}}
-  \label{fig:dsm_grand}
+  \label{fig:otago_dsm}
   \caption{Functions of Score given matches/non-matches}
 \end{figure}
 
 
 \subsection{Probability of a matching score at a given cohort size}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \subfloat[][Probability of a matching score at a given cohort size]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/pscohort}}
-  \label{fig:pscohort_grand}\\
+  \label{fig:grand_pscohort}\\
   \subfloat[][Probability of a score \emph{not} in a given cohort size]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/psnoncohort}}
-  \label{fig:psnoncohort_grand}
+  \label{fig:grand_psnoncohort}
   \caption{Probability of a score given a range of cohort size}
 \end{figure}
 
@@ -94,14 +94,14 @@ and $\max{(\texttt{sift\_match}(I_i, I_j))}$ should increase as the number of
 captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 \#cohort)}$ for all numbers of cohorts seem to be similar to one another.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \subfloat[][Probability of a matching score at a given cohort size]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/pscohort}}
-  \label{fig:pscohort_grand}\\
+  \label{fig:otago_pscohort}\\
   \subfloat[][Probability of a score \emph{not} in a given cohort size]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/psnoncohort}}
-  \label{fig:psnoncohort_grand}
+  \label{fig:otago_psnoncohort}
   \caption{Probability of a score given a range of cohort size}
 \end{figure}
 
@@ -110,22 +110,22 @@ captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 We use Earth Mover's Distance (EMD)\cite{emd00} as our metric to calculate the
 minimal cost required to transform $Pr(score|nonmatch)$ to $Pr(score|match)$.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/grand/emd}
   \caption{Earth Mover's Distance between the probability distributions}
-  \label{fig:emd_grand}
+  \label{fig:grand_emd}
 \end{figure}
 
 Initially, we also expected that the relationship between EMD and cohort size
 should be Gaussian. However, there seem to be no relationship between
 $Pr(score|nonmatch)$ and $Pr(score|match)$.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/otago/emd}
   \caption{Earth Mover's Distance between the probability distributions}
-  \label{fig:emd_grand}
+  \label{fig:otago_emd}
 \end{figure}
 
 \subsection{Entropy of $\Pr{[score|match]}$ at different cohort sizes}
@@ -133,25 +133,25 @@ $Pr(score|nonmatch)$ and $Pr(score|match)$.
 Entropy is the average amount of information we get from each distribution.
 $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \subfloat[][Entropy of $\Pr{[score|match]}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/ent_psm}}
-  \label{fig:ent_grand}\\
+  \label{fig:grand_ent_psm}\\
   \subfloat[][Entropy of $\Pr{[score|nonmatch]}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/ent_psnm}}
-  \label{fig:emd_grand}\\
+  \label{fig:grand_ent_psnm}\\
   \caption{Relationship between $\Pr{[score|match]}$ and $\Pr{[score|nonmatch]}$}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \subfloat[][Entropy of $\Pr{[score|match]}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/ent_psm}}
-  \label{fig:ent_grand}\\
+  \label{fig:otago_ent_psm}\\
   \subfloat[][Entropy of $\Pr{[score|nonmatch]}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/ent_psnm}}
-  \label{fig:emd_grand}\\
+  \label{fig:otago_ent_psnm}\\
   \caption{Relationship between $\Pr{[score|match]}$ and $\Pr{[score|nonmatch]}$}
 \end{figure}
 
@@ -163,18 +163,18 @@ $$\Pr{(match \mid score)} = \frac{\Pr{(score \mid match)}\Pr{(match)}}
 $$\Pr{(nonmatch \mid score)} = \frac{\Pr{(score \mid nonmatch)}\Pr{(nonmatch)}}
     {\Pr{(score)}}$$
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/grand/pms}
   \caption{Probability of matches/non-matches given score}
-  \label{fig:pms_grand}
+  \label{fig:grand_pms}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/otago/pms}
   \caption{Probability of matches/non-matches given score}
-  \label{fig:pms_grand}
+  \label{fig:otago_pms}
 \end{figure}
 
 \section{Adaptive Sampling Policies} % (fold)
@@ -207,7 +207,7 @@ Normal sampling policy.
   \centering
   \includegraphics[width=0.8\textwidth]{otago}
   \caption{Mean Average Precision for the new sampling policies}
-  \label{fig:pms_grand}
+  \label{fig:otago_adaptive_aoc}
 \end{figure}
 
 The adaptive sampling policy seem to perform averagely well. The performance

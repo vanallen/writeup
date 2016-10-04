@@ -21,13 +21,13 @@ yes-or-no answer to the question whether, given two images A and B, the animal
 in image A the same individual as the animal in image B.
 
 The proposed architecture comprises two major modules shown in Figure
-\ref{fig:overview}.
+\ref{fig:cnn_overview}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{system/overview}
   \caption{System Overview}
-  \label{fig:overview}
+  \label{fig:cnn_overview}
 \end{figure}
 
 \begin{enumerate}
@@ -95,7 +95,7 @@ star-shaped spot underneath its eye.
 The solution to such problem is to experiment with different pattern of pooling
 regions, and relax the parameter sharing scheme. Since we are using an existing
 pre-trained architecture, it is hard to tailor to fit our data. The improvement
-can be included in the future work \ref{future}.
+can be included in the future work \ref{cha:future_work}.
 
 \textbf{Caffe}
 
@@ -178,7 +178,7 @@ comparison between the presented solutions.
 
 The training and testing data is available in the existing Sloop system. We
 base our experiments on both species of skinks: \emph{Grand} and \emph{Otago}
-mentioned in \ref{chap:dataset}.
+mentioned in \ref{cha:datasets}.
 
 For our experiments, each image from both databases is reduced to the size of
 $227 \times 227$ pixels so that it can be directly fed into the CNN

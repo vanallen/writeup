@@ -19,7 +19,7 @@ biologists.
 According to the proposed architecture in section \ref{system}, we have
 experimented with both method of input processing, namely, concatenation and
 computing the difference. The results are shown in table
-\ref{concatenation-table} and \ref{result-table}.
+\ref{concatenation-table} and \ref{tab:results_table}.
 
 
 \begin{table}[t]
@@ -59,11 +59,12 @@ difference as the input.
     \clearpage% Flush earlier floats (otherwise order might not be correct)
     \thispagestyle{empty}% empty page style (?)
     \begin{landscape}% Landscape page
-    \begin{table}   \label{result-table}
+    \begin{table}
       \captionsetup{justification=centering}
         \caption{Precision (P), recall (R), and F-score (F) of the linear
         classifier with absolute feature difference on train, validation, and
         test set of the four datasets}
+        \label{tab:results_table}
 
       \centering % Center table
       \hskip-2.0cm\begin{tabular}{lllll|lll|lll|lll|lllll}
@@ -131,7 +132,7 @@ difference as the input.
     \clearpage% Flush page
 }
 
-Considering the classification results in \ref{result-table}, all the
+Considering the classification results in \ref{tab:results_table}, all the
 classifiers seem to perform equally well on the test data considering the
 F-beta score. SVM with radial bas kernel function yields the most stable
 performance with very high precision for both species. The offline algorithms
