@@ -13,10 +13,10 @@
 To study and understand the effect of relevance feedback to the retrieval
 results, we implement a simulator that reproduces the relevance feedback
 processes of sloop. The implementation of the simulator is described in
-\ref{sec:method} section. We then compare the initial ranked result set
+Section~\ref{sec:method}. We then compare the initial ranked result set
 outputted from SIFT computation with the results that undergo different rounds
-of relevance feedback with various configurations in the \ref{sec:experiments}
-section.
+of relevance feedback with various configurations in
+Section~\ref{sec:experiments}.
 
 \section{Methodology}
 \label{sec:method}
@@ -37,7 +37,7 @@ all the captures containing the same animals.
 
 Upon the retrieval of the new information from each batch, the simulator uses
 the identity graph to infer the answers of the unknown pairs. This imitates the
-in-database merging logic of the current version of Sloop\cite{sloopdocs}. The
+in-database merging logic of the current version of Sloop~\cite{sloopdocs}. The
 transitive relations are drawn from both matching pairs and non-matching pairs.
 For example, given capture $A$ is known to contain the same individual as that
 in capture $B$, and capture $B$ is known to contain the same individual as that
@@ -87,7 +87,7 @@ characteristic) curve, which is a plot of TPR and FPR, we use
 
 A precision recall curve is a plot of precision and recall as we  vary the
 threshold $\theta$. Precision or positive predictive value (PPV) is defined as
-following \cite{manning2008introduction}: $$PPV = \Pr{(y=1|\hat{y}=1)} =
+following~\cite{manning2008introduction}: $$PPV = \Pr{(y=1|\hat{y}=1)} =
 \frac{TP}{\hat{P}} = \frac{TP}{TP+FP}$$
 
 We evaluate the ranked retrieval performance of different relevance feedback
@@ -120,15 +120,15 @@ have to make in mind.
 
 We report three experiments corroborating the improvement of the retrieval
 results after various rounds of relevance feedback and different sampling
-strategies.  Experiment \ref{sub:batch_sizes} establishes that relevance
+strategies.  Experiment~\ref{sub:batch_sizes} establishes that relevance
 feedback improves the accretion of precision and recall of the preliminary
-results at various batch sizes.  Experiment \ref{sub:errors} shows the
+results at various batch sizes.  Experiment~\ref{sub:errors} shows the
 consequence of the erroneous answers at different error probabilities.
-Experiment \ref{sub:sampling_policies} compare the performance of various
+Experiment~\ref{sub:sampling_policies} compare the performance of various
 sampling policies.
 
 All experiments are performed on the Grand and Otago dataset described in
-Chapter \ref{cha:datasets}. Both datasets are annotated by the biologist, which
+Chapter~\ref{cha:datasets}. Both datasets are annotated by the biologist, which
 we take as our true labels. Table 
 
 \begin{table}[t]
@@ -223,7 +223,7 @@ We experiment with following policies:
 \section{Results and Discussion} % (fold)
 \label{sec:results}
 
-Figure \ref{pr_curves} displays the Precision-Recall graph at a given number of
+Figure~\ref{pr_curves} displays the Precision-Recall graph at a given number of
 sampled unknown pairs. With zero error probability, relevance feedback reduces
 the number of comparisons required for each specifies by a factor of 317 and
 307 for grand and otago respectively. Within four iterations of feedback loop,
@@ -247,7 +247,7 @@ interpolation of the new information.
 \label{sub:batch_sizes_res}
 
 Overall, from the graphs, MAP increases as we feed more data into the system.
-Figure \ref{fig:sizes_curves} indicates that we publish more unnecessary
+Figure~\ref{fig:sizes_curves} indicates that we publish more unnecessary
 tasks as we increase the batch size. The fewer captures there are in a batch,
 the lower the overall cost. Taking this idea one step further, we would like to
 infer the matches and merge the individuals as frequently as possible. However,

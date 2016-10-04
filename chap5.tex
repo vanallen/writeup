@@ -12,10 +12,10 @@
 % Sloop-mturk: Crowdsourced relevance feedback on mturk
 \section{Sloop MTurk}
 
-As described in \ref{chap:relevance_feedback}, multiple rounds of relevance
+As described in Chapter~\ref{chap:relevance_feedback}, multiple rounds of relevance
 feedback accelerates precision and recall of the recognition. This chapter
 presents the architecture of \emph{Sloop MTurk}, the crowdsourced relevance
-feedback integration of Sloop. 
+feedback integration of Sloop.
 
 \begin{figure}[ht]
   \centering
@@ -25,7 +25,7 @@ feedback integration of Sloop.
 \end{figure}
 
 Sloop MTurk communicates with the crowdsourcing platform in order to provide
-human feedback on the original rankings. Our focus is on 
+human feedback on the original rankings. Our focus is on
 
 \subsection{Architecture}
 
@@ -42,7 +42,7 @@ workflow.
 
 In the first stage of the relevance feedback workflow, Sloop MTurk retrieves a
 number of unknown, and known image pairs from the database in the ratio
-described in \ref{subsub:validation}. The metadata about the retrieved pairs,
+described in Section~\ref{subsub:validation}. The metadata about the retrieved pairs,
 such as the answers to the known pairs, individual identification numbers, and
 source address, is stored in a lightweight SQLite database while the images are
 stored separately.
@@ -51,8 +51,8 @@ Sloop MTurk never publishes a duplicated \emph{unknown} pair onto MTurk. It
 actively checks with the local database before any retrieval if an unknown pair
 is ever published before. User can set the sampling policy of Sloop MTurk in
 the config file. The default value is set to use the normal sampling on the
-median whose performance has been shown in chapter
-\ref{chap:relevance_feedback}.
+median whose performance has been shown in
+Chapter~\ref{chap:relevance_feedback}.
 
 Sloop MTurk only downloads the images necessary for the tasks to minimize the
 bandwidth usage. Upon the retrieval, Sloop MTurk caches the image data into its
@@ -68,7 +68,7 @@ another machine, or to use other external web hosting.
 
 Sloop MTurk publishes the tasks onto MTurk immediately after all the
 information is fetched. The tasks published are available on Amazon Mechanical
-Turk under the title: 'Image Matching -- Animals' posted by user 'sloop'. 
+Turk under the title: 'Image Matching -- Animals' posted by user 'sloop'.
 % TODO Tell user that they need AWS access ID and secret key to programmatically
 % communicate with MTurk
 
@@ -91,12 +91,12 @@ Update command pushes the answers logged in the local database back to the
 original database so that the data is ready for another round of relevance
 feedback. The remote database server then infers the captures' cohort from the
 data pushed and the existing data, and then performs the merging logic
-accordingly\cite{sloopdocs}. 
+accordingly~\cite{sloopdocs}.
 
 The update command is separated from fetch for the debugging purpose. In
 practice, as we would like to update the upstream database as frequent as
-possible as we have seen in the Experiments section in
-\ref{chap:relevance_feedback}.
+possible as we have seen in the Experiments section,
+Chapter~\ref{chap:relevance_feedback}.
 
 \subsection{Platform Selection}
 
@@ -173,15 +173,15 @@ for each task.
 
 \subsection{Cost Model}
 
-Sloop MTurk uses the evaluation metrics mentioned in chapter
-\ref{chap:relevance_feedback} to measure the performance of the system.
+Sloop MTurk uses the evaluation metrics mentioned in
+Chapter~\ref{chap:relevance_feedback} to measure the performance of the system.
 
 \subsubsection{Correctness}
 
 To analyze the correctness, we are still using the Mean Average Precision to
 evaluate the correctness of the results. MAP has been shown to have especially
 good discrimination and stability on evaluating information retrieval
-systems\cite{manning2008introduction}.
+systems~\cite{manning2008introduction}.
 
 \subsubsection{Expense}
 
