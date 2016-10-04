@@ -3,83 +3,45 @@
 	# "\newcommand{\singleletter}[1]{#1} "
 	# "\newcommand{\switchargs}[2]{#2#1} " }
 
-@book{manning2008introduction,
-  address = {Cambridge, UK},
-  author = {Manning, Christopher D. and Raghavan, Prabhakar and Schütze, Hinrich},
-  isbn = {978-0-521-86571-5},
-  publisher = {Cambridge University Press},
-  title = {Introduction to Information Retrieval},
-  year = 2008
+@article{caffe,
+    Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
+    Journal = {arXiv preprint arXiv:1408.5093},
+    Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
+    Year = 2014
 }
 
-@inproceedings{lecun95,
-    original =    "orig/lecun-bengio-95a.ps.gz",
-    author  =       "LeCun, Y. and Bengio, Y.",
-    title   =       "Convolutional Networks for Images, Speech, and Time-Series",
-    booktitle=      "The Handbook of Brain Theory and Neural Networks",
-    year    =       1995,
-    editor  =       "Arbib, M. A.",
-    publisher=      "MIT Press",
+@article{emd00,
+ author = {Rubner, Yossi and Tomasi, Carlo and Guibas, Leonidas J.},
+ title = {The Earth Mover's Distance As a Metric for Image Retrieval},
+ journal = {Int. J. Comput. Vision},
+ issue_date = {Nov. 2000},
+ volume = {40},
+ number = {2},
+ month = nov,
+ year = {2000},
+ issn = {0920-5691},
+ pages = {99--121},
+ numpages = {23},
+ url = {http://dx.doi.org/10.1023/A:1026543900054},
+ doi = {10.1023/A:1026543900054},
+ acmid = {365881},
+ publisher = {Kluwer Academic Publishers},
+ address = {Hingham, MA, USA},
+ keywords = {Earth Mover's Distance, color, image retrieval, perceptual metrics, texture},
 }
 
-@inproceedings{mnist13, 
-    Publisher = {JMLR Workshop and Conference Proceedings}, 
-    Title = {Regularization of Neural Networks using DropConnect}, 
-    Url = {http://jmlr.org/proceedings/papers/v28/wan13.pdf}, 
-    Booktitle = {Proceedings of the 30th International Conference on Machine Learning (ICML-13)}, 
-    Author = {Li Wan and Matthew Zeiler and Sixin Zhang and Yann L. Cun and Rob Fergus},
-    Month = may, 
-    Volume = {28}, 
-    Editor = {Sanjoy Dasgupta and David Mcallester}, 
-    Year = {2013}, 
-    Pages = {1058-1066}
-}
-
-@inproceedings{deepface14,
- author = {Taigman, Yaniv and Yang, Ming and Ranzato, Marc'Aurelio and Wolf, Lior},
- title = {DeepFace: Closing the Gap to Human-Level Performance in Face Verification},
- booktitle = {Proceedings of the 2014 IEEE Conference on Computer Vision and Pattern Recognition},
- series = {CVPR '14},
- year = {2014},
- isbn = {978-1-4799-5118-5},
- pages = {1701--1708},
- numpages = {8},
- url = {http://dx.doi.org/10.1109/CVPR.2014.220},
- doi = {10.1109/CVPR.2014.220},
- acmid = {2680208},
- publisher = {IEEE Computer Society},
- address = {Washington, DC, USA},
-}
-
-@inproceedings{chopra05,
-    author = {Chopra, Sumit and Hadsell, Raia and LeCun, Yann},
-    title = {Learning a Similarity Metric Discriminatively, with Application to Face Verification},
-    booktitle = {Proceedings of the 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05) - Volume 1 - Volume 01},
-    series = {CVPR '05},
-    year = 2005,
-    isbn = {0-7695-2372-2},
-    pages = {539--546},
-    numpages = {8},
-    url = {http://dx.doi.org/10.1109/CVPR.2005.202},
-    doi = {10.1109/CVPR.2005.202},
-    acmid = {1068961},
-    publisher = {IEEE Computer Society},
-    address = {Washington, DC, USA},
-}
-
-@article{prelu15,
-  author    = {Kaiming He and
-               Xiangyu Zhang and
-               Shaoqing Ren and
-               Jian Sun},
-  title     = {Delving Deep into Rectifiers: Surpassing Human-Level Performance on
-               ImageNet Classification},
+@article{fisher14,
+  author    = {Philipp Fischer and
+               Alexey Dosovitskiy and
+               Thomas Brox},
+  title     = {Descriptor Matching with Convolutional Neural Networks: a Comparison
+               to {SIFT}},
   journal   = {CoRR},
-  volume    = {abs/1502.01852},
-  year      = {2015},
-  url       = {http://arxiv.org/abs/1502.01852},
-  timestamp = {Mon, 02 Mar 2015 14:17:34 +0100},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/HeZR015},
+  volume    = {abs/1405.5769},
+  year      = {2014},
+  url       = {http://arxiv.org/abs/1405.5769},
+  timestamp = {Mon, 02 Jun 2014 08:30:36 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/FischerDB14},
   bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
@@ -114,18 +76,19 @@ pages={211-252}
     keywords = {image matching, invariant features, object recognition, scale invariance}
 } 
 
-@article{fisher14,
-  author    = {Philipp Fischer and
-               Alexey Dosovitskiy and
-               Thomas Brox},
-  title     = {Descriptor Matching with Convolutional Neural Networks: a Comparison
-               to {SIFT}},
+@article{prelu15,
+  author    = {Kaiming He and
+               Xiangyu Zhang and
+               Shaoqing Ren and
+               Jian Sun},
+  title     = {Delving Deep into Rectifiers: Surpassing Human-Level Performance on
+               ImageNet Classification},
   journal   = {CoRR},
-  volume    = {abs/1405.5769},
-  year      = {2014},
-  url       = {http://arxiv.org/abs/1405.5769},
-  timestamp = {Mon, 02 Jun 2014 08:30:36 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/FischerDB14},
+  volume    = {abs/1502.01852},
+  year      = {2015},
+  url       = {http://arxiv.org/abs/1502.01852},
+  timestamp = {Mon, 02 Mar 2015 14:17:34 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/HeZR015},
   bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
@@ -149,40 +112,56 @@ pages={211-252}
     keywords = {Camera calibration, Feature description, Interest points, Local features, Object recognition},
 }
 
-@article{emd00,
- author = {Rubner, Yossi and Tomasi, Carlo and Guibas, Leonidas J.},
- title = {The Earth Mover's Distance As a Metric for Image Retrieval},
- journal = {Int. J. Comput. Vision},
- issue_date = {Nov. 2000},
- volume = {40},
- number = {2},
- month = nov,
- year = {2000},
- issn = {0920-5691},
- pages = {99--121},
- numpages = {23},
- url = {http://dx.doi.org/10.1023/A:1026543900054},
- doi = {10.1023/A:1026543900054},
- acmid = {365881},
- publisher = {Kluwer Academic Publishers},
- address = {Hingham, MA, USA},
- keywords = {Earth Mover's Distance, color, image retrieval, perceptual metrics, texture},
+@book{manning2008introduction,
+  address = {Cambridge, UK},
+  author = {Manning, Christopher D. and Raghavan, Prabhakar and Schütze, Hinrich},
+  isbn = {978-0-521-86571-5},
+  publisher = {Cambridge University Press},
+  title = {Introduction to Information Retrieval},
+  year = 2008
 }
 
-@article{caffe,
-    Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
-    Journal = {arXiv preprint arXiv:1408.5093},
-    Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
-    Year = 2014
+@incollection{kriz12,
+    title = {ImageNet Classification with Deep Convolutional Neural Networks},
+    author = {Alex Krizhevsky and Sutskever, Ilya and Geoffrey E. Hinton},
+    booktitle = {Advances in Neural Information Processing Systems 25},
+    editor = {F. Pereira and C. J. C. Burges and L. Bottou and K. Q. Weinberger},
+    pages = {1097--1105},
+    year = {2012},
+    publisher = {Curran Associates, Inc.},
+    url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf}
 }
 
-@inproceedings{transfer,
-    author = {Rich Caruana},
-    title = {Learning Many Related Tasks at the Same Time With Backpropagation},
-    booktitle = {Advances in Neural Information Processing Systems 7},
-    year = 1995,
-    pages = {657--664},
-    publisher = {Morgan Kaufmann}
+@inproceedings{chopra05,
+    author = {Chopra, Sumit and Hadsell, Raia and LeCun, Yann},
+    title = {Learning a Similarity Metric Discriminatively, with Application to Face Verification},
+    booktitle = {Proceedings of the 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05) - Volume 1 - Volume 01},
+    series = {CVPR '05},
+    year = 2005,
+    isbn = {0-7695-2372-2},
+    pages = {539--546},
+    numpages = {8},
+    url = {http://dx.doi.org/10.1109/CVPR.2005.202},
+    doi = {10.1109/CVPR.2005.202},
+    acmid = {1068961},
+    publisher = {IEEE Computer Society},
+    address = {Washington, DC, USA},
+}
+
+@inproceedings{deepface14,
+ author = {Taigman, Yaniv and Yang, Ming and Ranzato, Marc'Aurelio and Wolf, Lior},
+ title = {DeepFace: Closing the Gap to Human-Level Performance in Face Verification},
+ booktitle = {Proceedings of the 2014 IEEE Conference on Computer Vision and Pattern Recognition},
+ series = {CVPR '14},
+ year = {2014},
+ isbn = {978-1-4799-5118-5},
+ pages = {1701--1708},
+ numpages = {8},
+ url = {http://dx.doi.org/10.1109/CVPR.2014.220},
+ doi = {10.1109/CVPR.2014.220},
+ acmid = {2680208},
+ publisher = {IEEE Computer Society},
+ address = {Washington, DC, USA},
 }
 
 @inproceedings{imagenet,
@@ -197,15 +176,42 @@ pages={211-252}
     year = 2009
 }
 
-@incollection{kriz12,
-    title = {ImageNet Classification with Deep Convolutional Neural Networks},
-    author = {Alex Krizhevsky and Sutskever, Ilya and Geoffrey E. Hinton},
-    booktitle = {Advances in Neural Information Processing Systems 25},
-    editor = {F. Pereira and C. J. C. Burges and L. Bottou and K. Q. Weinberger},
-    pages = {1097--1105},
-    year = {2012},
-    publisher = {Curran Associates, Inc.},
-    url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf}
+@inproceedings{lecun95,
+    original =    "orig/lecun-bengio-95a.ps.gz",
+    author  =       "LeCun, Y. and Bengio, Y.",
+    title   =       "Convolutional Networks for Images, Speech, and Time-Series",
+    booktitle=      "The Handbook of Brain Theory and Neural Networks",
+    year    =       1995,
+    editor  =       "Arbib, M. A.",
+    publisher=      "MIT Press",
+}
+
+@inproceedings{mnist13, 
+    Publisher = {JMLR Workshop and Conference Proceedings}, 
+    Title = {Regularization of Neural Networks using DropConnect}, 
+    Url = {http://jmlr.org/proceedings/papers/v28/wan13.pdf}, 
+    Booktitle = {Proceedings of the 30th International Conference on Machine Learning (ICML-13)}, 
+    Author = {Li Wan and Matthew Zeiler and Sixin Zhang and Yann L. Cun and Rob Fergus},
+    Month = may, 
+    Volume = {28}, 
+    Editor = {Sanjoy Dasgupta and David Mcallester}, 
+    Year = {2013}, 
+    Pages = {1058-1066}
+}
+
+@inproceedings{transfer,
+    author = {Rich Caruana},
+    title = {Learning Many Related Tasks at the Same Time With Backpropagation},
+    booktitle = {Advances in Neural Information Processing Systems 7},
+    year = 1995,
+    pages = {657--664},
+    publisher = {Morgan Kaufmann}
+}
+
+@misc{sloopdocs,
+    author = {Randy Westlund},
+    title = {Sloop 4.7 User Manual},
+    note = {Accessed: 2016-09-12}
 }
 
 @misc{ufldl,
@@ -216,11 +222,4 @@ pages={211-252}
             Caroline Suen},
     title = {Feature extraction using convolution},
     note = {Accessed: 2016-09-08}
-}
-
-@misc{sloopdocs,
-    author = {Randy Westlund},
-    title = {Sloop 4.7 User Manual},
-    note = {Accessed: 2016-09-12}
-    
 }
