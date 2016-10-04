@@ -108,7 +108,7 @@ captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 \subsection{Earth Mover's Distance}
 
 We use Earth Mover's Distance (EMD)~\cite{emd00} as our metric to calculate the
-minimal cost required to transform $Pr(score|nonmatch)$ to $Pr(score|match)$.
+minimal cost required to transform $\Pr{(score \mid nonmatch)}$ to $\Pr{(score \mid match)}$.
 
 \begin{figure}[ht]
   \centering
@@ -119,7 +119,7 @@ minimal cost required to transform $Pr(score|nonmatch)$ to $Pr(score|match)$.
 
 Initially, we also expected that the relationship between EMD and cohort size
 should be Gaussian. However, there seem to be no relationship between
-$Pr(score|nonmatch)$ and $Pr(score|match)$.
+$\Pr{(score \mid nonmatch)}$ and $\Pr{(score \mid match)}$.
 
 \begin{figure}[ht]
   \centering
@@ -128,31 +128,31 @@ $Pr(score|nonmatch)$ and $Pr(score|match)$.
   \label{fig:otago_emd} %chktex 24
 \end{figure}
 
-\subsection{Entropy of $\Pr{[score|match]}$ at different cohort sizes}
+\subsection{Entropy of $\Pr{(score \mid match)}$ at different cohort sizes}
 
 Entropy is the average amount of information we get from each distribution.
 $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
 
 \begin{figure}[ht]
   \centering
-  \subfloat[][Entropy of $\Pr{[score|match]}$ at different cohort sizes]
+  \subfloat[][Entropy of $\Pr{(score \mid match)}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/ent_psm}}
   \label{fig:grand_ent_psm}\\ %chktex 24
-  \subfloat[][Entropy of $\Pr{[score|nonmatch]}$ at different cohort sizes]
+  \subfloat[][Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/ent_psnm}}
-  \caption{Relationship between $\Pr{[score|match]}$ and $\Pr{[score|nonmatch]}$}
-  \label{fig:grand_ent_psnm}\\ %chktex 24
+  \caption{Relationship between $\Pr{(score \mid match)}$ and $\Pr{(score \mid nonmatch)}$}
+  \label{fig:grand_ent_psnm} %chktex 24
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \subfloat[][Entropy of $\Pr{[score|match]}$ at different cohort sizes]
+  \subfloat[][Entropy of $\Pr{(score \mid match)}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/ent_psm}}
   \label{fig:otago_ent_psm}\\ %chktex 24
-  \subfloat[][Entropy of $\Pr{[score|nonmatch]}$ at different cohort sizes]
+  \subfloat[][Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/ent_psnm}}
   \label{fig:otago_ent_psnm}\\ %chktex 24
-  \caption{Relationship between $\Pr{[score|match]}$ and $\Pr{[score|nonmatch]}$}
+  \caption{Relationship between $\Pr{(score \mid match)}$ and $\Pr{(score \mid nonmatch)}$}
   \label{fig:emd_grand} %chktex 24
 \end{figure}
 
