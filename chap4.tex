@@ -134,7 +134,7 @@ we take as our true labels. Table
 \begin{table}[t]
 \captionsetup{justification=centering}
   \caption{Number of capture pairs for each species}
-  \label{species-num-pairs}
+  \label{species-num-pairs} %chktex 24
   \centering
   \begin{tabular}{lc}
     \toprule
@@ -235,7 +235,6 @@ inclination of precision and recall is expected largely due to the
 interpolation of the new information.
 
 \begin{figure}[h!]
-
   \centering
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{pr/grand}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{pr/otago}}
@@ -269,10 +268,10 @@ size that is still large enough to engage the workers.
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{sizes/grtotal}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{sizes/ottotal}}
   \captionsetup{justification=centering}
-  \label{fig:sizes_curves}
   \caption{The total number of unknown pairs marked to achieve $MAP=1$
   ($Error=0$, \texttt{batch\_size}$=100$). Notice that this equals the total 
   number of tasks published to achieve $MAP=1$. }
+  \label{fig:sizes_curves} %chktex 24
 \end{figure}
 
 % subsection batch_size (end)
@@ -294,7 +293,7 @@ eventually.
   \centering
   \subfloat[Grand]{\includegraphics[width=\textwidth]{errors/graoc}}
   \caption{Mean Average Precision for different probabilities of error}
-  \label{fig:grand_aoc}
+  \label{fig:grand_aoc} %chktex 24
 \end{figure}
 % subsection errors (end)
 
