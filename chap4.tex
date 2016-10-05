@@ -234,7 +234,7 @@ accretes precision and recall given the correct feedback information. Such
 inclination of precision and recall is expected largely due to the
 interpolation of the new information.
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \centering
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{pr/grand}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{pr/otago}}
@@ -255,7 +255,7 @@ empirically, smaller batch size may upset some workers who would like to
 continuously work on the tasks. Therefore, we need to find the smallest batch
 size that is still large enough to engage the workers.
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \centering
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{sizes/graoc}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{sizes/otaoc}}
@@ -263,7 +263,7 @@ size that is still large enough to engage the workers.
   \caption{Mean Average Precision (MAP) for different batch sizes ($Error=0$)}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \centering
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{sizes/grtotal}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{sizes/ottotal}}
@@ -289,7 +289,7 @@ it is able to recover from the downward phase. However, the historical merges
 resulted from the past faulty data are irrevocable, so the precision saturates
 eventually.
 
-\begin{figure}[ht]
+\begin{figure}[htb]
   \centering
   \subfloat[Grand]{\includegraphics[width=\textwidth]{errors/graoc}}
   \caption{Mean Average Precision for different probabilities of error}
@@ -308,7 +308,7 @@ this depends largely on the species of the animal that we are interested in. As
 you can see the performance of the each sampling policy differs slightly
 between grand and otago.
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \centering
   \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{policies/grand}}\\
   \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{policies/otago}}
