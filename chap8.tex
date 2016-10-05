@@ -28,19 +28,21 @@ Table~\ref{concatenation-table} and Table~\ref{tab:results_table}.
   results for the input processing with feature vectors concatenation}
   \label{concatenation-table} %chktex 24
 \centering
-\begin{tabular}{lllllllllllllllllll}
+% The 'C' column type is defined in the document preamble. It adds
+% extra space to the left of the column to replace vertical rules. The
+% 'H' column type is for headers above it, which need to account for
+% the extra space.
+\begin{tabular}{llCccCccCcc}
     \toprule
-    \multicolumn{2}{c}{\multirow{2}{*}{Dataset} } & \multicolumn{3}{c}{PCT} &
-        \multicolumn{3}{c}{PA-I} & \multicolumn{3}{c}{PA-II}\\
-  \cmidrule{3-10}
+    \multicolumn{2}{c}{\multirow{2}{*}{Dataset} } & \multicolumn{3}{H}{PCT} &
+        \multicolumn{3}{H}{PA-I} & \multicolumn{3}{c}{PA-II}\\
+  \cmidrule{3-11}
         & & P & R & F  & P & R & F  & P & R & F \\
     \midrule
     \multirow{3}{*}{Gr$^{L}$-I}  & Train & 0.01 & 0.03 & 0.01 & 0.04 & 0.01 
         & 0.01 & 0.00 & 0.00 & 0.00 \\
-    \cmidrule{2-11}
                                  & Val   & 0.40 & 0.13 & 0.08 & 0.23 & 0.06
         & 0.08 & 0.46 & 0.08 & 0.06 \\
-    \cmidrule{2-11}
                                  & Test  & 0.01 & 0.05 & 0.02 & 0.03 & 0.01
         & 0.01 &  0.00 & 0.02 & 0.01 \\
     \bottomrule
@@ -67,12 +69,16 @@ difference as the input.
         \label{tab:results_table} %chktex 24
 
       \centering % Center table
-      \hskip-2.0cm\begin{tabular}{lllll|lll|lll|lll|lllll}
+        % The 'C' column type is defined in the document preamble. It adds
+        % extra space to the left of the column to replace vertical rules. The
+        % 'H' column type is for headers above it, which need to account for
+        % the extra space.
+      \hskip-2.0cm\begin{tabular}{llCccCccCccCccCcc}
           \toprule
 
-          \multicolumn{2}{c}{\multirow{2}{*}{Dataset} } & \multicolumn{3}{c}{SVM}
-            & \multicolumn{3}{c}{SVM-RBF} & \multicolumn{3}{c}{PCT}
-            & \multicolumn{3}{c}{PA-I} & \multicolumn{3}{c}{PA-II}\\
+          \multicolumn{2}{c}{\multirow{2}{*}{Dataset} } & \multicolumn{3}{H}{SVM}
+            & \multicolumn{3}{H}{SVM-RBF} & \multicolumn{3}{H}{PCT}
+            & \multicolumn{3}{H}{PA-I} & \multicolumn{3}{c}{PA-II}\\
         \cmidrule{3-17}
                                                     & & P & R & F  & P & R & F 
                                                     & P & R & F  & P & R & F & P
@@ -81,50 +87,42 @@ difference as the input.
           \multirow{3}{*}{Gr$^{L}$-I}  & Train & 0.91 & 0.21 & 0.34 & 0.97 & 0.18
             & 0.30 & 0.40 & 0.26 & 0.32 & 0.57 & 0.31 & 0.29 & 0.57 & 0.29 & 0.30
             \\
-          %\cmidrule{2-17}
                                        & Val   & 0.95 & 0.23 & 0.37 & 0.99 & 0.19
                                        & 0.32 & 0.58 & 0.37 & 0.45 & 0.65 & 0.48
                                        & 0.38  & 0.67 & 0.44 & 0.39      \\
-          %\cmidrule{2-17}
-                                       & Test  & 0.82 & 0.20 & 0.33 & 1.0 & 0.21
+                                       & Test  & 0.82 & 0.20 & 0.33 & 1.00 & 0.21
                                        & 0.35 &  0.42 & 0.24 & 0.30 & 0.54
                                        & 0.33 & 0.28 & 0.52 & 0.29 & 0.28     \\
-          \hline
+          \midrule
           \multirow{3}{*}{Ot$^{L}$-I}  & Train & 0.64 & 0.24 & 0.32 & 0.88 & 0.21
           & 0.34  & 0.45 & 0.32 & 0.29 & 0.37 & 0.16 & 0.23 & 0.36 & 0.27
           & 0.30     \\
-      %\cmidrule{2-17}
                                        & Val   & 0.81 & 0.42 & 0.51 & 0.90 & 0.24
                                        & 0.37 & 0.55 & 0.54 & 0.42 & 0.89 & 0.30
                                        & 0.39 & 0.65 & 0.55 & 0.59     \\
-      %\cmidrule{2-17}
                                        & Test  & 0.66 & 0.26 & 0.33 & 0.90 & 0.20
                                        & 0.32 & 0.46 & 0.39 & 0.33 & 0.36 & 0.17
                                        & 0.23 & 0.42 & 0.32 & 0.36     \\
-          \hline
+          \midrule
           \multirow{3}{*}{Gr$^{L}$-II} & Train & 0.92 & 0.35 & 0.50 & 0.99 & 0.21
           & 0.34 & 0.99 & 0.27 & 0.43 & 0.89 & 0.48 & 0.63 & 0.83 & 0.57 & 0.67 
           \\
-      %\cmidrule{2-17}
-                                       & Val   & 0.79 & 0.20 & 0.32 & 1.0 & 0.20
+                                       & Val   & 0.79 & 0.20 & 0.32 & 1.00 & 0.20
                                        & 0.33 & 0.93 & 0.19 & 0.32 & 0.76 & 0.21
                                        & 0.33 & 0.66 & 0.24 & 0.36     \\
-      %\cmidrule{2-17}
-                                       & Test  & 0.85 & 0.22 & 0.35 & 1.0 & 0.18
+                                       & Test  & 0.85 & 0.22 & 0.35 & 1.00 & 0.18
                                        & 0.30 & 0.92 & 0.19 & 0.31 & 0.86 & 0.20
                                        & 0.32 & 0.69 & 0.22 & 0.34     \\
-          \hline
-          \multirow{3}{*}{Ot$^{L}$-II} & Train & 0.57 & 0.29 & 0.38 & 1.0 & 0.22
-          & 0.38 & 0.53 & 0.70 & 0.60 & 0.59 & 0.78 & 0.67 & 1.0 & 0.25
+          \midrule
+          \multirow{3}{*}{Ot$^{L}$-II} & Train & 0.57 & 0.29 & 0.38 & 1.00 & 0.22
+          & 0.38 & 0.53 & 0.70 & 0.60 & 0.59 & 0.78 & 0.67 & 1.00 & 0.25
           & 0.40     \\
-      %\cmidrule{2-17}
-                                       & Val  & 0.57 & 0.68 & 0.62 & 1.0 & 0.24
+                                       & Val  & 0.57 & 0.68 & 0.62 & 1.00 & 0.24
                                        & 0.39 & 0.53 & 0.37 & 0.43 & 0.56 & 0.30
                                        & 0.39 & 0.97 & 0.19 & 0.32   \\
-      %\cmidrule{2-17}
-                                       & Test  & 0.57 & 0.28 & 0.38  & 1.0
+                                       & Test  & 0.57 & 0.28 & 0.38  & 1.00
                                        & 0.19 & 0.32 & 0.43 & 0.36 & 0.39 & 0.50
-                                       & 0.32 & 0.39 & 1.0 & 0.22 & 0.37     \\
+                                       & 0.32 & 0.39 & 1.00 & 0.22 & 0.37     \\
           \bottomrule
         \end{tabular}
       \end{table}
