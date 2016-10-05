@@ -14,7 +14,7 @@ All the experiments in this study are conducted on a database two species of
 skinks: \emph{Grand} and \emph{Otago} of 3687 images in total created by
 biologists at New Zealand Department of Conservation. 
 
-\begin{figure}[ht]
+\begin{figure}[htb]
   \centering
   \subfloat{\includegraphics[width=4cm]{dataset/general/grand_L3}}
   \subfloat{\includegraphics[width=4cm]{dataset/general/grand_L1}}
@@ -35,7 +35,7 @@ variations. The images are closely cropped to include only the anterior end of
 the subjects; therefore, the size varies from 1056 $\times$ 564 to 2437
 $\times$ 1215 pixels
 
-\begin{table}[t]
+\begin{table}[htb]
 \captionsetup{justification=centering}
   \caption{Summary of each database}
   \label{database-table} %chktex 24
@@ -77,7 +77,7 @@ the capture, where a selfscore of an image is calculated from comparing the
 sift features of each image with itself.  $$\texttt{selfscore}(C) =
 \max_{\forall I_i \in C} \texttt{sift\_match}(I_i, I_i)$$ 
 
-\begin{figure}[h!]
+\begin{figure}[htb]
   \centering
   \subfloat[Selfscores]{\includegraphics[width=0.58\textwidth]
       {dataset/grand/selfscores}}\qquad
@@ -87,7 +87,7 @@ sift features of each image with itself.  $$\texttt{selfscore}(C) =
   \caption{Selfscore Distribution}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[htb]
   \centering
   \subfloat[Selfscores]{\includegraphics[width=0.58\textwidth]
         {dataset/otago/selfscores}}\qquad
@@ -96,6 +96,7 @@ sift features of each image with itself.  $$\texttt{selfscore}(C) =
   \captionsetup{justification=centering}
   \caption{Selfscore Distribution}
 \end{figure}
+\FloatBarrier%
 
 \subsubsection{Scores}
 
@@ -107,14 +108,14 @@ $$\texttt{score}(C_1, C_2) = \max_{\forall I_i \in C_1 \forall I_j \in C_2}
         \texttt{selfscore}(C_2))}$$
 where $C$ is a capture and $I$ is an image in a capture.
 
-\begin{figure}[ht]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=\textwidth]{dataset/grand/scores}
   \caption{Score Distribution}
   \label{fig:grand_scores} %chktex 24
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=\textwidth]{dataset/otago/scores}
   \caption{Score Distribution}

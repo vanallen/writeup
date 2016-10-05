@@ -31,7 +31,7 @@ In the same way,
 $$\Pr{(score=s \mid nonmatch)} = \frac{\texttt{\# nonmatches\_whose\_score=s}}
     {\texttt{\# nonmatches}}$$
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \centering
   \subfloat[][Probability of Score given matches/non-matches]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/psm}}
@@ -46,7 +46,7 @@ $$\Pr{(score=s \mid nonmatch)} = \frac{\texttt{\# nonmatches\_whose\_score=s}}
   \label{fig:grand_dsm} %chktex 24
 \end{figure}
 
-From the plot above, we can deduct following conclusions:
+From Figure~\ref{fig:grand_dsm}, we can deduct following conclusions:
 \begin{itemize}
 \item Most of the cohorts has score between 0 and 0.07 overall so most matches
 and non-matches have score less than 0.06.
@@ -59,7 +59,7 @@ non-matches with the score in the same range. That is
 $$\Pr{(score \mid match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [0.08, 0.35)$$
 \end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \centering
   \subfloat[][Probability of Score given matches/non-matches]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/psm}}
@@ -77,7 +77,7 @@ $$\Pr{(score \mid match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [
 
 \subsection{Probability of a matching score at a given cohort size}
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \subfloat[][Probability of a matching score at a given cohort size]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/pscohort}}
@@ -94,7 +94,7 @@ and $\max{(\texttt{sift\_match}(I_i, I_j))}$ should increase as the number of
 captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 \#cohort)}$ for all numbers of cohorts seem to be similar to one another.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \subfloat[][Probability of a matching score at a given cohort size]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/pscohort}}
@@ -105,12 +105,13 @@ captures in a cohort increases. However, the distribution of $\Pr{(score \mid
   \label{fig:otago_psnoncohort} %chktex 24
 \end{figure}
 
+\FloatBarrier%
 \subsection{Earth Mover's Distance}
 
 We use Earth Mover's Distance (EMD)~\cite{emd00} as our metric to calculate the
 minimal cost required to transform $\Pr{(score \mid nonmatch)}$ to $\Pr{(score \mid match)}$.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/grand/emd}
   \caption{Earth Mover's Distance between the probability distributions}
@@ -121,7 +122,7 @@ Initially, we also expected that the relationship between EMD and cohort size
 should be Gaussian. However, there seem to be no relationship between
 $\Pr{(score \mid nonmatch)}$ and $\Pr{(score \mid match)}$.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/otago/emd}
   \caption{Earth Mover's Distance between the probability distributions}
@@ -133,7 +134,7 @@ $\Pr{(score \mid nonmatch)}$ and $\Pr{(score \mid match)}$.
 Entropy is the average amount of information we get from each distribution.
 $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \subfloat[][Entropy of $\Pr{(score \mid match)}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/grand/ent_psm}}
@@ -144,7 +145,7 @@ $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
   \label{fig:grand_ent_psnm} %chktex 24
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \subfloat[][Entropy of $\Pr{(score \mid match)}$ at different cohort sizes]
   {\includegraphics[width=0.95\textwidth]{dataset/otago/ent_psm}}
@@ -156,6 +157,7 @@ $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
   \label{fig:emd_grand} %chktex 24
 \end{figure}
 
+\FloatBarrier%
 \subsection{Probability of a Matches/Non-matches}
 
 $$\Pr{(match \mid score)} = \frac{\Pr{(score \mid match)}\Pr{(match)}}
@@ -164,14 +166,14 @@ $$\Pr{(match \mid score)} = \frac{\Pr{(score \mid match)}\Pr{(match)}}
 $$\Pr{(nonmatch \mid score)} = \frac{\Pr{(score \mid nonmatch)}\Pr{(nonmatch)}}
     {\Pr{(score)}}$$
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/grand/pms}
   \caption{Probability of matches/non-matches given score}
   \label{fig:grand_pms} %chktex 24
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.95\textwidth]{dataset/otago/pms}
   \caption{Probability of matches/non-matches given score}
@@ -204,7 +206,7 @@ Normal sampling policy.
 
 \section{Results}
 
-\begin{figure}[h!]
+\begin{figure}[htb]
   \centering
   \includegraphics[width=0.8\textwidth]{otago}
   \caption{Mean Average Precision for the new sampling policies}
