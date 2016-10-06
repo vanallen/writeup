@@ -35,6 +35,12 @@
 \usepackage{afterpage}
 \usepackage{placeins}
 % \usepackage[table,x11names]{xcolor}
+\usepackage{array}
+
+% A table column type for adding extra space to the left of the row. Used to
+% replace vertical rules. Requires the array package.
+\newcolumntype{C}{@{\hspace{1cm}}c}
+\newcolumntype{H}{c<{\hspace{1cm}}}
 
 \pagestyle{plain}
 
