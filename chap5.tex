@@ -12,10 +12,10 @@
 % Sloop-mturk: Crowdsourced relevance feedback on mturk
 \section{Sloop MTurk}
 
-As described in Chapter~\ref{chap:relevance_feedback}, multiple rounds of relevance
-feedback accelerates precision and recall of the recognition. This chapter
-presents the architecture of \emph{Sloop MTurk}, the crowdsourced relevance
-feedback integration of Sloop.
+As described in Chapter~\ref{chap:relevance_feedback}, multiple rounds of
+relevance feedback accelerates precision and recall of the recognition. This
+chapter presents the architecture of \emph{Sloop MTurk}, the crowdsourced
+relevance feedback integration of Sloop.
 
 \begin{figure}[htb]
   \centering
@@ -42,10 +42,10 @@ workflow.
 
 In the first stage of the relevance feedback workflow, Sloop MTurk retrieves a
 number of unknown, and known image pairs from the database in the ratio
-described in Section~\ref{subsub:validation}. The metadata about the retrieved pairs,
-such as the answers to the known pairs, individual identification numbers, and
-source address, is stored in a lightweight SQLite database while the images are
-stored separately.
+described in Section~\ref{subsub:validation}. The metadata about the retrieved
+pairs, such as the answers to the known pairs, individual identification
+numbers, and source address, is stored in a lightweight SQLite database while
+the images are stored separately.
 
 Sloop MTurk never publishes a duplicated \emph{unknown} pair onto MTurk. It
 actively checks with the local database before any retrieval if an unknown pair
@@ -69,8 +69,8 @@ another machine, or to use other external web hosting.
 Sloop MTurk publishes the tasks onto MTurk immediately after all the
 information is fetched. The tasks published are available on Amazon Mechanical
 Turk under the title: `Image Matching --- Animals' posted by user `sloop'.
-% TODO Tell user that they need AWS access ID and secret key to programmatically
-% communicate with MTurk
+% TODO Tell user that they need AWS access ID and secret key to
+% programmatically communicate with MTurk
 
 \subsubsection{Fetch}
 
@@ -106,9 +106,8 @@ popular crowdsourcing platforms.
 
 \subsection{Human Intelligence Task (HIT)}
 
-Tasks published on MTurk are called Human
-Intelligence Tasks (HITs). The terms `HIT' and `tasks' are going to be used
-interchangeably throughout this report.
+Tasks published on MTurk are called Human Intelligence Tasks (HITs). The terms
+`HIT' and `tasks' are going to be used interchangeably throughout this report.
 
 Requesters publish the tasks that they need to accomplish onto Amazon
 Mechanical Turk marketplace with an amount of payment to reward the workers who

@@ -64,9 +64,9 @@ the initialization.
 \section{Metrics} % (fold)
 \label{sec:metrices}
 
-This section describes the metrics used to evaluate the performance our
-models. Along with our goal to maximize the precision and recall, we would like
-to minimize the cost of the crowdsourced feedback or to operate optimally within a
+This section describes the metrics used to evaluate the performance our models.
+Along with our goal to maximize the precision and recall, we would like to
+minimize the cost of the crowdsourced feedback or to operate optimally within a
 budget constraint. The simulator also provides a counter that counts the number
 of iterations a distribution takes to converge. However, this is out of our
 interest because the time a model takes to converge can also be inferred from
@@ -223,11 +223,11 @@ We experiment with following policies:
 \section{Results and Discussion} % (fold)
 \label{sec:results}
 
-Figure~\ref{fig:pr_curves} displays the Precision-Recall graph at a given number of
-sampled unknown pairs. With zero error probability, relevance feedback reduces
-the number of comparisons required for each specifies by a factor of 317 and
-307 for grand and otago respectively. Within four iterations of feedback loop,
-Mean Average Precision (MAP) reaches 1.0.
+Figure~\ref{fig:pr_curves} displays the Precision-Recall graph at a given
+number of sampled unknown pairs. With zero error probability, relevance
+feedback reduces the number of comparisons required for each specifies by a
+factor of 317 and 307 for grand and otago respectively. Within four iterations
+of feedback loop, Mean Average Precision (MAP) reaches 1.0.
 
 The results corroborates the fact that the relevance feedback dramatically
 accretes precision and recall given the correct feedback information. Such

@@ -65,9 +65,11 @@ and non-matches have score less than 0.06.
 , but it turns out that it actually decreases. This results from the fact that
 there are \emph{very few} matches with scores higher than 0.33, which is the 99th
 percentile of the matches' score.
-\item The number of matches with $score \in [0.08, 0.35)$ is greater than that of
-non-matches with the score in the same range. That is
-$$\Pr{(score \mid match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [0.08, 0.35)$$
+
+\item The number of matches with $score \in [0.08, 0.35)$ is greater than that
+of non-matches with the score in the same range. That is $$\Pr{(score \mid
+match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [0.08, 0.35)$$
+
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -149,13 +151,12 @@ captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 \subsection{Earth Mover's Distance}
 
 We use Earth Mover's Distance (EMD)~\cite{emd00} as our metric to calculate the
-minimal cost required to transform $\Pr{(score \mid nonmatch)}$ to $\Pr{(score \mid match)}$.
-
+minimal cost required to transform $\Pr{(score \mid nonmatch)}$ to $\Pr{(score
+\mid match)}$.
 
 Initially, we also expected that the relationship between EMD and cohort size
 should be Gaussian. However, there seem to be no relationship between
 $\Pr{(score \mid nonmatch)}$ and $\Pr{(score \mid match)}$.
-
 
 \begin{figure}[htbp]
   \centering
@@ -193,7 +194,8 @@ $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
     \begin{subfigure}[t]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{dataset/grand/ent_psnm}
-        \caption{Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes}
+        \caption{Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort 
+        sizes}
         \label{fig:grand_ent_psnm} %chktex 24
     \end{subfigure}%
     \caption{Grand}
@@ -212,7 +214,8 @@ $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
     \begin{subfigure}[t]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{dataset/otago/ent_psnm}
-        \caption{Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes}
+        \caption{Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort 
+        sizes}
         \label{fig:otago_ent_psnm} %chktex 24
     \end{subfigure}%
     \caption{Otago}
@@ -265,8 +268,8 @@ non-matches, then uses normal sampling policy to overlay a Gaussian
 distribution, with $\mu=$\texttt{peak\_of\_the\_CDF\_difference} and
 $\sigma=0.3$, on the data. We continue each cycle by the sampling probability
 distribution reconstruction, and sampling from the generated distribution.
-Additionally, we also use Specific sampling policy to sample specifically at the
-\texttt{peak\_of\_the\_CDF\_difference} to compare the performance with the
+Additionally, we also use Specific sampling policy to sample specifically at
+the \texttt{peak\_of\_the\_CDF\_difference} to compare the performance with the
 Normal sampling policy.
 
 \section{Results}

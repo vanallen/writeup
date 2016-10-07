@@ -44,15 +44,15 @@ human and these machine-based algorithms, to \emph{Sloop}, the first pattern
 retrieval engine for animal biometric incorporating crowd-sourced relevance
 feedback.
 
-In the last few years, deep convolutional neural networks~\cite{lecun95, kriz12}
-have outperformed SIFTs and other descriptor-based techniques by a large margin
-in both object recognition and classification tasks~\cite{kriz12, fisher14,
-ILSVRC15}. In fact, the architecture has demonstrated recognition accuracy
-comparable to humans in several visual recognition tasks, such as recognizing
-faces~\cite{deepface14}, and handwritten digits~\cite{mnist13}. Motivated by the
-preceding achievements, we integrate a pre-trained convolutional neural network
-into a new python version of Sloop, \emph{SlooPy}, as a separate image
-processing workflow.
+In the last few years, deep convolutional neural networks~\cite{lecun95,
+kriz12} have outperformed SIFTs and other descriptor-based techniques by a
+large margin in both object recognition and classification tasks~\cite{kriz12,
+fisher14, ILSVRC15}. In fact, the architecture has demonstrated recognition
+accuracy comparable to humans in several visual recognition tasks, such as
+recognizing faces~\cite{deepface14}, and handwritten digits~\cite{mnist13}.
+Motivated by the preceding achievements, we integrate a pre-trained
+convolutional neural network into a new python version of Sloop, \emph{SlooPy},
+as a separate image processing workflow.
 
 Despite the scalability, and advantages of computational speed in automatic
 pattern recognition, some classification errors could occur and rapidly
@@ -101,12 +101,12 @@ feature extraction problem}, and \emph{pattern recognition problem}.
 
 Image feature extraction problem involves locating the animal in the image, and
 extract the features required for the matching. The choice of feature selection
-varies from species to species. The extracted feature object of an image is then
-passed into the pattern recognition algorithm to find the matches existed in the
-system. Current Sloop locates the animal and necessary features of an image by
-having the user click on the key points of the animal, and then calculates the
-feature vector using SIFT\@. It performs the matching by scoring the similarity of
-the SIFT object. 
+varies from species to species. The extracted feature object of an image is
+then passed into the pattern recognition algorithm to find the matches existed
+in the system. Current Sloop locates the animal and necessary features of an
+image by having the user click on the key points of the animal, and then
+calculates the feature vector using SIFT\@. It performs the matching by scoring
+the similarity of the SIFT object. 
 
 Traditional approaches in machine learning generally require training samples to
 be available for all the categories. Moreover, such approaches are designed to
