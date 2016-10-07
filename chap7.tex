@@ -7,14 +7,16 @@
 % * qualifications of informants if used in the study
 % * Validation
 % * Data gathering procedure (experiments)
-\chapter{Convolutional Neural Network}
+\chapter{Convolutional Neural Network} % (fold)
+\label{cha:convolutional_neural_network}
 
 We first describe the our new architecture in the System Overview
-(Section~\ref{system}). Then in the Experiments (Section~\ref{experiments}), we
+(Section~\ref{sec:system_overview}). Then in the Experiments (Section~\ref{sec:experiments}), we
 compare the performance of the current identification method within the
 existing pattern retrieval engine with that of the new architecture.
 
-\section{System Overview}\label{system}
+\section{System Overview} % (fold)
+\label{sec:system_overview}
 
 In this section, we begin by presenting the architecture that outputs a
 yes-or-no answer to the question whether, given two images A and B, the animal
@@ -62,16 +64,35 @@ aforementioned CNN architecture.
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[][The first layer filters, \texttt{conv1}]
-    {\includegraphics[width=8cm]{preprocess/paramconv1}}\\
-  \subfloat[][The first layer output, \texttt{conv1}]
-    {\includegraphics[width=8cm]{preprocess/blob20conv1}}
-  \subfloat[][The fifth layer after pooling, \texttt{pool5}]
-    {\includegraphics[width=8cm]{preprocess/blob20pool5}} \\
-  \subfloat[][The first layer output, \texttt{conv1}]
-    {\includegraphics[width=8cm]{preprocess/lastconv1}}
-  \subfloat[][The fifth layer after pooling, \texttt{pool5}]
-    {\includegraphics[width=8cm]{preprocess/lastpool5}}
+  \begin{subfigure}[t]{0.45\textwidth}
+      \centering
+      \includegraphics[width=7cm]{preprocess/paramconv1}
+      \caption{The first layer filters, \texttt{conv1}}
+  \end{subfigure}
+  ~\\
+  \begin{subfigure}[t]{0.45\textwidth}
+      \centering
+      \includegraphics[width=7cm]{preprocess/blob20conv1}
+      \caption{The first layer output, \texttt{conv1}}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{0.45\textwidth}
+      \centering
+      \includegraphics[width=7cm]{preprocess/blob20pool5}
+      \caption{The fifth layer after pooling, \texttt{pool5}}
+  \end{subfigure}
+  ~ \\
+  \begin{subfigure}[t]{0.45\textwidth}
+      \centering
+      \includegraphics[width=7cm]{preprocess/lastconv1}
+      \caption{The first layer output, \texttt{conv1}}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{0.45\textwidth}
+      \centering
+      \includegraphics[width=7cm]{preprocess/lastpool5}
+      \caption{The fifth layer after pooling, \texttt{pool5}}
+  \end{subfigure}
   \captionsetup{justification=centering}
   \caption{Visualizing Convolutional Network layers}
 \end{figure}
@@ -165,10 +186,12 @@ We have implemented following algorithms as our match recognizer:
 \end{itemize}
 
 We compare the performance of each classifier in the Experiments
-section~(\ref{experiments}). The classifier with the best performance will be
+section~(\ref{sec:experiments}). The classifier with the best performance will be
 selected for our final design.
+% section system_overview (end)
 
-\section{Experiments}\label{experiments}
+\section{Experiments} % (fold)
+\label{sec:experiments}
 
 In this section, we first introduce the datasets used in the experiments, then
 present the detailed evaluation of the variants of our architecture and the
@@ -243,4 +266,8 @@ we test the model on teh actual test set.
                                  & Test  & 561& 0.26 & 0.73\\
     \bottomrule
   \end{tabular}
+  \label{tab:results_tvt}
 \end{table}
+% section experiments (end)
+
+% chapter convolutional_neural_network (end)

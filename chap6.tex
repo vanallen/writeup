@@ -33,20 +33,31 @@ $$\Pr{(score=s \mid nonmatch)} = \frac{\texttt{\# nonmatches\_whose\_score=s}}
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[][Probability of Score given matches/non-matches]
-  {\includegraphics[width=0.95\textwidth]{dataset/grand/psm}}
-  \label{fig:grand_psm}\\ %chktex 24
-  \subfloat[][CDF of Score given matches/non-matches]
-  {\includegraphics[width=0.95\textwidth]{dataset/grand/csm}}
-  \label{fig:grand_csm}\\ %chktex 24
-  \subfloat[][Difference between the CDF of Score given matches/non-matches]
-  %$F\[non-match\]$ and $F\[match\]$
-  {\includegraphics[width=0.95\textwidth]{dataset/grand/dsm}}
-  \caption{Functions of Score given matches/non-matches}
-  \label{fig:grand_dsm} %chktex 24
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset/grand/psm}
+    \caption{Probability of Score given matches/non-matches}
+    \label{fig:grand_psm} %chktex 24
+  \end{subfigure}%
+
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset/grand/csm}
+    \caption{CDF of Score given matches/non-matches}
+    \label{fig:grand_csm} %chktex 24
+  \end{subfigure}%
+
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset/grand/dsm}
+    \caption{Difference between the CDF of Score given matches/non-matches}
+    %$F\[non-match\]$ and $F\[match\]$
+  \end{subfigure}%
+  \caption{Grand}
+  \label{fig:grand_sm} %chktex 24
 \end{figure}
 
-From Figure~\ref{fig:grand_dsm}, we can deduct following conclusions:
+From Figure~\ref{fig:grand_sm}, we can deduct following conclusions:
 \begin{itemize}
 \item Most of the cohorts has score between 0 and 0.07 overall so most matches
 and non-matches have score less than 0.06.
@@ -61,31 +72,52 @@ $$\Pr{(score \mid match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[][Probability of Score given matches/non-matches]
-  {\includegraphics[width=0.95\textwidth]{dataset/otago/psm}}
-  \label{fig:otago_psm}\\ %chktex 24
-  \subfloat[][CDF of Score given matches/non-matches]
-  {\includegraphics[width=0.95\textwidth]{dataset/otago/csm}}
-  \label{fig:otago_csm}\\ %chktex 24
-  \subfloat[][Difference between the CDF of Score given matches/non-matches]
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.8\textwidth]{dataset/otago/psm}
+        \caption{Probability of Score given matches/non-matches}
+      \label{fig:otago_psm} %chktex 24
+    \end{subfigure}%
+  \\
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.8\textwidth]{dataset/otago/csm}
+        \caption{CDF of Score given matches/non-matches}
+      \label{fig:otago_csm} %chktex 24
+    \end{subfigure}%
+  \\
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.8\textwidth]{dataset/otago/dsm}
+        \caption{Difference between the CDF of Score given matches/non-matches}
+        \label{fig:otago_dsm} %chktex 24
     %$F\[non-match\]$ and $F\[match\]$
-  {\includegraphics[width=0.95\textwidth]{dataset/otago/dsm}}
+    \end{subfigure}%
   \caption{Functions of Score given matches/non-matches}
-  \label{fig:otago_dsm} %chktex 24
+  \label{fig:otago_sm}
 \end{figure}
 
+% TODO analyze Otago
 
 \subsection{Probability of a matching score at a given cohort size}
 
 \begin{figure}[htbp]
-  \centering
-  \subfloat[][Probability of a matching score at a given cohort size]
-  {\includegraphics[width=0.95\textwidth]{dataset/grand/pscohort}}
-  \label{fig:grand_pscohort}\\ %chktex 24
-  \subfloat[][Probability of a score \emph{not} in a given cohort size]
-  {\includegraphics[width=0.95\textwidth]{dataset/grand/psnoncohort}}
-  \caption{Probability of a score given a range of cohort size}
-  \label{fig:grand_psnoncohort} %chktex 24
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/grand/pscohort}
+        \caption{Probability of a matching score at a given cohort size}
+        \label{fig:grand_pscohort} %chktex 24
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/grand/psnoncohort}
+        \caption{Probability of a score \emph{not} in a given cohort size}
+        \label{fig:grand_psnoncohort} %chktex 24
+    \end{subfigure}%
+    \caption{Grand}
+    \label{fig:grand_psc} %chktex 24
 \end{figure}
 
 Initially, we expected that as the cohort size increases, $\Pr{(score \mid
@@ -95,14 +127,22 @@ captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 \#cohort)}$ for all numbers of cohorts seem to be similar to one another.
 
 \begin{figure}[htbp]
-  \centering
-  \subfloat[][Probability of a matching score at a given cohort size]
-  {\includegraphics[width=0.95\textwidth]{dataset/otago/pscohort}}
-  \label{fig:otago_pscohort}\\ %chktex 24
-  \subfloat[][Probability of a score \emph{not} in a given cohort size]
-  {\includegraphics[width=0.95\textwidth]{dataset/otago/psnoncohort}}
-  \caption{Probability of a score given a range of cohort size}
-  \label{fig:otago_psnoncohort} %chktex 24
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/otago/pscohort}
+        \caption{Probability of a matching score at a given cohort size}
+        \label{fig:otago_pscohort} %chktex 24
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/otago/psnoncohort}
+        \caption{Probability of a score \emph{not} in a given cohort size}
+        \label{fig:otago_psnoncohort} %chktex 24
+    \end{subfigure}%
+    \caption{Otago}
+    \label{fig:otago_psc} %chktex 24
 \end{figure}
 
 \FloatBarrier%
@@ -111,22 +151,29 @@ captures in a cohort increases. However, the distribution of $\Pr{(score \mid
 We use Earth Mover's Distance (EMD)~\cite{emd00} as our metric to calculate the
 minimal cost required to transform $\Pr{(score \mid nonmatch)}$ to $\Pr{(score \mid match)}$.
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dataset/grand/emd}
-  \caption{Earth Mover's Distance between the probability distributions}
-  \label{fig:grand_emd} %chktex 24
-\end{figure}
 
 Initially, we also expected that the relationship between EMD and cohort size
 should be Gaussian. However, there seem to be no relationship between
 $\Pr{(score \mid nonmatch)}$ and $\Pr{(score \mid match)}$.
 
+
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.95\textwidth]{dataset/otago/emd}
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset/grand/emd}
+    \caption{Grand}
+    \label{fig:grand_emd} %chktex 24
+  \end{subfigure}%
+  \\
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset/otago/emd}
+    \caption{Otago}
+    \label{fig:otago_emd} %chktex 24
+  \end{subfigure}%
   \caption{Earth Mover's Distance between the probability distributions}
-  \label{fig:otago_emd} %chktex 24
+  \label{fig:emdist} %chktex 24
 \end{figure}
 
 \subsection{Entropy of $\Pr{(score \mid match)}$ at different cohort sizes}
@@ -135,26 +182,41 @@ Entropy is the average amount of information we get from each distribution.
 $H(X|Y)$ = amount of randomness in the random variable X given the event Y.
 
 \begin{figure}[htbp]
-  \centering
-  \subfloat[][Entropy of $\Pr{(score \mid match)}$ at different cohort sizes]
-  {\includegraphics[width=0.95\textwidth]{dataset/grand/ent_psm}}
-  \label{fig:grand_ent_psm}\\ %chktex 24
-  \subfloat[][Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes]
-  {\includegraphics[width=0.95\textwidth]{dataset/grand/ent_psnm}}
-  \caption{Relationship between $\Pr{(score \mid match)}$ and $\Pr{(score \mid nonmatch)}$}
-  \label{fig:grand_ent_psnm} %chktex 24
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/grand/ent_psm}
+        \caption{Entropy of $\Pr{(score \mid match)}$ at different cohort sizes}
+        \label{fig:grand_ent_psm} %chktex 24
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/grand/ent_psnm}
+        \caption{Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes}
+        \label{fig:grand_ent_psnm} %chktex 24
+    \end{subfigure}%
+    \caption{Grand}
+    \label{fig:grand_entemd} %chktex 24
 \end{figure}
 
 \begin{figure}[htbp]
-  \centering
-  \subfloat[][Entropy of $\Pr{(score \mid match)}$ at different cohort sizes]
-  {\includegraphics[width=0.95\textwidth]{dataset/otago/ent_psm}}
-  \label{fig:otago_ent_psm}\\ %chktex 24
-  \subfloat[][Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes]
-  {\includegraphics[width=0.95\textwidth]{dataset/otago/ent_psnm}}
-  \label{fig:otago_ent_psnm}\\ %chktex 24
-  \caption{Relationship between $\Pr{(score \mid match)}$ and $\Pr{(score \mid nonmatch)}$}
-  \label{fig:emd_grand} %chktex 24
+    \centering
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/otago/ent_psm}
+        \caption{Entropy of $\Pr{(score \mid match)}$ at different cohort sizes}
+        \label{fig:otago_ent_psm} %chktex 24
+    \end{subfigure}%
+    \\
+    \begin{subfigure}[t]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{dataset/otago/ent_psnm}
+        \caption{Entropy of $\Pr{(score \mid nonmatch)}$ at different cohort sizes}
+        \label{fig:otago_ent_psnm} %chktex 24
+    \end{subfigure}%
+    \caption{Otago}
+    \label{fig:otago_entemd} %chktex 24
 \end{figure}
 
 \FloatBarrier%
@@ -167,17 +229,20 @@ $$\Pr{(nonmatch \mid score)} = \frac{\Pr{(score \mid nonmatch)}\Pr{(nonmatch)}}
     {\Pr{(score)}}$$
 
 \begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dataset/grand/pms}
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset/grand/pms}
+    \caption{Grand}
+    \label{fig:grand_pms} %chktex 24
+  \end{subfigure}
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.8\textwidth]{dataset/otago/pms}
+    \caption{Otago}
+    \label{fig:otago_pms} %chktex 24
+  \end{subfigure}
   \caption{Probability of matches/non-matches given score}
-  \label{fig:grand_pms} %chktex 24
-\end{figure}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{dataset/otago/pms}
-  \caption{Probability of matches/non-matches given score}
-  \label{fig:otago_pms} %chktex 24
+  \label{fig:pms}
 \end{figure}
 
 \section{Adaptive Sampling Policies} % (fold)
@@ -208,9 +273,14 @@ Normal sampling policy.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.8\textwidth]{otago}
+  %TODO Grand
+  \begin{subfigure}[t]{\textwidth}
+    \centering
+    \includegraphics[width=0.6\textwidth]{otago}
+    \caption{Otago}
+  \end{subfigure}
   \caption{Mean Average Precision for the new sampling policies}
-  \label{fig:otago_adaptive_aoc} %chktex 24
+  \label{fig:adaptive_aoc} %chktex 24
 \end{figure}
 
 The adaptive sampling policy seem to perform averagely well. The performance

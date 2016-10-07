@@ -134,7 +134,7 @@ we take as our true labels. Table
 \begin{table}[t]
 \captionsetup{justification=centering}
   \caption{Number of capture pairs for each species}
-  \label{species-num-pairs} %chktex 24
+  \label{tab:species_npairs} %chktex 24
   \centering
   \begin{tabular}{lc}
     \toprule
@@ -223,7 +223,7 @@ We experiment with following policies:
 \section{Results and Discussion} % (fold)
 \label{sec:results}
 
-Figure~\ref{pr_curves} displays the Precision-Recall graph at a given number of
+Figure~\ref{fig:pr_curves} displays the Precision-Recall graph at a given number of
 sampled unknown pairs. With zero error probability, relevance feedback reduces
 the number of comparisons required for each specifies by a factor of 317 and
 307 for grand and otago respectively. Within four iterations of feedback loop,
@@ -236,11 +236,20 @@ interpolation of the new information.
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{pr/grand}}\\
-  \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{pr/otago}}
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{pr/grand}
+      \caption{Grand}
+  \end{subfigure}%
+  ~\\
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{pr/otago}
+      \caption{Otago}
+  \end{subfigure}%
   \captionsetup{justification=centering}
   \caption{Precision-Recall graph ($Error=0$, \texttt{batch\_size}$=400$)}
-  \label{pr_curves} %chktex 24
+  \label{fig:pr_curves} %chktex 24
 \end{figure}
 
 \subsection{Batch Sizes} % (fold)
@@ -257,16 +266,34 @@ size that is still large enough to engage the workers.
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{sizes/graoc}}\\
-  \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{sizes/otaoc}}
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{sizes/graoc}
+      \caption{Grand}
+  \end{subfigure}%
+  ~ \\
+    \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{sizes/otaoc}
+      \caption{Otago}
+  \end{subfigure}%
   \captionsetup{justification=centering}
   \caption{Mean Average Precision (MAP) for different batch sizes ($Error=0$)}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{sizes/grtotal}}\\
-  \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{sizes/ottotal}}
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{sizes/grtotal}
+      \caption{Grand}
+  \end{subfigure}%
+  ~ \\
+    \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{sizes/ottotal}
+      \caption{Otago}
+  \end{subfigure}%
   \captionsetup{justification=centering}
   \caption{The total number of unknown pairs marked to achieve $MAP=1$
   ($Error=0$, \texttt{batch\_size}$=100$). Notice that this equals the total 
@@ -291,9 +318,14 @@ eventually.
 
 \begin{figure}[htb]
   \centering
-  \subfloat[Grand]{\includegraphics[width=\textwidth]{errors/graoc}}
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.7\textwidth]{errors/graoc}
+      \caption{Grand}
+  \end{subfigure}%
+  % TODO Add Otago
   \caption{Mean Average Precision for different probabilities of error}
-  \label{fig:grand_aoc} %chktex 24
+  \label{fig:errors_aoc} %chktex 24
 \end{figure}
 % subsection errors (end)
 
@@ -310,11 +342,19 @@ between grand and otago.
 
 \begin{figure}[htbp]
   \centering
-  \subfloat[Grand]{\includegraphics[width=0.8\textwidth]{policies/grand}}\\
-  \subfloat[Otago]{\includegraphics[width=0.8\textwidth]{policies/otago}}
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.6\textwidth]{policies/grand}
+      \caption{Grand}
+  \end{subfigure}%
+  ~\\
+  \begin{subfigure}[t]{\textwidth}
+      \centering
+      \includegraphics[width=0.6\textwidth]{policies/otago}
+      \caption{Otago}
+  \end{subfigure}%
   \captionsetup{justification=centering}
-  \caption{Mean Average Precision (MAP) for various sampling policies ($Error=0$,
-    \texttt{batch\_size}$=100$)}
+  \caption{Mean Average Precision (MAP) for various sampling policies ($Error=0$, \texttt{batch\_size}$=100$)}
 \end{figure}
 % subsection sampling_policies (end)
 
