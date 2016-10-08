@@ -186,17 +186,29 @@ an incorrect answer to the unknown pair is
 $$\epsilon_m^{n-1} \cdot \frac{1}{2^m}$$.
 In the case that two assignment are accepted, but the resulting answer to the
 unknown pair is incorrect
-$$\epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}} \mbox{if both are incorrect}$$.
-$$\epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}} \mbox{if both answers do not match and the actual answer is the same}$$.
+$$\epsilon_m^{n-2} \cdot \binom{2}{2}\frac{1}{2^{2\cdot m}} \mbox{if both are incorrect}$$.
+$$\epsilon_m^{n-2} \cdot \binom{2}{1}\frac{1}{2^{2\cdot m}} \mbox{if both answers do not match and the actual answer is the same}$$.
 The error rate in this case is thus
-$$2 \cdot \epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}} \mbox{if both answers do not match and the actual answer is the same}$$.
+$$3 \cdot \epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}} \mbox{if both answers do not match and the actual answer is the same}$$.
 In the case that three assignment are accepted, but the resulting answer to the
 unknown pair is incorrect
-$$\epsilon_m^{n-3} \cdot \frac{1}{2^{3\cdot m}} \mbox{if all are incorrect}$$.
+$$\epsilon_m^{n-3} \cdot \binom{3}{3}\frac{1}{2^{3\cdot m}} \mbox{if all are incorrect}$$.
 $$\epsilon_m^{n-3} \cdot \binom{3}{2}\frac{1}{2^{3\cdot m}} \mbox{if two are incorrect}$$.
 The error rate in this case is thus
-$$4 \epsilon_m^{n-3} \cdot \binom{3}{2}\frac{1}{2^{3\cdot m}} \mbox{if two are incorrect}$$.
+$$4 \epsilon_m^{n-3} \cdot \frac{1}{2^{3\cdot m}} \mbox{if two are incorrect}$$.
 ...
+Let $i$ be the number of assignments accepted and 
+$\epsilon_{nm} = \frac{1}{2^m\epsilon_m}$.
+The error rate can be generalized as following:
+\begin{description}
+  \item[$i$ is odd]
+  $$(\binom{i}{i} + \binom{i}{i-1} + ... + \binom{i}{\frac{i+1}{2}})\epsilon_{nm}^i \epsilon_m^n$$
+  \item[$n$ is even]
+  $$(\binom{i}{i} + \binom{i}{i-1} + ... + \binom{i}{\frac{i}{2}})\epsilon_{nm}^i \epsilon_m^n$$
+\end{description}
+By binomial theroem, the total error rate is bounded by
+
+
 
 When the only person whose assignment is correct
 
