@@ -146,7 +146,8 @@ skill level.
 
 To further ensure the correctness of the answers submitted by the workers, we
 publish the same assignment to three workers, and determine the correct answer
-by consensus. We only allow workers with a task acceptance rate higher than
+by consensus. Conflicts are resolved by marking the individuals in the unknown
+pairs as different. We only allow workers with a task acceptance rate higher than
 0.8, to prevent spam. If the majority agrees on some answer, it may be safe to
 assume that it is correct. Obviously, the more number of workers we assign to a
 given task, the less chance there is of getting an incorrect answer. However,

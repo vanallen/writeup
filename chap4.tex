@@ -171,18 +171,46 @@ number of pairs sampled to reach convergence for each batch size.
 \subsection{Errors} % (fold)
 \label{sub:errors}
 
-Despite the task distribution and the gold standard questions, there is
-a probability of 0.078 of obtaining an incorrect answer, assuming that all the
-preventive events are independent. However, in practice, errors occur
-haphazardly rather than systematically. Thus, 0.078 is the worst case, where we
-assumed the worker always make a guess with equal probability.
+Despite all the preventive measures, i.e. task distribution and the gold standard
+questions, there is probability of obtaining an incorrect answer, assuming
+that all the events are independent.
+
+Suppose each HIT is distributed to $n$ workers -- or, in other words, each HIT
+contains $n$ assignments and there are $m$ questions for each assignments.
+For each assignment, the chance that an assignment is accepted with
+an incorrect answer to the unknown pair is $\frac{1}{2^m}$, and the chance
+that an assignment is rejected is $\epsilon_m = (1-\frac{1}{2^{m-1}})$
+
+In the case that only one assignment, out of $n$ assignments, is accepted with
+an incorrect answer to the unknown pair is
+$$\epsilon_m^{n-1} \cdot \frac{1}{2^m}$$.
+In the case that two assignment are accepted, but the resulting answer to the
+unknown pair is incorrect
+$$\epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}} \mbox{if both are incorrect}$$.
+$$\epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}} \mbox{if both answers do not match and the actual answer is the same}$$.
+The error rate in this case is thus
+$$2 \cdot \epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}} \mbox{if both answers do not match and the actual answer is the same}$$.
+In the case that three assignment are accepted, but the resulting answer to the
+unknown pair is incorrect
+$$\epsilon_m^{n-3} \cdot \frac{1}{2^{3\cdot m}} \mbox{if all are incorrect}$$.
+$$\epsilon_m^{n-3} \cdot \binom{3}{2}\frac{1}{2^{3\cdot m}} \mbox{if two are incorrect}$$.
+The error rate in this case is thus
+$$4 \epsilon_m^{n-3} \cdot \binom{3}{2}\frac{1}{2^{3\cdot m}} \mbox{if two are incorrect}$$.
+...
+
+When the only person whose assignment is correct
+
+
+However, in practice, errors occur haphazardly rather than systematically.
+Thus, 0.078 is the worst case, where we assumed the worker always make a guess 
+with equal probability.
 
 This experiment models such errors. Given an error probability $\epsilon$, if
 a pair of captures is sampled, the simulator marks it with the annotated answer
 (correct answer) with the probability $1-\epsilon$; otherwise, the pair is
-marked with the opposite label (the incorrect answer). Again, we compare the values
-of MAP at each iteration and the total number of pairs sampled for each error
-probability.
+marked with the opposite label (the incorrect answer). Again, we compare the
+values of MAP at each iteration and the total number of pairs sampled for each
+error probability.
 % subsection errors (end)
 
 \subsection{Sampling Policies} % (fold)
