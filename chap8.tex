@@ -11,13 +11,13 @@
 \subsection{Recognition}
 
 To evaluate the initial results, we calculate precision, recall, and F1 values
-of the predicted results compare to the gold standard annotated by the
+of the predicted results compared to the gold standard annotated by the
 biologists.
 
 \textbf{Input Processing}
 
-According to the proposed architecture in Section~\ref{sec:system_overview}, we
-have experimented with both method of input processing, namely, concatenation
+As discussed in the proposed architecture in Section~\ref{sec:system_overview}, we
+have experimented with both methods of input processing: concatenation
 and computing the difference. The results are shown in
 Table~\ref{tab:concatenation_table} and Table~\ref{tab:results_table}.
 
@@ -48,12 +48,12 @@ Table~\ref{tab:concatenation_table} and Table~\ref{tab:results_table}.
   \end{tabular}
 \end{table}
 
-All the classifiers perform poorly when feature vectors concatenation is used
+All the classifiers perform poorly when feature vector concatenation is used
 as the input processing method. This happens because of the \emph{curse of
 dimensionality}, where there are too many unnecessary input features. Doubling
 the dimension of the input image vector overcomplicates the classifier
-parameters causing the downfall in the prediction accuracy. On the other hand,
-the classifiers tend to perform pretty well when using absolute feature
+parameters causing a downfall in prediction accuracy. On the other hand,
+the classifiers tend to perform well when using the absolute feature
 difference as the input.
 
 \afterpage{%
@@ -129,18 +129,18 @@ difference as the input.
     \clearpage% Flush page
 }
 
-Considering the classification results in Table~\ref{tab:results_table}, all
-the classifiers seem to perform equally well on the test data considering the
-F-beta score. SVM with radial bas kernel function yields the most stable
+Considering the F-beta score in the classification results in
+Table~\ref{tab:results_table}, all the classifiers seem to perform equally well
+on the test data.  SVM with radial base kernel function yields the most stable
 performance with very high precision for both species. The offline algorithms
 slightly outrun all the online ones on average.
 
-In the system such as Sloop, we would like to have a high standard on the
+In a system such as Sloop, we would like to have a high standard for the
 individuals marked as a match because mistakes are extremely detrimental. It
-can easily propagate over the whole database so we would like to select a
-classifier with high F-beta score, preferably with high precision. In general,
-SVM-RBF is a very safe choice. However, the classifier with highest F-beta
-score are listed as following:
+can easily propagate over the whole database, so we would like to select a
+classifier with a high F-beta score and a high precision. In general,
+SVM-RBF is a very safe choice. However, the classifiers with the highest F-beta
+scores are listed as following:
 
 \begin{itemize}
   \item Gr$^{L}$-I SVM-RBF
@@ -151,7 +151,7 @@ score are listed as following:
 \end{itemize}
 
 Species-wise, classification results for Otago skinks seem to have higher
-recall, but lower precision, than that of Grands despite the similar proportion
+recall but lower precision than that of Grands, despite the similar proportion
 between the matching and non-matching pairs in training, validation, and test
 sets. This implies that the feature vectors of Otago are pretty similar to one
 another in the classifiers' point of view. The similarity results from the
