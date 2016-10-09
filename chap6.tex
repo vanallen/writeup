@@ -9,14 +9,14 @@
 % * Data gathering procedure (experiments)
 \chapter{Relevance Feedback with Adaptive Sampling}
 
-One of the most important questions we would like to answer is: given an
-initial distribution of scores, where should we be sampling from? In this
-chapter, we take advantage from the fact that we gradually gain more
+One of the most important questions we would like to answer is \emph{given an
+initial distribution of scores, where should we be sampling from?} In this
+chapter, we take advantage of the fact that we gradually gain more
 information about the score distribution over time to dynamically determine
 where we should be sampling from.
 
-First, we perform different statistical analyses on the data. Then we propose a
-new sampling scheme based on our analyses. Finally, we set up an experiment to
+First, we perform different statistical analysis on the data. Then we propose a
+new sampling scheme based on our analysis. Finally, we set up an experiment to
 compare the performance of our proposed scheme to the other standard sampling
 policies we have implemented.
 
@@ -57,17 +57,17 @@ $$\Pr{(score=s \mid nonmatch)} = \frac{\texttt{\# nonmatches\_whose\_score=s}}
   \label{fig:grand_sm} %chktex 24
 \end{figure}
 
-From Figure~\ref{fig:grand_sm}, we can deduct following conclusions:
+From Figure~\ref{fig:grand_sm}, we can reach the following conclusions:
 \begin{itemize}
-\item Most of the cohorts has score between 0 and 0.07 overall so most matches
-and non-matches have score less than 0.06.
-\item We expected $\Pr{(score \mid match)}$ to increase as the function of score
-, but it turns out that it actually decreases. This results from the fact that
-there are \emph{very few} matches with scores higher than 0.33, which is the 99th
-percentile of the matches' score.
+\item Most of the cohorts have scores between 0 and 0.07 overall, so most matches
+and non-matches have scores less than 0.06.
+\item We expected $\Pr{(score \mid match)}$ to increase as the function of score,
+but it turns out that it actually decreases. This results from the fact that
+there are \emph{very few} matches with scores higher than 0.33, which is the
+99\textsuperscript{th} percentile of the scores.
 
 \item The number of matches with $score \in [0.08, 0.35)$ is greater than that
-of non-matches with the score in the same range. That is $$\Pr{(score \mid
+of non-matches in the same range. That is, $$\Pr{(score \mid
 match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [0.08, 0.35)$$
 
 \end{itemize}
@@ -96,7 +96,7 @@ match)} > \Pr{(score \mid nonmatch)} \mbox{ where } score\in [0.08, 0.35)$$
     %$F\[non-match\]$ and $F\[match\]$
     \end{subfigure}%
   \caption{Functions of Score given matches/non-matches}
-  \label{fig:otago_sm}
+  \label{fig:otago_sm} %chktex 24
 \end{figure}
 
 % TODO analyze Otago
@@ -155,7 +155,7 @@ minimal cost required to transform $\Pr{(score \mid nonmatch)}$ to $\Pr{(score
 \mid match)}$.
 
 Initially, we also expected that the relationship between EMD and cohort size
-should be Gaussian. However, there seem to be no relationship between
+should be Gaussian. However, there seems to be no relationship between
 $\Pr{(score \mid nonmatch)}$ and $\Pr{(score \mid match)}$.
 
 \begin{figure}[htbp]
@@ -180,7 +180,7 @@ $\Pr{(score \mid nonmatch)}$ and $\Pr{(score \mid match)}$.
 \subsection{Entropy of $\Pr{(score \mid match)}$ at different cohort sizes}
 
 Entropy is the average amount of information we get from each distribution.
-$H(X|Y)$ = amount of randomness in the random variable X given the event Y.
+$H(X|Y)$ is the amount of randomness in the random variable $X$ given the event $Y$.
 
 \begin{figure}[htbp]
     \centering
@@ -245,30 +245,31 @@ $$\Pr{(nonmatch \mid score)} = \frac{\Pr{(score \mid nonmatch)}\Pr{(nonmatch)}}
     \label{fig:otago_pms} %chktex 24
   \end{subfigure}
   \caption{Probability of matches/non-matches given score}
-  \label{fig:pms}
+  \label{fig:pms} %chktex 24
 \end{figure}
 
 \section{Adaptive Sampling Policies} % (fold)
 \label{sec:sampling_policies}
 
-Starting with a completely unknown pairs, we would like to first get the idea
-of how the overall distribution looks like. As we have seen in
+Starting with completely unknown pairs, we would like to first get the idea
+of how the overall distribution looks. As we have seen in
 Chapter~\ref{chap:relevance_feedback}, the unbiased sampling policies, such as
-Uniform, and AllScores, that broadly sample the data from the distribution seem
+Uniform and AllScores, that broadly sample the data from the distribution seem
 to form a set of good candidates.
 
 Upon the retrieval of the general distribution, we would like to adaptively
-utilize the known data to determine the optimal sampling site. We experiment
+utilize the known data to determine the optimal sampling location. Using
+various sampling policies, we experiment
 with sampling from the peak of the difference between the CDF of the score
-given matches and non-matches using various sampling policies.
+given matches and non-matches.
 
 After we get the general picture of the distribution, we repeatedly reconstruct
 the plot of the difference between the CDF of the score given matches and
-non-matches, then uses normal sampling policy to overlay a Gaussian
-distribution, with $\mu=$\texttt{peak\_of\_the\_CDF\_difference} and
-$\sigma=0.3$, on the data. We continue each cycle by the sampling probability
+non-matches, then use a normal sampling policy to overlay a Gaussian
+distribution on the data, with $\mu=$\texttt{peak\_of\_the\_CDF\_difference} and
+$\sigma=0.3$. We continue each cycle by the sampling probability
 distribution reconstruction, and sampling from the generated distribution.
-Additionally, we also use Specific sampling policy to sample specifically at
+Additionally, we use a Specific sampling policy to sample specifically at
 the \texttt{peak\_of\_the\_CDF\_difference} to compare the performance with the
 Normal sampling policy.
 
@@ -286,7 +287,7 @@ Normal sampling policy.
   \label{fig:adaptive_aoc} %chktex 24
 \end{figure}
 
-The adaptive sampling policy seem to perform averagely well. The performance
+The adaptive sampling policy seems to have average performance. It
 does not differ from that of the other static sampling policies we have seen in
 Chapter~\ref{chap:relevance_feedback}.
 
