@@ -13,21 +13,21 @@
 
 As described in Chapter~\ref{chap:relevance_feedback}, multiple rounds of
 relevance feedback accelerates precision and recall. Such feedback can be 
-obtained through various approaches at different costs. We could also send all
+obtained through various approaches at different costs. We could send all
 the system's peliminary results to the biologists to verify the matches.
-Nevertheless, this option is impossible to implement on a large scale and costly
-since clearly their time would have been better spent elsewhere.
+However, this option is impossible to implement on a large scale and costly
+because clearly their time would have been better spent elsewhere.
 
-Instead, we utilize \emph{crowdsourcing} markets to efficiently gather the
-feedback. The markets provide \emph{repeated interaction} between 
-requesters and workers enabling us to obtain solutions to simple human-friendly
-tasks that are difficult for computers to solve at an affordable price. However,
-taking account of the cost requires the acceptance of any necessary trade-offs
-between quality and quantity. To solve alleviate this problem, we need an
+Instead, we utilize \emph{crowdsourcing} markets to efficiently gather
+feedback. The markets provide repeated interaction between requesters and
+workers, enabling us to obtain solutions to simple human-friendly tasks that
+are difficult for computers to solve. However, taking an account of the cost
+requires the acceptance of any necessary trade-offs between quality and
+quantity. To alleviate this problem, we need an
 effective quality control policy so that workers, requesters, and the platform
 itself can all adjust their behavior over time. 
 
-This chapter explains about crowdsourcing within Sloop and later presents the
+This chapter explains crowdsourcing within Sloop and later presents the
 architecture of \emph{Sloop MTurk}, the crowdsourced relevance feedback engine
 for Sloop.
 
@@ -37,19 +37,20 @@ for Sloop.
   \subsection{Platform Selection}
 
   Workers and requesters interact via a crowdsourcing platform. There are several 
-  platforms available, each with diffferent focuses. Examples of such
+  platforms available, each with a diffferent focus. Examples of such
   platforms are 
-  Amazon Mechanical Turk, which focuses on a series of small repetitive tasks~\cite{sliv14}, 
-  Microsoft’s Universal Human Relevance System (UHRS), whose tasks mainly involve organizing online contents, 
+  Amazon Mechanical Turk, which focuses on a series of small repetitive
+  tasks~\cite{sliv14}; Microsoft's Universal Human Relevance System (UHRS),
+  whose tasks mainly involve organizing online contents;
   and Upwork, which focuses on larger projects that requires programming skill.
   % TODO explain why we choose MTurk
   All our tasks are published on Amazon Mechanical Turk (MTurk), which is one of the most
   popular crowdsourcing platforms.
 
-  \subsection{Human Intelligence Task (HIT)}
+  \subsection{Human Intelligence Tasks (HITs)}
 
   Tasks published on MTurk are called Human Intelligence Tasks (HITs). The terms
-  `HIT' and `tasks' will be used interchangeably throughout this report.
+  `HIT' and `task' will be used interchangeably throughout this report.
 
   Requesters publish the tasks that they need completed to Amazon Mechanical
   Turk's marketplace with a set payment to reward workers who finish the tasks.
@@ -88,7 +89,7 @@ for Sloop.
   \end{enumerate}
 
   \subsubsection{Validation}
-  \label{subsub:validation}
+  \label{subsub:validation} %chktex 24
 
   For each task, since the quality of the submitted work is not directly
   observable, we add three other \emph{gold standard} questions, for which the
