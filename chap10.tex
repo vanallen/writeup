@@ -6,31 +6,31 @@
 
 \section{Convolutional Neural Network}
 
-One possible improvement is to tailor and train the parameters of the
+One possible improvement would be to tailor and train the parameters of the
 Convolutional Network to best fit our data. However, this requires a much
 larger dataset of labeled images. Therefore, we need to increase the size of
 our dataset.
 
-In order to properly evaluate the new system performance, we should use the
+In order to properly evaluate the new system's performance, we should use the
 SIFT algorithm in the previous system as our baseline. We have already
-generated the SIFT object representing each images available in the system
-however, they are generated from a sets of keypoints that are manually marked
-so that it is able to acheives 99.99\% ranking accuracy. With such biase, it is
-hard to evaluate the relative performance between the new and the old system.
+generated the SIFT objects representing each image available in the system,
+however, they are generated from fiducial points that are manually marked
+so that it is able to acheives 99.99\% ranking accuracy. With such bias, it is
+hard to evaluate the relative performance between the new and the old systems.
 
 Further, we can evaluate the performance of the model by analyzing the receiver
-operating characteristics (ROC), or ROC curves, which illustrates the
+operating characteristics, or ROC curves, which illustrates the
 performance of a classifier model. ROC exhibits the relationship between true
 positive rate (TPR) and the false positive rate (FPR), which provides tools to
 select possibly optimal models and to discard suboptimal ones.
 
-Since the datasets contain the human input, the manual input data can be
-utilized to improve the identification result as a one of the features. The
-definition of number of human interaction depends on the action required to
+Since the datasets contain human input, the manually input data can be
+utilized to improve the identification results as one of the features. The
+number of human interactions depends on the action required to
 complete a specific classification task. For instance, if the classification
-task requires user to click on the photos, the number of user clicks will then
-determine the number of human interaction. The classification results of the
+task requires users to click on the photos, the number of user clicks will then
+determine the number of human interactions. The classification results of the
 completely automated feature extractor and semi-automated feature extractor
-should be compared to determine the optimal human involvement.
+should be compared to determine the optimal level of human involvement.
 
 % chapter future_work (end)
