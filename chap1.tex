@@ -17,10 +17,10 @@ Unbiased information about animal population ecology gives biologists vital
 information about the effects of different physical or biological factors on
 the distribution and abundance of animal species, which plays a key role in the
 development of effective conservation strategies for rare and endangered
-species. Typical approaches that biologists take to estimate the size of a
-population of a given species often involve physically marking the animals.
-These approaches are not only expensive both in terms of time and cost, but
-they are also invasive for the animals.
+species. One typical approach that biologists take to estimate the size of a
+population of a given species is physically marking the animals.
+This approach is not only expensive both in terms of time and cost, but
+also invasive for the animals.
 
 The ability to identify an individual animal by recognizing it in photographs
 provides a non-invasive alternative that allows researchers to monitor the
@@ -31,15 +31,17 @@ the arduous task of comparing over a thousand images of every individual animal
 and their potential matches makes manual reviews impractical for large
 collections. To alleviate the problem, we need to automate the recognition
 process using computer-based image recognition techniques.
+These two improvements are relevance feedback integration and convolutional
+neural network integration.
 
 The considerable progress we have seen in computer vision is largely due to
 local descriptor-based algorithms, such as SIFT~\cite{lowe04}, and
-SURF~\cite{surf08}, etc. The field of computer vision covers a wide range of
-topics. For the purpose of animal image biometrics, this thesis will deal
+SURF~\cite{surf08}, etc.
+For the purpose of animal image biometrics, this thesis will deal
 mostly with the image classification and recognition problems. Despite the
 stellar performance of these algorithms in the past decades, there exists a
 substantial gap between algorithmic and human-level performance. In this work,
-we present two improvements, to \emph{Sloop}, the first pattern retrieval
+we present two improvements to \emph{Sloop}, the first pattern retrieval
 engine for animal biometrics incorporating crowd-sourced relevance feedback.
 These improvements are shown to bridge the performance gap between these
 machine-based algorithms and humans.
@@ -65,10 +67,6 @@ iterations and re-evaluates its strategy based on the gold standard responses
 from a human given at the previous iteration. However, this is out of scope
 for our work. In this project, we focus on the problem of how we can maximize
 the information gain from a given amount of user input.
-
-This project involves design and implementation of two additional features of
-Sloop: relevance feedback integration and convolutional neural network
-integration.
 
 \section{Problem Statements}
 
