@@ -1,5 +1,5 @@
 % Introduction (context in terms of content of the project)
-% * Significance (who will benefit? contribution of the study)
+% * Significance (who will benefit? Contribution of the study)
 % * Statement of the problem (problem must be reflected to the title)
 % * Conceptual framework (problems in relation to relevant literatures,
 % summarize the major variables -- independent variables/cause,
@@ -18,9 +18,9 @@ information about the effects of different physical or biological factors on
 the distribution and abundance of animal species, which plays a key role in the
 development of effective conservation strategies for rare and endangered
 species. One typical approach that biologists take to estimate the size of a
-population of a given species is physically marking the animals.
-This approach is not only expensive both in terms of time and cost, but
-also invasive for the animals.
+population of a given species is physically marking the animals.  This approach
+is not only expensive both in terms of time and cost, but also invasive for the
+animals.
 
 The ability to identify an individual animal by recognizing it in photographs
 provides a non-invasive alternative that allows researchers to monitor the
@@ -31,20 +31,18 @@ the arduous task of comparing over a thousand images of every individual animal
 and their potential matches makes manual reviews impractical for large
 collections. To alleviate the problem, we need to automate the recognition
 process using computer-based image recognition techniques.
-These two improvements are relevance feedback integration and convolutional
-neural network integration.
 
 The considerable progress we have seen in computer vision is largely due to
 local descriptor-based algorithms, such as SIFT~\cite{lowe04}, and
-SURF~\cite{surf08}, etc.
-For the purpose of animal image biometrics, this thesis will deal
-mostly with the image classification and recognition problems. Despite the
-stellar performance of these algorithms in the past decades, there exists a
-substantial gap between algorithmic and human-level performance. In this work,
-we present two improvements to \emph{Sloop}, the first pattern retrieval
-engine for animal biometrics incorporating crowd-sourced relevance feedback.
-These improvements are shown to bridge the performance gap between these
-machine-based algorithms and humans.
+SURF~\cite{surf08}, etc.  For the purpose of animal image biometrics, this
+thesis will deal mostly with the image classification and recognition problems.
+Despite the stellar performance of these algorithms in the past decades, there
+exists a substantial gap between algorithmic and human-level performance. In
+this work, we present two improvements: convolutional neural network
+integration and relevance feedback integration to \emph{Sloop}~\cite{sloop},
+the first pattern retrieval engine for animal biometrics incorporating
+crowd-sourced relevance feedback.  These improvements are shown to bridge the
+performance gap between these machine-based algorithms and humans.
 
 In the last few years, deep convolutional neural networks~\cite{lecun95,
 kriz12} have outperformed SIFT and other descriptor-based techniques by a large
@@ -64,52 +62,71 @@ train a machine learning model. The model can incrementally learn from the
 accumulation of user-input data in our retrieval system. This creates a
 positive feedback loop where the model learns its mistakes from the previous
 iterations and re-evaluates its strategy based on the gold standard responses
-from a human given at the previous iteration. However, this is out of scope
-for our work. In this project, we focus on the problem of how we can maximize
-the information gain from a given amount of user input.
+from a human given at the previous iteration. However, this is out of scope for
+our work. In this project, we focus on the problem of how we can maximize the
+information gain from a given amount of user input.
+
+
+\section{Challenges}
 
 \section{Problem Statements}
 
 \subsection{Relevance Feedback} % (fold)
 \label{sub:relevance_feedback}
-One problem of interest is assigning tasks to workers with the goal of maximizing
-the quality of completed tasks at a low prices or subject to budget
-constraints.
+
+One problem of interest is assigning tasks to workers with the goal of
+maximizing the quality of completed tasks at a low prices or subject to budget
+constraints. As a requester, our utility is the ratio between the amount of
+information gain from completed work and the price that we have to pay for the
+work. Hence, our problem is to design a mechanism which makes repeated
+decisions to maximize our utility.
 % subsection relevance_feedback (end)
 
 \subsection{Image Recognition} % (fold)
 \label{sub:image_recognition}
-The emergence of convolutional neural networks pushes forward the frontiers of all
-domains of computer vision~\cite{lecun95}. Recent studies show that
-convolutional neural network architectures clearly dominate both handcrafted
-features and traditional orientation-based local descriptors, such as
-SIFT~\cite{lowe04}, and SURF~\cite{surf08}, etc.\ in classification
-tasks~\cite{fisher14,kriz12,prelu15,ILSVRC15}.
-
-The second part of this thesis presents a new architecture whose goal is to
-improve the identification accuracy as well as curtail or eliminate human
-involvement. We compare the recognition ability of the two algorithms: SIFT and
-convolutional neural networks.
-% subsection image_recognition (end)
-
-\section{Challenges}
 
 The animal identification task involves two major challenges: the \emph{image
 feature extraction problem}, and the \emph{pattern recognition problem}.
+\begin{description}
+    \item[Image feature extraction problem] involves locating the animal in the
+    image, and extracting the features required for matching. The choice of
+    feature selection varies from species to species.
 
-The image feature extraction problem involves locating the animal in the image,
-and extracting the features required for matching. The choice of feature
-selection varies from species to species. The extracted feature object of an
-image is then passed into the pattern recognition algorithm to find the matches
-that exist in the system. The current version of Sloop locates the animal and
-necessary features in an image by having the user click on fiducial points in
-the image, and then calculates the feature vector using SIFT\@. It performs the
-matching by scoring the similarity of the SIFT objects between images.
+    \item[Pattern recognition problem] The extracted feature object of an image
+    is then passed into the pattern recognition algorithm to find the matches
+    that exist in the system.
+\end{description}
+
+The current version of Sloop locates the animal and necessary features in an
+image by having the user click on fiducial points in the image, and then
+calculates the feature matrix using SIFT\@. It then performs matching by
+iteratively checking if a keypoint descriptor exist in the other image.  The
+more matching keypoints there are, the more likely that the pair of images is a
+match.
+
+Since all the keypoints are weighted equally, Sloop needs human assistance to
+locate the discriminating features to exclude the noises and background. User
+assistance in feature extraction is generally considered unnecessary and
+expensive.  Thus, our first problem in this section is to fully automate the
+feature extraction process. 
+
+Matching such human engineered features, as in SIFT, may lead to poor
+generalization~\cite{fisher14}.  Further, the currently employed feature
+descriptors matching approach also overlooks the relationship between two
+nearby local descriptors. Ideally, we would like our algorithm to automatically
+learn the features from the sample images and recognize possible matches
+accordingly.
 
 Traditional approaches in machine learning generally require training samples
 to be available for all categories. Moreover, such approaches are designed to
 handle only the dataset with a finite, preferably small, number of categories.
-Nevertheless, our application requires the ability to recognize high
-dimensional input, whose categories are not known in advance. In addition,
-while the number of categories can be very large, the number of examples per
-category can be very small.
+On the other hand, our application requires the ability to recognize high
+dimensional input, whose categories are not known in advance. While the number
+of categories can be very large, the number of examples per category can be
+very small.
+
+The second part of this thesis presents a new architecture whose goal is to
+improve the recognition accuracy as well as curtail or eliminate human
+involvement. We then compare the recognition ability of the two algorithms:
+SIFT and convolutional neural networks.
+% subsection image_recognition (end)
