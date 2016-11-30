@@ -10,6 +10,35 @@
     Year = 2014
 }
 
+@ARTICLE{transfer, 
+author={S. J. Pan and Q. Yang}, 
+journal={IEEE Transactions on Knowledge and Data Engineering}, 
+title={A Survey on Transfer Learning}, 
+year={2010}, 
+volume={22}, 
+number={10}, 
+pages={1345-1359}, 
+keywords={knowledge engineering;learning by example;optimisation;unsupervised learning;data mining;inductive transfer learning;knowledge transfer;machine learning;transductive transfer learning;unsupervised transfer learning;Data mining;Knowledge engineering;Knowledge transfer;Labeling;Learning systems;Machine learning;Machine learning algorithms;Space technology;Testing;Training data;Transfer learning;data mining.;machine learning;survey}, 
+doi={10.1109/TKDE.2009.191}, 
+ISSN={1041-4347}, 
+month={Oct},}
+
+# https://arxiv.org/abs/1411.1792
+@article{transfer14,
+  author    = {Jason Yosinski and
+               Jeff Clune and
+               Yoshua Bengio and
+               Hod Lipson},
+  title     = {How transferable are features in deep neural networks?},
+  journal   = {CoRR},
+  volume    = {abs/1411.1792},
+  year      = {2014},
+  url       = {http://arxiv.org/abs/1411.1792},
+  timestamp = {Mon, 01 Dec 2014 14:32:13 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/YosinskiCBL14},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
 @article{emd00,
  author = {Rubner, Yossi and Tomasi, Carlo and Guibas, Leonidas J.},
  title = {The Earth Mover's Distance As a Metric for Image Retrieval},
@@ -45,35 +74,54 @@
   bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
+@article{cvevaluation,
+ author = {Forman, George and Scholz, Martin},
+ title = {Apples-to-apples in Cross-validation Studies: Pitfalls in Classifier Performance Measurement},
+ journal = {SIGKDD Explor. Newsl.},
+ issue_date = {June 2010},
+ volume = {12},
+ number = {1},
+ month = nov,
+ year = {2010},
+ issn = {1931-0145},
+ pages = {49--57},
+ numpages = {9},
+ url = {http://doi.acm.org/10.1145/1882471.1882479},
+ doi = {10.1145/1882471.1882479},
+ acmid = {1882479},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
 @article{ILSVRC15,
-Author = {Olga Russakovsky and Jia Deng and Hao Su and Jonathan Krause and Sanjeev Satheesh and Sean Ma and Zhiheng Huang and Andrej Karpathy and Aditya Khosla and Michael Bernstein and Alexander C. Berg and Li Fei-Fei},
-Title = {{ImageNet Large Scale Visual Recognition Challenge}},
-Year = {2015},
-journal   = {International Journal of Computer Vision (IJCV)},
-doi = {10.1007/s11263-015-0816-y},
-volume={115},
-number={3},
-pages={211-252}
+  Author = {Olga Russakovsky and Jia Deng and Hao Su and Jonathan Krause and Sanjeev Satheesh and Sean Ma and Zhiheng Huang and Andrej Karpathy and Aditya Khosla and Michael Bernstein and Alexander C. Berg and Li Fei-Fei},
+  Title = {{ImageNet Large Scale Visual Recognition Challenge}},
+  Year = {2015},
+  journal   = {International Journal of Computer Vision (IJCV)},
+  doi = {10.1007/s11263-015-0816-y},
+  volume={115},
+  number={3},
+  pages={211-252}
 }
 
 @article{lowe04,
-    author = {Lowe, David G.},
-    title = {Distinctive Image Features from Scale-Invariant Keypoints},
-    journal = {Int. J. Comput. Vision},
-    issue_date = {November 2004},
-    volume = {60},
-    number = {2},
-    month = nov,
-    year = 2004,
-    issn = {0920-5691},
-    pages = {91--110},
-    numpages = {20},
-    url = {http://dx.doi.org/10.1023/B:VISI.0000029664.99615.94},
-    doi = {10.1023/B:VISI.0000029664.99615.94},
-    acmid = {996342},
-    publisher = {Kluwer Academic Publishers},
-    address = {Hingham, MA, USA},
-    keywords = {image matching, invariant features, object recognition, scale invariance}
+  author = {Lowe, David G.},
+  title = {Distinctive Image Features from Scale-Invariant Keypoints},
+  journal = {Int. J. Comput. Vision},
+  issue_date = {November 2004},
+  volume = {60},
+  number = {2},
+  month = nov,
+  year = 2004,
+  issn = {0920-5691},
+  pages = {91--110},
+  numpages = {20},
+  url = {http://dx.doi.org/10.1023/B:VISI.0000029664.99615.94},
+  doi = {10.1023/B:VISI.0000029664.99615.94},
+  acmid = {996342},
+  publisher = {Kluwer Academic Publishers},
+  address = {Hingham, MA, USA},
+  keywords = {image matching, invariant features, object recognition, scale invariance}
 } 
 
 @article{prelu15,
@@ -110,7 +158,7 @@ pages={211-252}
  publisher = {ACM},
  address = {New York, NY, USA},
  keywords = {crowdsourcing, dynamic pricing, multi-armed bandits, reputation systems},
-} 
+}
 
 @article{surf08,
     author = {Bay, Herbert and Ess, Andreas and Tuytelaars, Tinne and Van Gool, Luc},
@@ -219,19 +267,13 @@ pages={211-252}
     Pages = {1058-1066}
 }
 
-@inproceedings{transfer,
+@inproceedings{finetune,
     author = {Rich Caruana},
     title = {Learning Many Related Tasks at the Same Time With Backpropagation},
     booktitle = {Advances in Neural Information Processing Systems 7},
     year = 1995,
     pages = {657--664},
     publisher = {Morgan Kaufmann}
-}
-
-@misc{sloopdocs,
-    author = {Randy Westlund},
-    title = {Sloop 4.7 User Manual},
-    note = {Accessed: 2016-09-12}
 }
 
 @misc{ufldl,
@@ -242,4 +284,100 @@ pages={211-252}
             Caroline Suen},
     title = {Feature extraction using convolution},
     note = {Accessed: 2016-09-08}
+}
+
+
+# --------------------------------------
+
+@inbook{sloop13,
+  author = "Ravela, Sai
+  and Duyck, James
+  and Finn, Chelsea",
+  editor = "Carrasco-Ochoa, Jes{\'u}s Ariel
+  and Mart{\'i}nez-Trinidad, Jos{\'e} Francisco
+  and Rodr{\'i}guez, Joaqu{\'i}n Salas
+  and di Baja, Gabriella Sanniti",
+  title = "Vision-Based Biometrics for Conservation",
+  bookTitle = "Pattern Recognition: 5th Mexican Conference, MCPR 2013, Quer{\'e}taro, Mexico, June 26-29, 2013. Proceedings",
+  year = "2013",
+  publisher = "Springer Berlin Heidelberg",
+  address = "Berlin, Heidelberg",
+  pages = "10--19",
+  isbn = "978-3-642-38989-4",
+  doi = "10.1007/978-3-642-38989-4_2",
+  url = "http://dx.doi.org/10.1007/978-3-642-38989-4_2"
+}
+
+@inbook{sloop14,
+  author = "Finn, Chelsea
+  and Duyck, James
+  and Hutcheon, Andy
+  and Vera, Pablo
+  and Salas, Joaquin
+  and Ravela, Sai",
+  editor = "Mart{\'i}nez-Trinidad, Jos{\'e} Francisco
+  and Carrasco-Ochoa, Jes{\'u}s Ariel
+  and Olvera-Lopez, Jos{\'e} Arturo
+  and Salas-Rodr{\'i}guez, Joaqu{\'i}n
+  and Suen, Ching Y.",
+  title = "Relevance Feedback in Biometric Retrieval of Animal Photographs",
+  bookTitle = "Pattern Recognition: 6th Mexican Conference, MCPR 2014, Cancun, Mexico, June 25-28, 2014. Proceedings",
+  year = "2014",
+  publisher = "Springer International Publishing",
+  address = "Cham",
+  pages = "281--290",
+  isbn = "978-3-319-07491-7",
+  doi = "10.1007/978-3-319-07491-7_29",
+  url = "http://dx.doi.org/10.1007/978-3-319-07491-7_29"
+}
+
+@article{sloop15,
+  author = {Duyck, James and Finn, Chelsea and Hutcheon, Andy and Vera, Pablo and Salas, Joaquin and Ravela, Sai},
+  title = {Sloop},
+  journal = {Pattern Recognition.},
+  issue_date = {April 2015},
+  volume = {48},
+  number = {4},
+  month = apr,
+  year = {2015},
+  issn = {0031-3203},
+  pages = {1059--1073},
+  numpages = {15},
+  url = {http://dx.doi.org/10.1016/j.patcog.2014.07.017},
+  doi = {10.1016/j.patcog.2014.07.017},
+  acmid = {2801401},
+  publisher = {Elsevier Science Inc.},
+  address = {New York, NY, USA},
+  keywords = {Animal biometrics, Conservation, Crowdsourcing, Gecko, Hybrid shape contexts, Individual identification, Local features, Photo-identification, Relevance feedback, Salamander, Scale-cascaded alignment, Skink, Whale shark},
+}
+
+@manual{sloopdocs,
+  author = {Randy Westlund},
+  title = {Sloop 4.7 User Manual},
+  organization = {Massachusetts Institute of Technology},
+  year = {2016},
+  note = {Accessed: 2016-09-12}
+}
+
+@phdthesis{ravela02
+  author = {Ravela, S.},
+  title = {On Multi-scale Differential Features and their Representations for Recognition and Retrieval},
+  school = {University of Massachusetts at Amherst},
+  year = {2002}
+} # Face recognition with differential features and gaussian filtering. Suggest the use of relevance feedback (motivation)
+
+@inproceedings{ravela08,
+  author = {Sai Ravela and Chris Yang and Josh Runge},
+  title = {Visual Recapture for Movement Ecology at Interannual Timescales},
+  booktitle = {Workshop on Visual Observation and Analysis of Animal and Insect Behavior},
+  year = {2008}
+} # Sloop for marble salamander with relevance feedback (motivation)
+
+@inproceedings{yang09,
+    author = "Chris Yang and Sai Ravela",
+    title = "Spectral control of viscous alignment for deformation invariant image matching",
+    booktitle = "International Conference on Computer Vision",
+    volume = "1",
+    year = "2009",
+    pages = "1303–-1310"
 }
