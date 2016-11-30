@@ -19,8 +19,8 @@ the distribution and abundance of animal species, which plays a key role in the
 development of effective conservation strategies for rare and endangered
 species. One typical approach that biologists take to estimate the size of a
 population of a given species is physically marking the animals.  This approach
-is not only expensive both in terms of time and cost, but also invasive for the
-animals.
+is not only invasive for the animals, but also expensive both in terms of time
+and cost.
 
 The ability to identify an individual animal by recognizing it in photographs
 provides a non-invasive alternative that allows researchers to monitor the
@@ -32,17 +32,25 @@ and their potential matches makes manual reviews impractical for large
 collections. To alleviate the problem, we need to automate the recognition
 process using computer-based image recognition techniques.
 
-The considerable progress we have seen in computer vision is largely due to
-local descriptor-based algorithms, such as SIFT~\cite{lowe04}, and
-SURF~\cite{surf08}, etc.  For the purpose of animal image biometrics, this
-thesis will deal mostly with the image classification and recognition problems.
-Despite the stellar performance of these algorithms in the past decades, there
-exists a substantial gap between algorithmic and human-level performance. In
-this work, we present two improvements: convolutional neural network
-integration and relevance feedback integration to \emph{Sloop}~\cite{sloop},
-the first pattern retrieval engine for animal biometrics incorporating
-crowd-sourced relevance feedback.  These improvements are shown to bridge the
-performance gap between these machine-based algorithms and humans.
+The need for individual animal identification systems for large biological
+image databases led to the emergence of \emph{Sloop}, the first pattern
+retrieval engine for animal biometrics that couples computational visual
+recognition with crowd-sourcing~\cite{sloop13,sloop14,sloop15}. As a
+content-based information retrieval system, Sloop provides a way to efficiently
+search and analyze pairs of images, sorted by their similarity, from within
+large collections. This can speed up the identification procedure by an order
+of magnitude since not all the pairs need to be manually reviewed.
+
+The foremost requirements of a biometric-based system like Sloop are
+\emph{correctness} and \emph{scalability}. It is obvious that correctness is
+the most desired property of an identification system. However, the image
+recognition itself is a challenging problem in the field of image analysis and
+computer vision that continues to attract growing number of researchers over
+the last few decades. The considerable progress we have seen in computer vision
+is largely due to local descriptor-based algorithms, such as
+SIFT~\cite{lowe04}, and SURF~\cite{surf08}, etc.  For the purpose of animal
+image biometrics, this thesis will deal mostly with the image classification
+and recognition problems.
 
 In the last few years, deep convolutional neural networks~\cite{lecun95,
 kriz12} have outperformed SIFT and other descriptor-based techniques by a large
@@ -50,83 +58,36 @@ margin in both object recognition and classification tasks~\cite{kriz12,
 fisher14, ILSVRC15}. In fact, the architecture has demonstrated recognition
 accuracy comparable to humans in several visual recognition tasks, such as
 recognizing faces~\cite{deepface14} and handwritten digits~\cite{mnist13}.
-Motivated by the preceding achievements, we integrate a pre-trained
-convolutional neural network into a new python version of Sloop, \emph{SlooPy},
-as a separate image processing workflow.
+Motivated by the achievements of deep learning, we implement a new image
+processing workflow that uses a convolutional neural network,
+AlexNet~\cite{kriz12}, as a feature extractor for Sloop. This technique is
+referred to as \emph{transfer learning}~\cite{transfer, finetune}. 
 
-Despite the scalability and advantages of computational speed in automatic
-pattern recognition, some classification errors may occur and rapidly
-propagate. Some degree of human involvement may benefit the identification
-process. Not only can user input resolve the errors, it can also be used to
-train a machine learning model. The model can incrementally learn from the
-accumulation of user-input data in our retrieval system. This creates a
+Despite the stellar performance of these algorithms in the past decades, there
+exists a substantial gap between algorithmic and human-level performance. Some
+degree of human involvement may benefit the identification process. Sloop
+leverages crowd-sourced relevance feedback to improve the retrieval accuracy.
+Not only can user input resolve the errors, the retrieval system can also
+incrementally learn from the accumulation of user-input data. This creates a
 positive feedback loop where the model learns its mistakes from the previous
 iterations and re-evaluates its strategy based on the gold standard responses
-from a human given at the previous iteration. However, this is out of scope for
-our work. In this project, we focus on the problem of how we can maximize the
-information gain from a given amount of user input.
+from a human given at the previous iteration.  One problem of interest is
+assigning tasks to workers with the goal of maximizing the quality of completed
+tasks at a low prices or subject to budget constraints. As a requester, our
+utility is the ratio between the amount of \emph{information gain} from
+completed work and the \emph{price} that we have to pay for the work. Hence,
+our problem is to design a mechanism which makes repeated decisions to maximize
+our utility.
 
-
-\section{Challenges}
-
-\section{Problem Statements}
-
-\subsection{Relevance Feedback} % (fold)
-\label{sub:relevance_feedback}
-
-One problem of interest is assigning tasks to workers with the goal of
-maximizing the quality of completed tasks at a low prices or subject to budget
-constraints. As a requester, our utility is the ratio between the amount of
-information gain from completed work and the price that we have to pay for the
-work. Hence, our problem is to design a mechanism which makes repeated
-decisions to maximize our utility.
-% subsection relevance_feedback (end)
-
-\subsection{Image Recognition} % (fold)
-\label{sub:image_recognition}
-
-The animal identification task involves two major challenges: the \emph{image
-feature extraction problem}, and the \emph{pattern recognition problem}.
-\begin{description}
-    \item[Image feature extraction problem] involves locating the animal in the
-    image, and extracting the features required for matching. The choice of
-    feature selection varies from species to species.
-
-    \item[Pattern recognition problem] The extracted feature object of an image
-    is then passed into the pattern recognition algorithm to find the matches
-    that exist in the system.
-\end{description}
-
-The current version of Sloop locates the animal and necessary features in an
-image by having the user click on fiducial points in the image, and then
-calculates the feature matrix using SIFT\@. It then performs matching by
-iteratively checking if a keypoint descriptor exist in the other image.  The
-more matching keypoints there are, the more likely that the pair of images is a
-match.
-
-Since all the keypoints are weighted equally, Sloop needs human assistance to
-locate the discriminating features to exclude the noises and background. User
-assistance in feature extraction is generally considered unnecessary and
-expensive.  Thus, our first problem in this section is to fully automate the
-feature extraction process. 
-
-Matching such human engineered features, as in SIFT, may lead to poor
-generalization~\cite{fisher14}.  Further, the currently employed feature
-descriptors matching approach also overlooks the relationship between two
-nearby local descriptors. Ideally, we would like our algorithm to automatically
-learn the features from the sample images and recognize possible matches
-accordingly.
-
-Traditional approaches in machine learning generally require training samples
-to be available for all categories. Moreover, such approaches are designed to
-handle only the dataset with a finite, preferably small, number of categories.
-On the other hand, our application requires the ability to recognize high
-dimensional input, whose categories are not known in advance. While the number
-of categories can be very large, the number of examples per category can be
-very small.
-
-The second part of this thesis presents a new architecture whose goal is to
-improve the recognition accuracy as well as curtail or eliminate human
-involvement. We then compare the recognition ability of the two algorithms:
-SIFT and convolutional neural networks.
-% subsection image_recognition (end)
+This research presents two improvements to \emph{Sloop}~\cite{sloop15}:
+\emph{convolutional neural network integration} and \emph{relevance feedback
+optimization}. Starting with a collection of unannotated images, Sloop
+automated ly compares individuals animals in the images to determine
+preliminary matches. Despite the scalability and advantages of computational
+speed, the accuracy	 outputted from automatic recognition have yet to achieve
+human-level performance.  Thus, Sloop then posts a number of selected images
+pairs on an online crowd-sourcing platform to gather human feedback required to
+finalize the decision. High accuracy recognition algorithms together with
+effective relevance feedback strategies yield very substantial gains in
+retrieval performance, and, therefore, bridge the performance gap between these
+machine-based algorithms and humans.
