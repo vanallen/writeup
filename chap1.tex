@@ -1,21 +1,11 @@
-% Introduction (context in terms of content of the project)
-% * Significance (who will benefit? Contribution of the study)
-% * Statement of the problem (problem must be reflected to the title)
-% * Conceptual framework (problems in relation to relevant literatures,
-% summarize the major variables -- independent variables/cause,
-% dependent/effect, other influential vars)
-%   - Existing research and its relevancy
-%   - Key idea of my approach
-%   - discuss variables related to the problem
-%   - Conceptualize relationship between variables
-% * Scope and delimitation
-% (* list out technical terms)
+%!TEX root = main.tex
+\chapter{Introduction} % (fold)
+\label{cha:introduction}
 
-\chapter{Introduction}
-
+% Significance (Contribution of the study)
 Unbiased information about animal population ecology gives biologists vital
-information about the effects of different physical or biological factors on
-the distribution and abundance of animal species, which plays a key role in the
+information about the effects of different physical or biological factors on the
+distribution and abundance of animal species, which plays a key role in the
 development of effective conservation strategies for rare and endangered
 species. One typical approach that biologists take to estimate the size of a
 population of a given species is physically marking the animals.  This approach
@@ -26,43 +16,43 @@ The ability to identify an individual animal by recognizing it in photographs
 provides a non-invasive alternative that allows researchers to monitor the
 species' diversity and dispersal.  Researchers can track movements and observe
 the genetic variation of a species by comparing each member's images with the
-all the existing images collected at different times and locations. However,
-the arduous task of comparing over a thousand images of every individual animal
-and their potential matches makes manual reviews impractical for large
-collections. To alleviate the problem, we need to automate the recognition
-process using computer-based image recognition techniques.
+all the existing images collected at different times and locations. However, the
+arduous task of comparing over a thousand images of every individual animal and
+their potential matches makes manual reviews impractical for large collections.
+To alleviate the problem, we need to automate the recognition process using
+computer-based image recognition techniques.
 
-The need for individual animal identification systems for large biological
-image databases led to the emergence of \emph{Sloop}, the first pattern
-retrieval engine for animal biometrics that couples computational visual
-recognition with crowd-sourcing~\cite{sloop13,sloop14,sloop15}. As a
-content-based information retrieval system, Sloop provides a way to efficiently
-search and analyze pairs of images, sorted by their similarity, from within
-large collections. This can speed up the identification procedure by an order
-of magnitude since not all the pairs need to be manually reviewed.
+The need for individual animal identification systems for large biological image
+databases led to the emergence of \emph{Sloop}, the first pattern retrieval
+engine for animal biometrics that couples computational visual recognition with
+crowd-sourcing~\cite{sloop13,sloop14,sloop15}. As a content-based information
+retrieval system, Sloop provides a way to efficiently search and analyze pairs
+of images, sorted by their similarity, from within large collections. This can
+speed up the identification procedure by an order of magnitude since not all the
+pairs need to be manually reviewed.
 
-Starting with a collection of unannotated images, Sloop
-automatedly compares individuals animals in the images to determine
-preliminary matches. Despite the scalability and advantages of computational
-speed, the accuracy	outputted from automatic recognition have yet to achieve
-human-level performance.  Thus, Sloop then posts a number of selected images
-pairs on an online crowd-sourcing platform to gather human feedback required to
-finalize the decision.
+% Statement of the problem (problem must be reflected to the title)
+Starting with a collection of unannotated images, Sloop automatedly compares
+individuals animals in the images to determine preliminary matches. Despite the
+scalability and advantages of computational speed, the accuracy outputted from
+automatic recognition have yet to achieve human-level performance.  Thus, Sloop
+then posts a number of selected images pairs on an online crowd-sourcing
+platform to gather human feedback required to finalize the decision.
 
+% CNN Conceptual framework 
 The foremost requirements of a biometric-based system like Sloop are
-\emph{correctness} and \emph{scalability}. It is obvious that correctness is
-the most desired property of an identification system. However, the image
-recognition itself is a challenging problem in the field of image analysis and
-computer vision that continues to attract growing number of researchers over
-the last few decades. The considerable progress we have seen in computer vision
-is largely due to local descriptor-based algorithms, such as
-SIFT~\cite{lowe04}, and SURF~\cite{surf08}, etc.  For the purpose of animal
-image biometrics, this thesis will deal mostly with the image classification
-and recognition problems.
+\emph{correctness} and \emph{scalability}. It is obvious that correctness is the
+most desired property of an identification system. However, the image
+recognition itself is a challenging problem in the field of computer vision that
+continues to attract growing number of researchers over the last few decades.
+The considerable progress we have seen in computer vision is largely due to
+local descriptor-based algorithms, such as SIFT~\cite{lowe04}, and
+SURF~\cite{surf08}, etc.  For the purpose of animal image biometrics, this
+thesis will deal mostly with the image classification and recognition problems.
 
 Motivated by the achievements of deep learning, we implement a new image
 processing workflow that uses a convolutional neural network,
-AlexNet~\cite{kriz12}, as a feature extractor for Sloop. This technique is
+AlexNet~\cite{kriz12}, as a feature extractor. This technique is
 referred to as \emph{transfer learning}~\cite{transfer, finetune}. In the last
 few years, deep convolutional neural networks~\cite{lecun95, kriz12} have
 outperformed SIFT and other descriptor-based techniques by a large margin in
@@ -71,34 +61,39 @@ ILSVRC15}. In fact, the architecture has demonstrated recognition accuracy
 comparable to humans in several visual recognition tasks, such as recognizing
 faces~\cite{deepface14} and handwritten digits~\cite{mnist13}.
 
+% Relevant Feedback Conceptual framework
 Despite the stellar performance of these algorithms in the past decades, there
 exists a substantial gap between algorithmic and human-level performance. Some
-degree of human involvement may benefit the identification process. Not only
-can user input resolve the errors, the retrieval system can also incrementally
-learn from the accumulation of user-input data. This creates a positive
-feedback loop where the model learns its mistakes from the previous iterations
-and re-evaluates its strategy based on the gold standard responses from a human
-given at the previous iteration.
+degree of \emph{human involvement} may benefit the identification process. Not
+only can user input resolve the errors, the retrieval system can also
+incrementally learn from the accumulation of user-input data. This creates a
+positive feedback loop where the model learns its mistakes from the previous
+iterations and re-evaluates its strategy based on the gold standard responses
+from a human given at the previous iteration.
 
 This leads us to the problem of how we can maximize the quality of completed
 tasks at a low prices or subject to budget constraints. Sloop leverages
 crowd-sourced relevance feedback to improve the retrieval accuracy. As a
 requester, our utility is the ratio between the amount of \emph{information
-gain} from completed work and the \emph{price} that we have to pay for the
-work. Hence, we need to design a mechanism which makes repeated decisions to
-maximize our utility.
+gain} from completed work and the \emph{price} that we have to pay for the work.
+Hence, we need to design a mechanism which makes repeated decisions to maximize
+our utility.
 
-This research presents two improvements to \emph{Sloop}~\cite{sloop15}:
-\emph{relevance feedback optimization} and \emph{convolutional neural network
-integration}. High accuracy recognition algorithms together with effective
-relevance feedback strategies yield substantial gains in retrieval performance,
-and, therefore, bridge the performance gap between these machine-based
-algorithms and humans. 
+In this thesis, we present two improvements to \emph{Sloop}~\cite{sloop15}:
+\emph{convolutional neural network integration} and \emph{relevance feedback
+optimization}. High accuracy recognition algorithms together with effective
+relevance feedback strategies has shown to yield substantial gains in retrieval
+performance, and, therefore, narrow the performance gap between the
+machine-based algorithms and humans.
 
-The first part of this thesis presents analyses on relevance feedback and Sloop
-MTurk, the crowdsourced relevance feedback engine for Sloop, then proposes
-different relevance feedback strategies and discussed their performance. The
-second part of this thesis presents a new architecture whose goal is to improve
-the recognition accuracy as well as curtail or eliminate human involvement in
-the features learning step. We then compare the recognition ability of the two
-algorithms: SIFT and convolutional neural networks.
+The first part of this thesis presents \emph{Sloop Amazon Mechanical Turk (Sloop
+MTurk)}~\ref{cha:sloop_mturk}, the crowdsourced relevance feedback engine for
+Sloop, along with the analyses on the effectiveness of relevance feedback and
+various sampling strategies for relevance feedback.  Then, we presents
+\emph{SlooPy Image Processing Engine (SlooPy IPE)}~\ref{cha:sloopy_ipe}, the new
+image recognition architecture with CNN feature extractor workflow, whose goal
+is to improve the base recognition accuracy and mitigate the cost incurred by
+human involvement.  In this part, we also compare the recognition performance of
+SlooPy IPE to that of the previous architecture, which is based on SIFT.
+
+% chapter introduction (end)
