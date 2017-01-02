@@ -1,4 +1,5 @@
-\graphicspath{{./images/chap7/}}
+%!TEX root = main.tex
+\graphicspath{{images/chap7/}}
 % Classification with CNN
 % Methodology
 % * Design and Architecture
@@ -7,8 +8,8 @@
 % * qualifications of informants if used in the study
 % * Validation
 % * Data gathering procedure (experiments)
-\chapter{Convolutional Neural Network} % (fold)
-\label{cha:convolutional_neural_network}
+\chapter{SlooPy IPE} % (fold)
+\label{cha:sloopy_ipe}
 
 We first describe our new architecture in System Overview
 (Section~\ref{sec:system_overview}). Then in Experiments
@@ -212,7 +213,7 @@ should maintain its identification capability without regard to the variations
 in sizes, lighting, or background.
 
 \textbf{Partitioning}
-
+% TODO
 We divide the data from both databases into four datasets by animal species:
 Gr$^{L}$-I, Gr$^{L}$-II, Ot$^{L}$-I, Ot$^{L}$-II where Gr is for Grand, Ot is
 for Otago, and $L$ is for the left view. Notice that the right view is not be used for the
@@ -239,7 +240,6 @@ We prevent the overfitting problem by monitoring the model's performance on a
 validation set, acting as a representation of future test examples. If the
 model's performance ceases to improve sufficiently on the validation set then
 we test the model on the actual test set.
-
 
 \begin{table}[t]
 \captionsetup{justification=centering}
@@ -268,6 +268,8 @@ we test the model on the actual test set.
   \end{tabular}
   \label{tab:results_tvt}
 \end{table}
+
+
 % section experiments (end)
 
 % chapter convolutional_neural_network (end)
