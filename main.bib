@@ -1,381 +1,583 @@
 @preamble{ "\newcommand{\noopsort}[1]{} "
-	# "\newcommand{\printfirst}[2]{#1} "
-	# "\newcommand{\singleletter}[1]{#1} "
-	# "\newcommand{\switchargs}[2]{#2#1} " }
+# "\newcommand{\printfirst}[2]{#1} "
+# "\newcommand{\singleletter}[1]{#1} "
+# "\newcommand{\switchargs}[2]{#2#1} " }
 
 @article{caffe,
-    Author = {Jia, Yangqing and Shelhamer, Evan and Donahue, Jeff and Karayev, Sergey and Long, Jonathan and Girshick, Ross and Guadarrama, Sergio and Darrell, Trevor},
-    Journal = {arXiv preprint arXiv:1408.5093},
-    Title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
-    Year = 2014
+author = {Jia, Yangqing
+and Shelhamer, Evan
+and Donahue, Jeff
+and Karayev, Sergey
+and Long, Jonathan
+and Girshick, Ross
+and Guadarrama, Sergio
+and Darrell, Trevor},
+Journal = {arXiv preprint arXiv:1408.5093},
+title = {Caffe: Convolutional Architecture for Fast Feature Embedding},
+Year = 2014
 }
 
-@ARTICLE{transfer, 
-author={S. J. Pan and Q. Yang}, 
-journal={IEEE Transactions on Knowledge and Data Engineering}, 
-title={A Survey on Transfer Learning}, 
-year={2010}, 
-volume={22}, 
-number={10}, 
-pages={1345-1359}, 
-keywords={knowledge engineering;learning by example;optimisation;unsupervised learning;data mining;inductive transfer learning;knowledge transfer;machine learning;transductive transfer learning;unsupervised transfer learning;Data mining;Knowledge engineering;Knowledge transfer;Labeling;Learning systems;Machine learning;Machine learning algorithms;Space technology;Testing;Training data;Transfer learning;data mining.;machine learning;survey}, 
-doi={10.1109/TKDE.2009.191}, 
-ISSN={1041-4347}, 
-month={Oct},}
+@article{transfer,
+author = {S. J. Pan and Q. Yang},
+journal = {IEEE Transactions on Knowledge and Data Engineering},
+title = {A Survey on Transfer Learning},
+year = {2010},
+volume = {22},
+number = {10},
+pages = {1345-1359},
+doi = {10.1109/TKDE.2009.191},
+ISSN = {1041-4347},
+month = {Oct}
+}
+
+% http://deeplearning.cs.cmu.edu/notes/CNN2.pdf
+@article{facerec97,
+author = {Lawrence, S. and Giles, C.L. and Tsoi, Ah Chung and Back, A.D.},
+title = {Face recognition: a convolutional neural-network approach},
+doi = {10.1109/72.554195},
+issn = {1045-9227},
+journal = {Neural Networks, IEEE Transactions on},
+keywords = {CNN computer convolutional face network neural recognition},
+month = jan,
+number = 1,
+pages = {98-113},
+url = {http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=554195&tag=1},
+volume = 8,
+year = 1997
+}
+
+@article{facesurvey03,
+author = {Zhao, W. and Chellapa, Rama and Phillips,P.J. and Rosenfeld, A.},
+title = {Face recognition: A literature survey},
+journal = {ACM Comput. Surv.},
+volume = {35},
+year = {2003},
+month = {2003/12//},
+pages = {399 - 458},
+isbn = {0360-0300},
+doi = {10.1145/954339.954342},
+url = {http://doi.acm.org/10.1145/954339.954342}
+}
 
 # https://arxiv.org/abs/1411.1792
 @article{transfer14,
-  author    = {Jason Yosinski and
-               Jeff Clune and
-               Yoshua Bengio and
-               Hod Lipson},
-  title     = {How transferable are features in deep neural networks?},
-  journal   = {CoRR},
-  volume    = {abs/1411.1792},
-  year      = {2014},
-  url       = {http://arxiv.org/abs/1411.1792},
-  timestamp = {Mon, 01 Dec 2014 14:32:13 +0100},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/YosinskiCBL14},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
+author    = {Jason Yosinski and
+Jeff Clune and
+Yoshua Bengio and
+Hod Lipson},
+title     = {How transferable are features in deep neural networks?},
+journal   = {CoRR},
+volume    = {abs/1411.1792},
+year      = {2014},
+url       = {http://arxiv.org/abs/1411.1792},
 }
 
 @article{emd00,
- author = {Rubner, Yossi and Tomasi, Carlo and Guibas, Leonidas J.},
- title = {The Earth Mover's Distance As a Metric for Image Retrieval},
- journal = {Int. J. Comput. Vision},
- issue_date = {Nov. 2000},
- volume = {40},
- number = {2},
- month = nov,
- year = {2000},
- issn = {0920-5691},
- pages = {99--121},
- numpages = {23},
- url = {http://dx.doi.org/10.1023/A:1026543900054},
- doi = {10.1023/A:1026543900054},
- acmid = {365881},
- publisher = {Kluwer Academic Publishers},
- address = {Hingham, MA, USA},
- keywords = {Earth Mover's Distance, color, image retrieval, perceptual metrics, texture},
+author = {Rubner, Yossi and Tomasi, Carlo and Guibas, Leonidas J.},
+title = {The Earth Mover's Distance As a Metric for Image Retrieval},
+journal = {Int. J. Comput. Vision},
+issue_date = {Nov. 2000},
+volume = {40},
+number = {2},
+month = nov,
+year = {2000},
+issn = {0920-5691},
+pages = {99--121},
+numpages = {23},
+url = {http://dx.doi.org/10.1023/A:1026543900054},
+doi = {10.1023/A:1026543900054},
+acmid = {365881},
+publisher = {Kluwer Academic publishers},
+address = {Hingham, MA, USA},
+keywords = {Earth Mover's Distance, color, image retrieval, perceptual metrics,
+texture},
 }
 
 @article{fisher14,
-  author    = {Philipp Fischer and
-               Alexey Dosovitskiy and
-               Thomas Brox},
-  title     = {Descriptor Matching with Convolutional Neural Networks: a Comparison
-               to {SIFT}},
-  journal   = {CoRR},
-  volume    = {abs/1405.5769},
-  year      = {2014},
-  url       = {http://arxiv.org/abs/1405.5769},
-  timestamp = {Mon, 02 Jun 2014 08:30:36 +0200},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/FischerDB14},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
+author    = {Philipp Fischer and Alexey Dosovitskiy and Thomas Brox},
+title     = {Descriptor Matching with Convolutional Neural Networks: a
+Comparison to {SIFT}},
+journal   = {CoRR},
+volume    = {abs/1405.5769},
+year      = {2014},
+url       = {http://arxiv.org/abs/1405.5769},
+timestamp = {Mon, 02 Jun 2014 08:30:36 +0200},
+biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/FischerDB14},
+bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
 @article{cvevaluation,
- author = {Forman, George and Scholz, Martin},
- title = {Apples-to-apples in Cross-validation Studies: Pitfalls in Classifier Performance Measurement},
- journal = {SIGKDD Explor. Newsl.},
- issue_date = {June 2010},
- volume = {12},
- number = {1},
- month = nov,
- year = {2010},
- issn = {1931-0145},
- pages = {49--57},
- numpages = {9},
- url = {http://doi.acm.org/10.1145/1882471.1882479},
- doi = {10.1145/1882471.1882479},
- acmid = {1882479},
- publisher = {ACM},
- address = {New York, NY, USA},
-} 
+author = {Forman, George and Scholz, Martin},
+title = {Apples-to-apples in Cross-validation Studies: Pitfalls in Classifier
+Performance Measurement}, journal = {SIGKDD Explor. Newsl.},
+issue_date = {June 2010},
+volume = {12},
+number = {1},
+month = nov,
+year = {2010},
+issn = {1931-0145},
+pages = {49--57},
+numpages = {9},
+url = {http://doi.acm.org/10.1145/1882471.1882479},
+doi = {10.1145/1882471.1882479},
+acmid = {1882479},
+publisher = {ACM},
+address = {New York, NY, USA},
+}
 
 @article{ILSVRC15,
-  Author = {Olga Russakovsky and Jia Deng and Hao Su and Jonathan Krause and Sanjeev Satheesh and Sean Ma and Zhiheng Huang and Andrej Karpathy and Aditya Khosla and Michael Bernstein and Alexander C. Berg and Li Fei-Fei},
-  Title = {{ImageNet Large Scale Visual Recognition Challenge}},
-  Year = {2015},
-  journal   = {International Journal of Computer Vision (IJCV)},
-  doi = {10.1007/s11263-015-0816-y},
-  volume={115},
-  number={3},
-  pages={211-252}
+author = {Olga Russakovsky 
+and Jia Deng 
+and Hao Su 
+and Jonathan Krause
+and Sanjeev Satheesh 
+and Sean Ma 
+and Zhiheng Huang 
+and Andrej Karpathy 
+and Aditya Khosla 
+and Michael Bernstein 
+and Alexander C. Berg 
+and Li Fei-Fei},
+title = {{ImageNet Large Scale Visual Recognition Challenge}},
+Year = {2015},
+journal   = {International Journal of Computer Vision (IJCV)},
+doi = {10.1007/s11263-015-0816-y},
+volume={115},
+number={3},
+pages={211-252}
 }
 
 @article{lowe04,
-  author = {Lowe, David G.},
-  title = {Distinctive Image Features from Scale-Invariant Keypoints},
-  journal = {Int. J. Comput. Vision},
-  issue_date = {November 2004},
-  volume = {60},
-  number = {2},
-  month = nov,
-  year = 2004,
-  issn = {0920-5691},
-  pages = {91--110},
-  numpages = {20},
-  url = {http://dx.doi.org/10.1023/B:VISI.0000029664.99615.94},
-  doi = {10.1023/B:VISI.0000029664.99615.94},
-  acmid = {996342},
-  publisher = {Kluwer Academic Publishers},
-  address = {Hingham, MA, USA},
-  keywords = {image matching, invariant features, object recognition, scale invariance}
-} 
+author = {Lowe, David G.},
+title = {Distinctive Image Features from Scale-Invariant Keypoints},
+journal = {Int. J. Comput. Vision},
+issue_date = {November 2004},
+volume = {60},
+number = {2},
+month = nov,
+year = 2004,
+issn = {0920-5691},
+pages = {91--110},
+numpages = {20},
+url = {http://dx.doi.org/10.1023/B:VISI.0000029664.99615.94},
+doi = {10.1023/B:VISI.0000029664.99615.94},
+acmid = {996342},
+publisher = {Kluwer Academic publishers},
+address = {Hingham, MA, USA},
+keywords = {image matching, invariant features, object recognition, scale
+invariance}
+}
 
 @article{prelu15,
-  author    = {Kaiming He and
-               Xiangyu Zhang and
-               Shaoqing Ren and
-               Jian Sun},
-  title     = {Delving Deep into Rectifiers: Surpassing Human-Level Performance on
-               ImageNet Classification},
-  journal   = {CoRR},
-  volume    = {abs/1502.01852},
-  year      = {2015},
-  url       = {http://arxiv.org/abs/1502.01852},
-  timestamp = {Mon, 02 Mar 2015 14:17:34 +0100},
-  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/HeZR015},
-  bibsource = {dblp computer science bibliography, http://dblp.org}
+author    = {Kaiming He 
+and Xiangyu Zhang 
+and Shaoqing Ren 
+and Jian Sun},
+title     = {Delving Deep into Rectifiers: Surpassing Human-Level Performance
+on ImageNet Classification},
+journal   = {CoRR},
+volume    = {abs/1502.01852},
+year      = {2015},
+url       = {http://arxiv.org/abs/1502.01852},
+timestamp = {Mon, 02 Mar 2015 14:17:34 +0100},
+biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/HeZR015},
+bibsource = {dblp computer science bibliography, http://dblp.org}
 }
 
 @article{sliv14,
- author = {Slivkins, Aleksandrs and Vaughan, Jennifer Wortman},
- title = {Online Decision Making in Crowdsourcing Markets: Theoretical Challenges},
- journal = {SIGecom Exch.},
- issue_date = {December 2013},
- volume = {12},
- number = {2},
- month = nov,
- year = {2014},
- issn = {1551-9031},
- pages = {4--23},
- numpages = {20},
- url = {http://doi.acm.org/10.1145/2692359.2692364},
- doi = {10.1145/2692359.2692364},
- acmid = {2692364},
- publisher = {ACM},
- address = {New York, NY, USA},
- keywords = {crowdsourcing, dynamic pricing, multi-armed bandits, reputation systems},
+author = {Slivkins, Aleksandrs and Vaughan, Jennifer Wortman},
+title = {Online Decision Making in Crowdsourcing Markets: Theoretical
+Challenges},
+journal = {SIGecom Exch.},
+issue_date = {December 2013},
+volume = {12},
+number = {2},
+month = nov,
+year = {2014},
+issn = {1551-9031},
+pages = {4--23},
+numpages = {20},
+url = {http://doi.acm.org/10.1145/2692359.2692364},
+doi = {10.1145/2692359.2692364},
+acmid = {2692364},
+publisher = {ACM},
+address = {New York, NY, USA},
+keywords = {crowdsourcing, dynamic pricing, multi-armed bandits, reputation
+systems},
 }
 
 @article{surf08,
-    author = {Bay, Herbert and Ess, Andreas and Tuytelaars, Tinne and Van Gool, Luc},
-    title = {Speeded-Up Robust Features (SURF)},
-    journal = {Comput. Vis. Image Underst.},
-    issue_date = {June, 2008},
-    volume = {110},
-    number = {3},
-    month = jun,
-    year = {2008},
-    issn = {1077-3142},
-    pages = {346--359},
-    numpages = {14},
-    url = {http://dx.doi.org/10.1016/j.cviu.2007.09.014},
-    doi = {10.1016/j.cviu.2007.09.014},
-    acmid = {1370556},
-    publisher = {Elsevier Science Inc.},
-    address = {New York, NY, USA},
-    keywords = {Camera calibration, Feature description, Interest points, Local features, Object recognition},
+author = {Bay, Herbert
+and Ess, Andreas
+and Tuytelaars, Tinne
+and Van Gool, Luc},
+title = {Speeded-Up Robust Features (SURF)},
+journal = {Comput. Vis. Image Underst.},
+issue_date = {June, 2008},
+volume = {110},
+number = {3},
+month = jun,
+year = {2008},
+issn = {1077-3142},
+pages = {346--359},
+numpages = {14},
+url = {http://dx.doi.org/10.1016/j.cviu.2007.09.014},
+doi = {10.1016/j.cviu.2007.09.014},
+acmid = {1370556},
+publisher = {Elsevier Science Inc.},
+address = {New York, NY, USA},
+keywords = {Camera calibration, Feature description, Interest points, Local
+features, Object recognition},
 }
 
 @book{manning2008introduction,
-  address = {Cambridge, UK},
-  author = {Manning, Christopher D. and Raghavan, Prabhakar and Schütze, Hinrich},
-  isbn = {978-0-521-86571-5},
-  publisher = {Cambridge University Press},
-  title = {Introduction to Information Retrieval},
-  year = 2008
+address = {Cambridge, UK},
+author = {Manning, Christopher D. and Raghavan, Prabhakar and Schütze,
+Hinrich},
+isbn = {978-0-521-86571-5},
+publisher = {Cambridge University Press},
+title = {Introduction to Information Retrieval},
+year = 2008
 }
 
 @incollection{kriz12,
-    title = {ImageNet Classification with Deep Convolutional Neural Networks},
-    author = {Alex Krizhevsky and Sutskever, Ilya and Geoffrey E. Hinton},
-    booktitle = {Advances in Neural Information Processing Systems 25},
-    editor = {F. Pereira and C. J. C. Burges and L. Bottou and K. Q. Weinberger},
-    pages = {1097--1105},
-    year = {2012},
-    publisher = {Curran Associates, Inc.},
-    url = {http://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf}
+title = {ImageNet Classification with Deep Convolutional Neural Networks},
+author = {Alex Krizhevsky and Sutskever, Ilya and Geoffrey E. Hinton},
+booktitle = {Advances in Neural Information Processing Systems 25},
+editor = {F. Pereira and C. J. C. Burges and L. Bottou and K. Q.
+Weinberger},
+pages = {1097--1105},
+year = {2012},
+publisher = {Curran Associates, Inc.},
 }
 
 @inproceedings{chopra05,
-    author = {Chopra, Sumit and Hadsell, Raia and LeCun, Yann},
-    title = {Learning a Similarity Metric Discriminatively, with Application to Face Verification},
-    booktitle = {Proceedings of the 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR'05) - Volume 1 - Volume 01},
-    series = {CVPR '05},
-    year = 2005,
-    isbn = {0-7695-2372-2},
-    pages = {539--546},
-    numpages = {8},
-    url = {http://dx.doi.org/10.1109/CVPR.2005.202},
-    doi = {10.1109/CVPR.2005.202},
-    acmid = {1068961},
-    publisher = {IEEE Computer Society},
-    address = {Washington, DC, USA},
+author = {Chopra, Sumit and Hadsell, Raia and LeCun, Yann},
+title = {Learning a Similarity Metric Discriminatively, with Application to
+Face Verification},
+booktitle = {Proceedings of the 2005 IEEE Computer Society Conference on
+Computer Vision and Pattern Recognition (CVPR'05) - Volume 1 - Volume 01},
+series = {CVPR '05},
+year = 2005,
+isbn = {0-7695-2372-2},
+pages = {539--546},
+numpages = {8},
+url = {http://dx.doi.org/10.1109/CVPR.2005.202},
+doi = {10.1109/CVPR.2005.202},
+acmid = {1068961},
+publisher = {IEEE Computer Society},
+address = {Washington, DC, USA},
 }
 
 @inproceedings{deepface14,
- author = {Taigman, Yaniv and Yang, Ming and Ranzato, Marc'Aurelio and Wolf, Lior},
- title = {DeepFace: Closing the Gap to Human-Level Performance in Face Verification},
- booktitle = {Proceedings of the 2014 IEEE Conference on Computer Vision and Pattern Recognition},
- series = {CVPR '14},
- year = {2014},
- isbn = {978-1-4799-5118-5},
- pages = {1701--1708},
- numpages = {8},
- url = {http://dx.doi.org/10.1109/CVPR.2014.220},
- doi = {10.1109/CVPR.2014.220},
- acmid = {2680208},
- publisher = {IEEE Computer Society},
- address = {Washington, DC, USA},
+author = {Taigman, Yaniv
+and Yang, Ming
+and Ranzato, Marc'Aurelio
+and Wolf, Lior},
+title = {DeepFace: Closing the Gap to Human-Level Performance in Face
+Verification},
+booktitle = {Proceedings of the 2014 IEEE Conference on Computer Vision and
+Pattern Recognition},
+series = {CVPR '14},
+year = {2014},
+isbn = {978-1-4799-5118-5},
+pages = {1701--1708},
+numpages = {8},
+url = {http://dx.doi.org/10.1109/CVPR.2014.220},
+doi = {10.1109/CVPR.2014.220},
+acmid = {2680208},
+publisher = {IEEE Computer Society},
+address = {Washington, DC, USA},
 }
 
 @inproceedings{imagenet,
-    author = {Jia Deng and
-     Wei Dong and
-     Richard Socher and
-     Li-jia Li and
-     Kai Li and
-     Li Fei-fei},
-    title = {Imagenet: A large-scale hierarchical image database},
-    booktitle = {CVPR},
-    year = 2009
+author = {Jia Deng
+and Wei Dong
+and Richard Socher
+and Li-jia Li
+and Kai Li
+and Li Fei-fei},
+title = {Imagenet: A large-scale hierarchical image database},
+booktitle = {CVPR},
+year = 2009
 }
 
 @inproceedings{lecun95,
-    original =    "orig/lecun-bengio-95a.ps.gz",
-    author  =       "LeCun, Y. and Bengio, Y.",
-    title   =       "Convolutional Networks for Images, Speech, and Time-Series",
-    booktitle=      "The Handbook of Brain Theory and Neural Networks",
-    year    =       1995,
-    editor  =       "Arbib, M. A.",
-    publisher=      "MIT Press",
+original = "orig/lecun-bengio-95a.ps.gz",
+author = "LeCun, Y. and Bengio, Y.",
+title = "Convolutional Networks for Images, Speech, and Time-Series",
+booktitle = "The Handbook of Brain Theory and Neural Networks",
+year = 1995,
+editor = "Arbib, M. A.",
+publisher = "MIT Press",
 }
 
-@inproceedings{mnist13, 
-    Publisher = {JMLR Workshop and Conference Proceedings}, 
-    Title = {Regularization of Neural Networks using DropConnect}, 
-    Url = {http://jmlr.org/proceedings/papers/v28/wan13.pdf}, 
-    Booktitle = {Proceedings of the 30th International Conference on Machine Learning (ICML-13)}, 
-    Author = {Li Wan and Matthew Zeiler and Sixin Zhang and Yann L. Cun and Rob Fergus},
-    Month = may, 
-    Volume = {28}, 
-    Editor = {Sanjoy Dasgupta and David Mcallester}, 
-    Year = {2013}, 
-    Pages = {1058-1066}
+@inproceedings{mnist13,
+publisher = {JMLR Workshop and Conference Proceedings},
+title = {Regularization of Neural Networks using DropConnect},
+Url = {http://jmlr.org/proceedings/papers/v28/wan13.pdf},
+booktitle = {Proceedings of the 30th International Conference on Machine
+Learning (ICML-13)},
+author = {Li Wan and Matthew Zeiler and Sixin Zhang and Yann L. Cun and Rob
+Fergus},
+Month = may,
+Volume = {28},
+Editor = {Sanjoy Dasgupta and David Mcallester},
+Year = {2013},
+Pages = {1058-1066}
 }
 
 @inproceedings{finetune,
-    author = {Rich Caruana},
-    title = {Learning Many Related Tasks at the Same Time With Backpropagation},
-    booktitle = {Advances in Neural Information Processing Systems 7},
-    year = 1995,
-    pages = {657--664},
-    publisher = {Morgan Kaufmann}
+author = {Rich Caruana},
+title = {Learning Many Related Tasks at the Same Time With Backpropagation},
+booktitle = {Advances in Neural Information Processing Systems 7},
+year = 1995,
+pages = {657--664},
+publisher = {Morgan Kaufmann}
 }
 
 @misc{ufldl,
-    author = {Andrew Ng and
-            Jiquan Ngiam and
-            Chuan Yu Foo and
-            Yifan Mai and
-            Caroline Suen},
-    title = {Feature extraction using convolution},
-    note = {Accessed: 2016-09-08}
+author = {Andrew Ng
+and Jiquan Ngiam
+and Chuan Yu Foo
+and Yifan Mai
+and Caroline Suen},
+title = {Feature extraction using convolution},
+note = {Accessed: 2016-09-08}
 }
 
+# ------------------------------
+#       Related Work
 
-# --------------------------------------
+
+@inproceedings{animal14, 
+    author = {G. Chen and T. X. Han and Z. He and R. Kays and T. Forrester}, 
+    booktitle = {2014 IEEE International Conference on Image Processing (ICIP)}, 
+    title = {Deep convolutional neural network based species recognition for
+    wild animal monitoring}, 
+    year = {2014}, 
+    pages = {858-862}, 
+    doi = {10.1109/ICIP.2014.7025172}, 
+    ISSN = {1522-4880}, 
+    month = {Oct}
+}
+
+@inproceedings{shape00,
+    author = {Serge Belongie and Jitendra Malik and Jan Puzicha},
+    title = {Shape Context: A new descriptor for shape matching and object
+    recognition},
+    booktitle = {In NIPS},
+    year = {2000},
+    pages = {831--837}
+}
+
+@article{town13,
+    author = {Town, Christopher 
+    and Marshall, Andrea 
+    and Sethasathien, Nutthaporn},
+    title = {Manta Matcher: automated photographic identification of manta rays
+    using keypoint features},
+    journal = {Ecology and Evolution},
+    volume = {3},
+    number = {7},
+    issn = {2045-7758},
+    url = {http://dx.doi.org/10.1002/ece3.587},
+    doi = {10.1002/ece3.587},
+    pages = {1902--1914},
+    year = {2013}
+}
+
+@article{object91,
+    author = {Turk, Matthew and Pentland, Alex},
+    title = {Eigenfaces for Recognition},
+    journal = {J. Cognitive Neuroscience},
+    issue_date = {Winter 1991},
+    volume = {3},
+    number = {1},
+    month = jan,
+    year = {1991},
+    issn = {0898-929X},
+    pages = {71--86},
+    numpages = {16},
+    url = {http://dx.doi.org/10.1162/jocn.1991.3.1.71},
+    doi = {10.1162/jocn.1991.3.1.71},
+    acmid = {1326894},
+    publisher = {MIT Press},
+    address = {Cambridge, MA, USA},
+} 
+
+@article{object95,
+    abstract = {{An abstract is not available.}},
+    address = {Hingham, MA, USA},
+    author = {Murase, Hiroshi and Nayar, Shree K.},
+    day = {1},
+    doi = {10.1007/bf01421486},
+    issn = {0920-5691},
+    journal = {Int. J. Comput. Vision},
+    keywords = {appearance, learning, recognition},
+    month = jan,
+    number = {1},
+    pages = {5--24},
+    posted-at = {2007-03-07 10:17:01},
+    priority = {2},
+    publisher = {Kluwer Academic Publishers},
+    title = {{Visual learning and recognition of 3-D objects from appearance}},
+    url = {http://dx.doi.org/10.1007/bf01421486},
+    volume = {14},
+    year = {1995}
+}
+
+@inproceedings{object97,
+    author = {Oren, Michael 
+    and Papageorgiou, Constantine 
+    and Sinha, Pawan 
+    and Osuna, Edgar 
+    and Poggio, Tomaso},
+    title = {Pedestrian Detection Using Wavelet Templates},
+    booktitle = {Proceedings of the 1997 Conference on Computer Vision and Pattern Recognition (CVPR '97)},
+    series = {CVPR '97},
+    year = {1997},
+    isbn = {0-8186-7822-4},
+    pages = {193--},
+    url = {http://dl.acm.org/citation.cfm?id=794189.794507},
+    acmid = {794507},
+    publisher = {IEEE Computer Society},
+    address = {Washington, DC, USA},
+} 
+
+@inproceedings{object98,
+    author = {Yann Lecun and Léon Bottou and Yoshua Bengio and Patrick Haffner},
+    title = {Gradient-based learning applied to document recognition},
+    booktitle = {Proceedings of the IEEE},
+    year = {1998},
+    pages = {2278--2324}
+}
+
+# ------------------------------
+#       Sloop
 
 @inbook{sloop13,
-  author = "Ravela, Sai
-  and Duyck, James
-  and Finn, Chelsea",
-  editor = "Carrasco-Ochoa, Jes{\'u}s Ariel
-  and Mart{\'i}nez-Trinidad, Jos{\'e} Francisco
-  and Rodr{\'i}guez, Joaqu{\'i}n Salas
-  and di Baja, Gabriella Sanniti",
-  title = "Vision-Based Biometrics for Conservation",
-  bookTitle = "Pattern Recognition: 5th Mexican Conference, MCPR 2013, Quer{\'e}taro, Mexico, June 26-29, 2013. Proceedings",
-  year = "2013",
-  publisher = "Springer Berlin Heidelberg",
-  address = "Berlin, Heidelberg",
-  pages = "10--19",
-  isbn = "978-3-642-38989-4",
-  doi = "10.1007/978-3-642-38989-4_2",
-  url = "http://dx.doi.org/10.1007/978-3-642-38989-4_2"
+    author = "Ravela, Sai
+    and Duyck, James
+    and Finn, Chelsea",
+    editor = "Carrasco-Ochoa, Jes{\'u}s Ariel
+    and Mart{\'i}nez-Trinidad, Jos{\'e} Francisco
+    and Rodr{\'i}guez, Joaqu{\'i}n Salas
+    and di Baja, Gabriella Sanniti",
+    title = "Vision-Based Biometrics for Conservation",
+    bookTitle = "Pattern Recognition: 5th Mexican Conference, MCPR 2013,
+    Quer{\'e}taro, Mexico, June 26-29, 2013. Proceedings",
+    year = "2013",
+    publisher = "Springer Berlin Heidelberg",
+    address = "Berlin, Heidelberg",
+    pages = "10--19",
+    isbn = "978-3-642-38989-4",
+    doi = "10.1007/978-3-642-38989-4_2",
+    url = "http://dx.doi.org/10.1007/978-3-642-38989-4_2"
 }
 
 @inbook{sloop14,
-  author = "Finn, Chelsea
-  and Duyck, James
-  and Hutcheon, Andy
-  and Vera, Pablo
-  and Salas, Joaquin
-  and Ravela, Sai",
-  editor = "Mart{\'i}nez-Trinidad, Jos{\'e} Francisco
-  and Carrasco-Ochoa, Jes{\'u}s Ariel
-  and Olvera-Lopez, Jos{\'e} Arturo
-  and Salas-Rodr{\'i}guez, Joaqu{\'i}n
-  and Suen, Ching Y.",
-  title = "Relevance Feedback in Biometric Retrieval of Animal Photographs",
-  bookTitle = "Pattern Recognition: 6th Mexican Conference, MCPR 2014, Cancun, Mexico, June 25-28, 2014. Proceedings",
-  year = "2014",
-  publisher = "Springer International Publishing",
-  address = "Cham",
-  pages = "281--290",
-  isbn = "978-3-319-07491-7",
-  doi = "10.1007/978-3-319-07491-7_29",
-  url = "http://dx.doi.org/10.1007/978-3-319-07491-7_29"
+    author = "Finn, Chelsea
+    and Duyck, James
+    and Hutcheon, Andy
+    and Vera, Pablo
+    and Salas, Joaquin
+    and Ravela, Sai",
+    editor = "Mart{\'i}nez-Trinidad, Jos{\'e} Francisco
+    and Carrasco-Ochoa, Jes{\'u}s Ariel
+    and Olvera-Lopez, Jos{\'e} Arturo
+    and Salas-Rodr{\'i}guez, Joaqu{\'i}n
+    and Suen, Ching Y.",
+    title = "Relevance Feedback in Biometric Retrieval of Animal Photographs",
+    bookTitle = "Pattern Recognition: 6th Mexican Conference, MCPR 2014, Cancun,
+    Mexico, June 25-28, 2014. Proceedings",
+    year = "2014",
+    publisher = "Springer International Publishing",
+    address = "Cham",
+    pages = "281--290",
+    isbn = "978-3-319-07491-7",
+    doi = "10.1007/978-3-319-07491-7_29",
+    url = "http://dx.doi.org/10.1007/978-3-319-07491-7_29"
 }
 
 @article{sloop15,
-  author = {Duyck, James and Finn, Chelsea and Hutcheon, Andy and Vera, Pablo and Salas, Joaquin and Ravela, Sai},
-  title = {Sloop},
-  journal = {Pattern Recognition.},
-  issue_date = {April 2015},
-  volume = {48},
-  number = {4},
-  month = apr,
-  year = {2015},
-  issn = {0031-3203},
-  pages = {1059--1073},
-  numpages = {15},
-  url = {http://dx.doi.org/10.1016/j.patcog.2014.07.017},
-  doi = {10.1016/j.patcog.2014.07.017},
-  acmid = {2801401},
-  publisher = {Elsevier Science Inc.},
-  address = {New York, NY, USA},
-  keywords = {Animal biometrics, Conservation, Crowdsourcing, Gecko, Hybrid shape contexts, Individual identification, Local features, Photo-identification, Relevance feedback, Salamander, Scale-cascaded alignment, Skink, Whale shark},
+    author = {Duyck, James
+    and Finn, Chelsea
+    and Hutcheon, Andy
+    and Vera, Pablo
+    and Salas, Joaquin
+    and Ravela, Sai},
+    title = {Sloop: A Pattern Retrieval Engine for Individual Animal Identification.},
+    journal = {Pattern Recognition.},
+    issue_date = {April 2015},
+    volume = {48},
+    number = {4},
+    month = apr,
+    year = {2015},
+    issn = {0031-3203},
+    pages = {1059--1073},
+    numpages = {15},
+    url = {http://dx.doi.org/10.1016/j.patcog.2014.07.017},
+    doi = {10.1016/j.patcog.2014.07.017},
+    acmid = {2801401},
+    publisher = {Elsevier Science Inc.},
+    address = {New York, NY, USA},
+    keywords = {Animal biometrics, Conservation, Crowdsourcing, Gecko, Hybrid
+    shape contexts, Individual identification, Local features,
+    Photo-identification, Relevance feedback, Salamander, Scale-cascaded
+    alignment, Skink, Whale shark},
 }
 
 @manual{sloopdocs,
-  author = {Randy Westlund},
-  title = {Sloop 4.7 User Manual},
-  organization = {Massachusetts Institute of Technology},
-  year = {2016},
-  note = {Accessed: 2016-09-12}
+    author = {Randy Westlund},
+    title = {Sloop 4.7 User Manual},
+    organization = {Massachusetts Institute of Technology},
+    year = {2016},
+    note = {Accessed: 2016-09-12}
 }
 
-@phdthesis{ravela02
-  author = {Ravela, S.},
-  title = {On Multi-scale Differential Features and their Representations for Recognition and Retrieval},
-  school = {University of Massachusetts at Amherst},
-  year = {2002}
-} # Face recognition with differential features and gaussian filtering. Suggest the use of relevance feedback (motivation)
+@phdthesis{ravela02,
+    author = {Sai Ravela},
+    title = {On Multi-scale Differential Features and their Representations for
+    Recognition and Retrieval},
+    school = {University of Massachusetts at Amherst},
+    year = {2002}
+}
 
+@inproceedings{ravela04,
+    author = {S. Ravela and Lloyd R. Gamble},
+    title = {On recognizing individual salamanders},
+    booktitle = {In Proceedings of Asian Conference on Computer Vision, Ki-Sang Hong and Zhengyou Zhang, Ed. Jeju, Korea: Asian Federation of Computer Vision Societies},
+    year = {2004},
+    pages = {742--747}
+}
+
+@inproceedings{gamble08,
+    author = {L. Gamble and S. Ravela and K. McGarigal},
+    title = {Multi-scale features for identifying individuals in large biological databases: an application of pattern recognition technology to the marbled salamander Ambystoma opacum},
+    booktitle = {Journal of Applied Ecology},
+    volume = {45},
+    year = {2008},
+    pages = {170–180}
+}
+
+# Sloop for marble salamander with relevance feedback (motivation)
 @inproceedings{ravela08,
-  author = {Sai Ravela and Chris Yang and Josh Runge},
-  title = {Visual Recapture for Movement Ecology at Interannual Timescales},
-  booktitle = {Workshop on Visual Observation and Analysis of Animal and Insect Behavior},
-  year = {2008}
-} # Sloop for marble salamander with relevance feedback (motivation)
+    author = {Sai Ravela
+    and Chris Yang
+    and Josh Runge},
+    title = {Visual Recapture for Movement Ecology at Interannual Timescales},
+    booktitle = {Workshop on Visual Observation and Analysis of Animal and Insect
+    Behavior},
+    year = {2008}
+}
 
+# This implements PCA and scale-cascade
 @inproceedings{yang09,
-    author = "Chris Yang and Sai Ravela",
-    title = "Spectral control of viscous alignment for deformation invariant image matching",
+    author = "Chris Yang
+    and Sai Ravela",
+    title = "Spectral control of viscous alignment for deformation invariant
+    image matching",
     booktitle = "International Conference on Computer Vision",
     volume = "1",
     year = "2009",
