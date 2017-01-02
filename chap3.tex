@@ -1,18 +1,11 @@
 %!TEX root = main.tex
 \graphicspath{{images/chap3/}}
-% Relevance Feedback
-% Methodology
-% * Design and Architecture
-% * Population of interest and sampling subject used in the study
-% * Instrument and what it measures (matrices)
-% * qualifications of informants if used in the study
-% * Validation
-% * Data gathering procedure (experiments)
+
 \chapter{Datasets} % (fold)
 \label{cha:datasets}
 
-All the experiments in this study are conducted on a database which comprises two
-species of skinks: \emph{Grand} and \emph{Otago} of 3687 images in total
+All the experiments in this study are conducted on a database which comprises
+two species of skinks: \emph{Grand} and \emph{Otago} of 3687 images in total
 created by biologists at New Zealand's Department of Conservation.
 
 \begin{figure}[htb]
@@ -89,16 +82,17 @@ quantitatively by \emph{similarity score}. The similarity score between two
 individuals is obtained from comparing the SIFT features of all the images
 within a capture to the SIFT features of the images within the other
 individual's cohort.  These scores are normalized by the \emph{minimum
-selfscore} among all the images involved in the
-comparison. A \emph{capture} is a group of images containing the same
-individual from different views, captured at the same time.  A \emph{cohort} is
-a set of all images from all captures of the same individual.
+selfscore} among all the images involved in the comparison. A \emph{capture} is
+a group of images containing the same individual from different views, captured
+at the same time.  A \emph{cohort} is a set of all images from all captures of
+the same individual.
 
 \subsubsection{Selfscores}
 
-The selfscore for a capture is the \emph{maximum} selfscore of all the images within
-the capture, where a selfscore of an image is calculated from comparing the
-sift features of each image with itself.
+The selfscore for a capture is the \emph{maximum} selfscore of all the images
+within the capture, where a selfscore of an image is calculated from comparing
+the sift features of each image with itself.
+
 $$\texttt{selfscore}(C) = \max_{\forall I_i \in C} \texttt{sift\_match}(I_i, I_i)$$
 
 \begin{figure}[htb]
@@ -132,6 +126,7 @@ $$\texttt{selfscore}(C) = \max_{\forall I_i \in C} \texttt{sift\_match}(I_i, I_i
 
 The score between the two individuals is the maximum score among all the
 comparisons among the images within the two cohorts.
+
 $$\texttt{score}(C_1, C_2) = \max_{\forall I_i \in C_1 \forall I_j \in C_2}
     \frac{\texttt{sift\_match}(I_i, I_j)}{\min(\texttt{selfscore}(C_1),
         \texttt{selfscore}(C_2))}$$
