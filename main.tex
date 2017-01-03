@@ -1,20 +1,13 @@
 % -*- Mode:TeX -*-
 
-%% The documentclass options along with the pagestyle can be used to generate
-%% a technical report, a draft copy, or a regular thesis.  You may need to
-%% re-specify the pagestyle after you \include  cover.tex.  For more
-%% information, see the first few lines of mitthesis.cls. 
-
-% \documentclass[12pt,vi,twoside]{mitthesis}
-%%
 %%  If you want your thesis copyright to you instead of MIT, use the
-%%  ``vi'' option, as above.
-%%
-%\documentclass[12pt,twoside,leftblank]{mitthesis}
+%%  ``vi'' option, as below.
+% \documentclass[12pt,vi,twoside]{mitthesis}
 %%
 %% If you want blank pages before new chapters to be labelled ``This
 %% Page Intentionally Left Blank'', use the ``leftblank'' option, as
-%% above. 
+%% below. 
+% \documentclass[12pt,twoside,leftblank]{mitthesis}
 
 \documentclass[12pt,twoside]{mitthesis}
 \usepackage{lgrind} 		  % 2e style for including codes
@@ -24,7 +17,7 @@
 % \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 % \usepackage{hyperref}       % hyperlinks
 % \usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
+\usepackage{booktabs}         % professional-quality tables
 % \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{amsmath}
 % \usepackage{nicefrac}       % compact symbols for 1/2, etc.
@@ -135,7 +128,6 @@
 \include{chap10}
 \appendix
 \include{appa}
-\include{appb}
+% \include{appb}
 \include{biblio}
 \end{document}
-

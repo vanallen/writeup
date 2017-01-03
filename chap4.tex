@@ -1,73 +1,63 @@
 %!TEX root = main.tex
 \graphicspath{{images/chap4/}}
-% Relevance Feedback
-% Methodology
-% * Design and Architecture
-% * Population of interest and sampling subject used in the study
-% * Instrument and what it measures (metrics)
-% * qualifications of informants if used in the study
-% * Validation
-% * Data gathering procedure (experiments)
 \chapter{Relevance Feedback} % (fold)
 \label{cha:relevance_feedback}
 
 To study and understand the effect of relevance feedback to the retrieval
 results, we implement a simulator that reproduces the relevance feedback
 processes of Sloop. The implementation of the simulator is described in
-Section~\ref{sec:method}. We then compare the initial ranked result set
-output from SIFT computation with the results that undergo different rounds
-of relevance feedback with various configurations in
-Section~\ref{sec:experiments}.
+Section~\ref{sec:method}. We then compare the initial ranked result set output
+from SIFT computation with the results that undergo different rounds of
+relevance feedback with various configurations in Section~\ref{sec:experiments}.
 
 \section{Methodology}
 \label{sec:method}
 
 The relevance feedback simulator mimics the behavior of the task submission
-process by repeatedly sampling a batch of capture pairs from the pool of
-all unknown capture pairs. For all the sampled pairs within a batch, the
-simulator marks them as matching pairs or non-matching pairs with the
-\emph{correct} answers.
+process by repeatedly sampling a batch of capture pairs from the pool of all
+unknown capture pairs. For all the sampled pairs within a batch, the simulator
+marks them as matching pairs or non-matching pairs with the \emph{correct}
+answers.
 
 When all the pairs in a specific batch are marked, it constructs an
 \emph{identity graph} that represents the connections between all the known
 pairs using the marked answers. The identity graph is undirected. The nodes in
-the graph represent captures. If there is an edge connecting nodes $A$
-and $B$, captures $A$ and $B$ contain the same individual. Graphically mapping
-the relationship of individuals results in fully-connected subgraphs formed by
-all the captures containing the same animals.
+the graph represent captures. If there is an edge connecting nodes $A$ and $B$,
+captures $A$ and $B$ contain the same individual. Graphically mapping the
+relationship of individuals results in fully-connected subgraphs formed by all
+the captures containing the same animals.
 
 Upon the retrieval of the new information from each batch, the simulator uses
 the identity graph to infer the answers of the unknown pairs. This imitates the
 in-database merging logic of the current version of Sloop~\cite{sloopdocs}. The
 transitive relations are drawn from both matching pairs and non-matching pairs.
 For example, given that capture $A$ is known to contain the same individual as
-capture $B$, and capture $B$ is known to contain the same individual as
-capture $C$, the simulator can infer that capture $A$ contains the same
-individual as capture $C$, without knowing the actual answer for
-$A$ and $C$. Once such transitive inference is made, it adds $C$ to the
-identity graph. Then, it continues to sample a new batch iteratively until the
-distribution satisfies the convergence condition specified by the user.
+capture $B$, and capture $B$ is known to contain the same individual as capture
+$C$, the simulator can infer that capture $A$ contains the same individual as
+capture $C$, without knowing the actual answer for $A$ and $C$. Once such
+transitive inference is made, it adds $C$ to the identity graph. Then, it
+continues to sample a new batch iteratively until the distribution satisfies the
+convergence condition specified by the user.
 
 The correctness of such inference relies on the validity of the premises, i.e.\
 if the answers to the matches are correct then the conclusion must also hold.
 Problems arise when our seemingly \emph{correct} answers are, in fact,
-incorrect. With auto merging, the error propagates rapidly. An incorrect
-answer yields erroneous results not only for the pair of captures in question,
-but to \emph{all} the captures from the same cohorts as the captures in
-question. However, incorrect answers can be detected once inconsistency among
-the answers emerges. In actual Sloop production systems, all captures within
-the cohorts related to the captures for which inconsistency apears are going to
-be sent to expert manual review for reevaluation. On the other hand, in our
-simulation, we would like to examine the consequences of incorrect answers.
-Therefore, the simulator also allows users to specify the error probability at
-initialization.
+incorrect. With auto merging, the error propagates rapidly. An incorrect answer
+yields erroneous results not only for the pair of captures in question, but to
+\emph{all} the captures from the same cohorts as the captures in question.
+However, incorrect answers can be detected once inconsistency among the answers
+emerges. In actual Sloop production systems, all captures within the cohorts
+related to the captures for which inconsistency apears are going to be sent to
+expert manual review for reevaluation. On the other hand, in our simulation, we
+would like to examine the consequences of incorrect answers.  Therefore, the
+simulator also allows users to specify the error probability at initialization.
 
 \section{Metrics} % (fold)
 \label{sec:metrices}
 
-This section describes the metrics used to evaluate the performance of our models.
-Along with our goal of maximizing precision and recall, we would like to
-minimize the cost of the crowdsourced feedback, or operate optimally within a
+This section describes the metrics used to evaluate the performance of our
+models.  Along with our goal of maximizing precision and recall, we would like
+to minimize the cost of the crowdsourced feedback, or operate optimally within a
 budget constraint. The simulator also provides a counter that counts the number
 of iterations a distribution takes to converge. However, this is out of our
 interest because the time a model takes to converge can also be inferred from
@@ -88,7 +78,8 @@ characteristic curve (ROC), which is a plot of TPR and FPR, we use \emph
 
 A precision recall curve is a plot of precision and recall as we vary the
 threshold, $\theta$. Precision or positive predictive value (PPV) is defined as
-following~\cite{manning2008introduction}: $$PPV = \Pr{(y=1|\hat{y}=1)} =
+following~\cite{manning2008introduction}: 
+$$PPV = \Pr{(y=1|\hat{y}=1)} =
 \frac{TP}{\hat{P}} = \frac{TP}{TP+FP}$$
 
 We evaluate the ranked retrieval performance of different relevance feedback
@@ -99,12 +90,12 @@ roughly the area under the \emph{precision-recall curve}.
 \subsection{Cost} % (fold)
 \label{sub:cost}
 
-The total amount of money we have to spend to reward the workers is
-proportional to the number of tasks we publish. If, at the moment we
-have just finished marking all the unknown pairs, there are still some leftover
-crowdsourcing tasks, those tasks are not going to be cancelled (unless the user
-manually cancels them). Hence, we can use the number of tasks we publish as our
-cost metric.
+The total amount of money we have to spend to reward the workers is proportional
+to the number of tasks we publish. If, at the moment we have just finished
+marking all the unknown pairs, there are still some leftover crowdsourcing
+tasks, those tasks are not going to be cancelled (unless the user manually
+cancels them). Hence, we can use the number of tasks we publish as our cost
+metric.
 % subsection cost (end)
 
 % section metrics (end)
@@ -119,18 +110,19 @@ Our goal as the requester is to maximize the Mean Average Precision value of a
 preliminary score distribution output from Sloop, keeping in mind the payments
 we have to make.
 
-We report three experiments corroborating the improvement of retrieval
-results after various rounds of relevance feedback and different sampling
-strategies.  Experiment~\ref{sub:batch_sizes} establishes that relevance
-feedback improves the accretion of precision and recall of the preliminary
-results at various batch sizes.  Experiment~\ref{sub:errors} shows the
-consequence of the erroneous answers at different error probabilities.
+We report three experiments corroborating the improvement of retrieval results
+after various rounds of relevance feedback and different sampling strategies.
+Experiment~\ref{sub:batch_sizes} establishes that relevance feedback improves
+the accretion of precision and recall of the preliminary results at various
+batch sizes.  Experiment~\ref{sub:relevance_errors} shows the consequence of the
+erroneous answers at different error probabilities.
 Experiment~\ref{sub:sampling_policies} compares the performance of various
 sampling policies.
 
 All experiments are performed on the Grand and Otago dataset described in
 Chapter~\ref{cha:datasets}. Both datasets are annotated by the biologist, which
-we take as our true labels. Table~\ref{tab:species_npairs} shows the total number of pairs of captures for each species to be compared.
+we take as our true labels. Table~\ref{tab:species_npairs} shows the total
+number of pairs of captures for each species to be compared.
 
 \begin{table}[t]
 \captionsetup{justification=centering}
@@ -158,10 +150,9 @@ drawing each unknown pair is equally probable. The reason we use a uniform
 random sampling policy is because it is simple and unbiased, which is useful to
 get a general baseline value.
 
-During the sampling process, we observe the Mean Average Precision (MAP) at
-each iteration. A batch of samples is iteratively drawn until we know the
-answers to \emph{all} the unknown pairs or MAP is equal to 1, whichever happens
-first.
+During the sampling process, we observe the Mean Average Precision (MAP) at each
+iteration. A batch of samples is iteratively drawn until we know the answers to
+\emph{all} the unknown pairs or MAP is equal to 1, whichever happens first.
 
 We then repeat the process for various batch sizes, which is defined to be the
 total number of unknown pairs marked between a pair of the following events:
@@ -170,64 +161,19 @@ number of pairs sampled to reach convergence for each batch size.
 % subsection batch_sizes (end)
 
 \subsection{Errors} % (fold)
-\label{sub:errors}
+\label{sub:relevance_errors}
 
-Despite all the preventive measures, i.e.\ task distribution and the gold standard
-questions, there is a probability of obtaining an incorrect answer, assuming
-that all the events are independent.
+Despite all the preventive measures, i.e.\ task distribution and the gold
+standard questions, there is a probability of obtaining an incorrect answer,
+assuming that all the events are independent.
 
-Suppose each HIT is distributed to $n$ workers, or in other words, each HIT
-contains $n$ assignments and there are $m$ questions for each assignments.
-For each assignment, the chance that an assignment is accepted with
-an incorrect answer to the unknown pair is $\frac{1}{2^m}$, and the chance
-that an assignment is rejected is $\epsilon_m = (1-\frac{1}{2^{m-1}})$
-
-The probability that only one assignment out of $n$ assignments is accepted with
-an incorrect answer to the unknown pair is
-$$\epsilon_m^{n-1} \cdot \frac{1}{2^m}$$
-The probability that two assignments are accepted, but the resulting answer to the
-unknown pair is incorrect is
-$$\epsilon_m^{n-2} \cdot \binom{2}{2}\frac{1}{2^{2\cdot m}}$$
-if both are incorrect, and
-$$\epsilon_m^{n-2} \cdot \binom{2}{1}\frac{1}{2^{2\cdot m}}$$
-if both answers are `do not match' and the actual answer is the same.
-The error rate in this case is thus
-$$3 \cdot \epsilon_m^{n-2} \cdot \frac{1}{2^{2\cdot m}}$$
-if both answers are `do not match' and the actual answer is the same.
-The probability that three assignments are accepted, but the resulting answer to the
-unknown pair is incorrect is
-$$\epsilon_m^{n-3} \cdot \binom{3}{3}\frac{1}{2^{3\cdot m}}$$
-if all are incorrect, and
-$$\epsilon_m^{n-3} \cdot \binom{3}{2}\frac{1}{2^{3\cdot m}}$$
-if two are incorrect.
-The error rate in this case is thus
-$$4 \epsilon_m^{n-3} \cdot \frac{1}{2^{3\cdot m}}$$
-if two are incorrect.
-Let $i$ be the number of assignments accepted and
-$\epsilon_{nm} = \frac{1}{2^m\epsilon_m}$.
-The error rate can be generalized as follows:
-\begin{description}
-  \item[$i$ is odd:]
-  $$(\binom{i}{i} + \binom{i}{i-1} + \cdots +
-  \binom{i}{\frac{i+1}{2}})\epsilon_{nm}^i \epsilon_m^n$$
-  \item[$n$ is even:]
-  $$(\binom{i}{i} + \binom{i}{i-1} + \cdots +
-  \binom{i}{\frac{i}{2}})\epsilon_{nm}^i \epsilon_m^n$$
-\end{description}
-By the binomial theorem, the total error rate is bounded by
-
-When the only person whose assignment is correct
-
-However, in practice, errors occur haphazardly rather than systematically.
-Thus, 0.078 is the worst case, where we assumed the worker always make a guess
-with equal probability.
-
-This experiment models such errors. Given an error probability $\epsilon$, if
-a pair of captures is sampled, the simulator marks it with the annotated answer
-(correct answer) with the probability $1-\epsilon$; otherwise, the pair is
-marked with the opposite label (the incorrect answer). Again, we compare the
-values of MAP at each iteration and the total number of pairs sampled for each
-error probability.
+Assuming that the workers always make a guess with equal probability since, in
+practice, errors occur haphazardly rather than systematically. Given an error
+probability $\epsilon$, if a pair of captures is sampled, the simulator marks it
+with the annotated answer (correct answer) with the probability $1-\epsilon$;
+otherwise, the pair is marked with the opposite label (the incorrect answer).
+Again, we compare the values of MAP at each iteration and the total number of
+pairs sampled for each error probability.
 % subsection errors (end)
 
 \subsection{Sampling Policies} % (fold)
@@ -268,11 +214,11 @@ We experiment with following policies:
 \section{Results and Discussion} % (fold)
 \label{sec:results}
 
-Figure~\ref{fig:pr_curves} displays the Precision-Recall graph at a given
-number of sampled unknown pairs. With zero error probability, relevance
-feedback reduces the number of comparisons required for each species by a
-factor of 317 and 307 for grand and otago respectively. Within four iterations
-of the feedback loop, Mean Average Precision (MAP) reaches 1.0.
+Figure~\ref{fig:pr_curves} displays the Precision-Recall graph at a given number
+of sampled unknown pairs. With zero error probability, relevance feedback
+reduces the number of comparisons required for each species by a factor of 317
+and 307 for grand and otago respectively. Within four iterations of the feedback
+loop, Mean Average Precision (MAP) reaches 1.0.
 
 The results corroborate the fact that the relevance feedback dramatically
 accelerates precision and recall given the correct feedback information. Such
@@ -301,9 +247,9 @@ interpolation of the new information.
 \label{sub:batch_sizes_res}
 
 Overall, from the graphs, MAP increases as we feed more data into the system.
-Figure~\ref{fig:sizes_curves} indicates that we publish more unnecessary
-tasks as we increase the batch size. The fewer captures there are in a batch,
-the lower the overall cost. Taking this idea one step further, we would like to
+Figure~\ref{fig:sizes_curves} indicates that we publish more unnecessary tasks
+as we increase the batch size. The fewer captures there are in a batch, the
+lower the overall cost. Taking this idea one step further, we would like to
 infer the matches and merge the individuals as frequently as possible. However,
 empirically, a smaller batch size may upset some workers who would like to
 continuously work on the tasks. Therefore, we need to find the smallest batch
@@ -349,7 +295,7 @@ size that is still large enough to engage the workers.
 % subsection batch_size (end)
 
 \subsection{Errors} % (fold)
-\label{sub:errors}
+\label{sub:results_errors}
 
 Despite the presence of errors, relevance feedback still yields higher MAP
 overall with an error threshold of 0.05. With a nonzero error probability, MAP
@@ -357,9 +303,8 @@ curves downward before it curves up and reaches a saturation point. This is
 because initially when it does not have much data, the system is very sensitive
 to errors, especially the false negatives, which trigger an irreversible merge
 operation. Thus, the precision declines rapidly.  As it gains more correct data,
-it is able to recover from the downward phase. However, the merges
-resulting from past faulty data are irrevocable, so the precision saturates
-eventually.
+it is able to recover from the downward phase. However, the merges resulting
+from past faulty data are irrevocable, so the precision saturates eventually.
 
 \begin{figure}[htb]
   \centering
@@ -380,10 +325,10 @@ eventually.
 Uniform sampling (Uniform), normal sampling (Normal), and sampling from all the
 scores (AllScores) seem to outperform other sampling policies in term of the
 total cost. The samplers that sample single score values at a time, such as
-sampling from the median (Percentile), perform poorly compared to others. However,
-this depends largely on the species of the animal that we are interested in. As
-you can see the performance of each sampling policy differs slightly
-between Grand and Otago.
+sampling from the median (Percentile), perform poorly compared to others.
+However, this depends largely on the species of the animal that we are
+interested in. As you can see the performance of each sampling policy differs
+slightly between Grand and Otago.
 
 \begin{figure}[htbp]
   \centering
@@ -399,7 +344,8 @@ between Grand and Otago.
       \caption{Otago}
   \end{subfigure}%
   \captionsetup{justification=centering}
-  \caption{Mean Average Precision (MAP) for various sampling policies ($Error=0$, \texttt{batch\_size}$=100$)}
+  \caption{Mean Average Precision (MAP) for various sampling policies
+  ($Error=0$, \texttt{batch\_size}$=100$)}
 \end{figure}
 % subsection sampling_policies (end)
 % section results (end)

@@ -7,11 +7,24 @@ Herbert Bay, Andreas Ess, Tinne Tuytelaars, and Luc Van~Gool.
 \newblock Speeded-up robust features (surf).
 \newblock {\em Comput. Vis. Image Underst.}, 110(3):346--359, June 2008.
 
-\bibitem{transfer}
+\bibitem{shape00}
+Serge Belongie, Jitendra Malik, and Jan Puzicha.
+\newblock Shape context: A new descriptor for shape matching and object
+  recognition.
+\newblock In {\em In NIPS}, pages 831--837, 2000.
+
+\bibitem{finetune}
 Rich Caruana.
 \newblock Learning many related tasks at the same time with backpropagation.
 \newblock In {\em Advances in Neural Information Processing Systems 7}, pages
   657--664. Morgan Kaufmann, 1995.
+
+\bibitem{animal14}
+G.~Chen, T.~X. Han, Z.~He, R.~Kays, and T.~Forrester.
+\newblock Deep convolutional neural network based species recognition for wild
+  animal monitoring.
+\newblock In {\em 2014 IEEE International Conference on Image Processing
+  (ICIP)}, pages 858--862, Oct 2014.
 
 \bibitem{chopra05}
 Sumit Chopra, Raia Hadsell, and Yann LeCun.
@@ -26,11 +39,32 @@ Jia Deng, Wei Dong, Richard Socher, Li~jia Li, Kai Li, and Li~Fei-fei.
 \newblock Imagenet: A large-scale hierarchical image database.
 \newblock In {\em CVPR}, 2009.
 
+\bibitem{sloop15}
+James Duyck, Chelsea Finn, Andy Hutcheon, Pablo Vera, Joaquin Salas, and Sai
+  Ravela.
+\newblock Sloop: A pattern retrieval engine for individual animal
+  identification.
+\newblock {\em Pattern Recognition.}, 48(4):1059--1073, April 2015.
+
+\bibitem{sloop14}
+Chelsea Finn, James Duyck, Andy Hutcheon, Pablo Vera, Joaquin Salas, and Sai
+  Ravela.
+\newblock {\em Relevance Feedback in Biometric Retrieval of Animal
+  Photographs}, pages 281--290.
+\newblock Springer International Publishing, Cham, 2014.
+
 \bibitem{fisher14}
 Philipp Fischer, Alexey Dosovitskiy, and Thomas Brox.
 \newblock Descriptor matching with convolutional neural networks: a comparison
   to {SIFT}.
 \newblock {\em CoRR}, abs/1405.5769, 2014.
+
+\bibitem{gamble08}
+L.~Gamble, S.~Ravela, and K.~McGarigal.
+\newblock Multi-scale features for identifying individuals in large biological
+  databases: an application of pattern recognition technology to the marbled
+  salamander ambystoma opacum.
+\newblock In {\em Journal of Applied Ecology}, volume~45, page 170–180, 2008.
 
 \bibitem{prelu15}
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
@@ -51,11 +85,22 @@ Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E. Hinton.
   editors, {\em Advances in Neural Information Processing Systems 25}, pages
   1097--1105. Curran Associates, Inc., 2012.
 
+\bibitem{facerec97}
+S.~Lawrence, C.L. Giles, Ah~Chung Tsoi, and A.D. Back.
+\newblock Face recognition: a convolutional neural-network approach.
+\newblock {\em Neural Networks, IEEE Transactions on}, 8(1):98--113, January
+  1997.
+
 \bibitem{lecun95}
 Y.~LeCun and Y.~Bengio.
 \newblock Convolutional networks for images, speech, and time-series.
 \newblock In M.~A. Arbib, editor, {\em The Handbook of Brain Theory and Neural
   Networks}. MIT Press, 1995.
+
+\bibitem{object98}
+Yann Lecun, Léon Bottou, Yoshua Bengio, and Patrick Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock In {\em Proceedings of the IEEE}, pages 2278--2324, 1998.
 
 \bibitem{lowe04}
 David~G. Lowe.
@@ -67,10 +112,47 @@ Christopher~D. Manning, Prabhakar Raghavan, and Hinrich Schütze.
 \newblock {\em Introduction to Information Retrieval}.
 \newblock Cambridge University Press, Cambridge, UK, 2008.
 
+\bibitem{object95}
+Hiroshi Murase and Shree~K. Nayar.
+\newblock {Visual learning and recognition of 3-D objects from appearance}.
+\newblock {\em Int. J. Comput. Vision}, 14(1):5--24, January 1995.
+
 \bibitem{ufldl}
 Andrew Ng, Jiquan Ngiam, Chuan~Yu Foo, Yifan Mai, and Caroline Suen.
 \newblock Feature extraction using convolution.
 \newblock Accessed: 2016-09-08.
+
+\bibitem{object97}
+Michael Oren, Constantine Papageorgiou, Pawan Sinha, Edgar Osuna, and Tomaso
+  Poggio.
+\newblock Pedestrian detection using wavelet templates.
+\newblock In {\em Proceedings of the 1997 Conference on Computer Vision and
+  Pattern Recognition (CVPR '97)}, CVPR '97, pages 193--, Washington, DC, USA,
+  1997. IEEE Computer Society.
+
+\bibitem{transfer}
+S.~J. Pan and Q.~Yang.
+\newblock A survey on transfer learning.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  22(10):1345--1359, Oct 2010.
+
+\bibitem{ravela04}
+S.~Ravela and Lloyd~R. Gamble.
+\newblock On recognizing individual salamanders.
+\newblock In {\em In Proceedings of Asian Conference on Computer Vision,
+  Ki-Sang Hong and Zhengyou Zhang, Ed. Jeju, Korea: Asian Federation of
+  Computer Vision Societies}, pages 742--747, 2004.
+
+\bibitem{ravela02}
+Sai Ravela.
+\newblock {\em On Multi-scale Differential Features and their Representations
+  for Recognition and Retrieval}.
+\newblock PhD thesis, University of Massachusetts at Amherst, 2002.
+
+\bibitem{sloop13}
+Sai Ravela, James Duyck, and Chelsea Finn.
+\newblock {\em Vision-Based Biometrics for Conservation}, pages 10--19.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2013.
 
 \bibitem{emd00}
 Yossi Rubner, Carlo Tomasi, and Leonidas~J. Guibas.
@@ -85,6 +167,12 @@ Olga Russakovsky, Jia Deng, Hao Su, Jonathan Krause, Sanjeev Satheesh, Sean Ma,
 \newblock {\em International Journal of Computer Vision (IJCV)},
   115(3):211--252, 2015.
 
+\bibitem{sliv14}
+Aleksandrs Slivkins and Jennifer~Wortman Vaughan.
+\newblock Online decision making in crowdsourcing markets: Theoretical
+  challenges.
+\newblock {\em SIGecom Exch.}, 12(2):4--23, November 2014.
+
 \bibitem{deepface14}
 Yaniv Taigman, Ming Yang, Marc'Aurelio Ranzato, and Lior Wolf.
 \newblock Deepface: Closing the gap to human-level performance in face
@@ -92,6 +180,17 @@ Yaniv Taigman, Ming Yang, Marc'Aurelio Ranzato, and Lior Wolf.
 \newblock In {\em Proceedings of the 2014 IEEE Conference on Computer Vision
   and Pattern Recognition}, CVPR '14, pages 1701--1708, Washington, DC, USA,
   2014. IEEE Computer Society.
+
+\bibitem{town13}
+Christopher Town, Andrea Marshall, and Nutthaporn Sethasathien.
+\newblock Manta matcher: automated photographic identification of manta rays
+  using keypoint features.
+\newblock {\em Ecology and Evolution}, 3(7):1902--1914, 2013.
+
+\bibitem{object91}
+Matthew Turk and Alex Pentland.
+\newblock Eigenfaces for recognition.
+\newblock {\em J. Cognitive Neuroscience}, 3(1):71--86, January 1991.
 
 \bibitem{mnist13}
 Li~Wan, Matthew Zeiler, Sixin Zhang, Yann~L. Cun, and Rob Fergus.
@@ -102,7 +201,20 @@ Li~Wan, Matthew Zeiler, Sixin Zhang, Yann~L. Cun, and Rob Fergus.
 
 \bibitem{sloopdocs}
 Randy Westlund.
-\newblock Sloop 4.7 user manual.
+\newblock {\em Sloop 4.7 User Manual}.
+\newblock Massachusetts Institute of Technology, 2016.
 \newblock Accessed: 2016-09-12.
+
+\bibitem{yang09}
+Chris Yang and Sai Ravela.
+\newblock Spectral control of viscous alignment for deformation invariant image
+  matching.
+\newblock In {\em International Conference on Computer Vision}, volume~1, pages
+  1303–--1310, 2009.
+
+\bibitem{facesurvey03}
+W.~Zhao, Rama Chellapa, P.J. Phillips, and A.~Rosenfeld.
+\newblock Face recognition: A literature survey.
+\newblock {\em ACM Comput. Surv.}, 35:399 -- 458, 2003/12// 2003.
 
 \end{thebibliography}
