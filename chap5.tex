@@ -9,10 +9,10 @@
 % * Validation
 % * Data gathering procedure (experiments)
 \chapter{Crowdsourced Relevance Feedback}
-\label{chap:sloop_mturk}
+\label{cha:sloop_mturk}
 % Sloop-mturk: Crowdsourced relevance feedback on mturk
 
-As described in Chapter~\ref{chap:relevance_feedback}, multiple rounds of
+As described in Chapter~\ref{cha:relevance_feedback}, multiple rounds of
 relevance feedback accelerates precision and recall. Such feedback can be 
 obtained through various approaches at different costs. We could send all
 the system's peliminary results to the biologists to verify the matches.
@@ -117,7 +117,7 @@ for Sloop.
   \subsection{Cost Model}
 
   Sloop MTurk uses the evaluation metrics mentioned in
-  Chapter~\ref{chap:relevance_feedback} to measure the performance of the system.
+  Chapter~\ref{cha:relevance_feedback} to measure the performance of the system.
 
   \subsubsection{Correctness}
 
@@ -166,7 +166,7 @@ for Sloop.
   has ever been published before. Users can set the sampling policy of Sloop MTurk in
   the configuration file. The default is to use the normal sampling from the
   median whose performance has been shown in
-  Chapter~\ref{chap:relevance_feedback}.
+  Chapter~\ref{cha:relevance_feedback}.
 
   Sloop MTurk only fetches from the Sloop database the images necessary for the
   tasks to be published.  Upon retrieval, Sloop MTurk caches the image data
@@ -204,7 +204,7 @@ for Sloop.
   The update command is separated from fetch for ease of debugging. In
   practice, we would like to update the upstream database as frequently as
   possible as we have seen in the Experiments section,
-  Chapter~\ref{chap:relevance_feedback}.
+  Chapter~\ref{cha:relevance_feedback}.
 
 % section sloop_mturk (end)
 
