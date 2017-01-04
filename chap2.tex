@@ -133,22 +133,12 @@ generalization~\cite{fisher14}.
 \section{Relevance feedback} % (fold)
 \label{sec:relevance_feedback}
 
-Relevance Feedback is a technique that involves users in the retrieval process.
-Sloop, as an interactive human–machine system, takes advantage of crowd-based
-relevance feedback to improve the retrieval results~\cite{sloop15}.
-Specifically, given a query that returns a set of initial results, the system
-takes user feedback on the initial results to improve the results returned from
-the later iterations when given the same or related
-queries~\cite{manning2008introduction}.
-
-Not only can user input resolve the errors, it can also be used to train a
-machine learning model. The model can incrementally learn from the accumulation
-of user-input data in our retrieval system. This creates a positive feedback
-loop where the model learns its mistakes from the previous iterations and
-re-evaluates its strategy based on the gold standard responses from a human
-given at the previous iteration. However, currently, we only focus on the
-problem of how we can maximize the information gain from a given amount of user
-input.
+Relevance Feedback is a technique that incorperates user feedback to improve the
+final results set~\cite{manning2008introduction}. The system can incrementally
+learn from the accumulation of user input data and re-evaluates its strategy
+based on the gold standard responses from a human given at the previous
+iteration.  User input for relevance feedback can be retrieved from several
+sources, e.g. experts, or crowdsourcing.
 
 \subsection{Crowdsourcing}
 
